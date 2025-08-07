@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import MyNavbar from "./staticCompoents/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Fotter from "./staticCompoents/Fotter"
 
 
 const geistSans = Geist({
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
       >
         <MyNavbar/>
         {children}
+        <Fotter/>
       </body>
     </html>
   );

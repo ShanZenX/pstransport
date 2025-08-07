@@ -7,7 +7,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import logo from "@/public/ps-logo.jpeg";
+import logo from "@/public/Ps-main.png";
 
 export default function MyNavbar() {
   const [isClient, setIsClient] = useState(false);
@@ -41,7 +41,7 @@ export default function MyNavbar() {
     >
       <Container fluid>
         <Navbar.Brand href="/" className="!text-[#d2f65a] font-bold tracking-wider">
-          <Image src={logo} alt="PS transport" width={62} priority />
+          <Image src={logo} alt="PS transport" width={100} priority />
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="navbarScroll" />

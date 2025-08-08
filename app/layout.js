@@ -3,6 +3,7 @@ import "./globals.css";
 import MyNavbar from "./staticCompoents/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Fotter from "./staticCompoents/Fotter"
+import Section1 from "./components/MainPage/Section1";
 
 
 const geistSans = Geist({
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <MyNavbar/>
+        <Section1/>
         {children}
         <Fotter/>
       </body>

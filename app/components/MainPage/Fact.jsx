@@ -4,7 +4,7 @@ import Image from "next/image";
 import { IoMdPeople, IoIosSpeedometer } from "react-icons/io";
 import { FaCarSide, FaRegCalendarAlt } from "react-icons/fa";
 
-const Section1 = () => {
+const Fact = () => {
   return (
     <section className="relative w-full bg-yellow-400 overflow-hidden">
       <Image
@@ -101,4 +101,4 @@ const Section1 = () => {
   );
 };
 
-export default Section1;
+export default Fact;

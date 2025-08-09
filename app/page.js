@@ -1,11 +1,14 @@
 import Image from "next/image";
-import Section1 from "./components/MainPage/Fact";
+import Fact from "./components/MainPage/Fact";
+import WhyPage from "./components/MainPage/WhyPage";
+import ReviewsSection from "./components/MainPage/Review";
 
 export default function Home() {
   return (
     <div className="">
-              <Section1/>
-
+      <WhyPage />
+      <ReviewsSection/>
+      <Fact />
     </div>
   );
 }

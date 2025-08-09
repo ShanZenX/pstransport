@@ -3,6 +3,7 @@ import Background from "@/public/Bg-1.png";
 import Image from "next/image";
 import { IoMdPeople, IoIosSpeedometer } from "react-icons/io";
 import { FaCarSide, FaRegCalendarAlt } from "react-icons/fa";
+import StatisticCard from "../miniComponent/StatisticCard";
 
 const Facts = [
   {
@@ -41,10 +42,7 @@ const Fact = () => {
         priority
       />
       <div className="relative z-10 text-center py-14 px-4">
-        <p
-          className="text-4xl font-bold text-gray-900 text-center mb-12"
-          style={{ fontFamily: '"system-ui", monospace' }}
-        >
+        <h2 className="text-3xl sm:text-4xl font-extrabold  text-gray-900 mb-3">
           Facts In Numbers
         </p>
         <p className="text-gray-700 max-w-xl mx-auto mb-8 font-medium">
@@ -54,22 +52,7 @@ const Fact = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl my-10 mx-auto">
           {Facts.map((item) => (
-            <div
-              key={item.id}
-              className="bg-white p-4 rounded-xl shadow-md flex flex-col"
-            >
-              <div className="flex flex-row items-center justify-start gap-3">
-                <div className="bg-orange-400 p-3 rounded-lg">{item.icon}</div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900 m-0 leading-tight ">
-                    {item.value}
-                  </h4>
-                  <p className="text-sm text-gray-500 m-0 text-start">
-                    {item.label}
-                  </p>
-                </div>
-              </div>
-            </div>
+           <StatisticCard key={item.id} item={item} />
           ))}
         </div>
       </div>

@@ -9,25 +9,25 @@ const Facts = [
   {
     id: 1,
     icon: <FaCarSide size={28} className="text-white" />,
-    value: "540+",
+    value: "150+",
     label: "Cars",
   },
   {
     id: 2,
     icon: <IoMdPeople size={28} className="text-white" />,
-    value: "20k+",
+    value: "5k+",
     label: "Customers",
   },
   {
     id: 3,
     icon: <FaRegCalendarAlt size={28} className="text-white" />,
-    value: "25+",
+    value: "4+",
     label: "Years",
   },
   {
     id: 4,
     icon: <IoIosSpeedometer size={28} className="text-white" />,
-    value: "20m+",
+    value: "10m+",
     label: "Miles",
   },
 ];
@@ -42,7 +42,7 @@ const Fact = () => {
         priority
       />
       <div className="relative z-10 text-center py-14 px-4">
-        <h2 className="text-3xl sm:text-4xl font-extrabold  text-gray-900 mb-3">
+        <p className="text-3xl sm:text-4xl font-extrabold  text-gray-900 mb-3">
           Facts In Numbers
         </p>
         <p className="text-gray-700 max-w-xl mx-auto mb-8 font-medium">

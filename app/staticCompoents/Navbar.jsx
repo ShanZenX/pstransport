@@ -1,28 +1,24 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
+import Link from "next/link";
+import Image from "next/image";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import logo from "@/public/Ps-main.png";
 
-export default function MyNavbar() {
-  const [isClient, setIsClient] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
+export default function Navbar() {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
-  // Ensure hydration-safe behavior by enabling rendering only on client
   useEffect(() => {
-    setIsClient(true);
-
     let lastScrollTop = 0;
 
     const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      setIsVisible(scrollTop <= lastScrollTop); // show on scroll up
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      setIsVisible(scrollTop <= lastScrollTop);
       lastScrollTop = Math.max(scrollTop, 0);
     };
 
@@ -30,56 +26,89 @@ export default function MyNavbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  if (!isClient) return null; // Prevent hydration mismatch
+  const navItems = [
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/Services" },
+    { name: "About Us", href: "/about" },
+  ];
 
   return (
-    <Navbar
-      expand="lg"
-      className={`border-b-2 border-black !bg-[#FFFFFF] shadow-[0_5px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm md:h-16 !px-5 transition-transform duration-700 z-10 fixed w-full ${
+    <header
+      className={`fixed top-0 left-0 w-full z-50 bg-white shadow transition-transform duration-500 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <Container fluid>
-        <Navbar.Brand href="/" className="!text-[#d2f65a] font-bold tracking-wider">
-          <Image src={logo} alt="PS transport" width={100} priority />
-        </Navbar.Brand>
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-[0.4rem]">
+        {/* Logo */}
+        <Link href="/" className="flex items-center">
+          <Image src={logo} alt="Logo" height={52} priority />
+        </Link>
 
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="ml-auto my-2 px-2 gap-4 my-lg-0 !text-black"
-            style={{ maxHeight: "100px" }}
-            navbarScroll
-          >
-            <Nav.Link
-              href="/"
-              className={`${
-                pathname === "/" ? "!bg-[rgba(255,209,5,0.86)] !text-black" : "text-amber-900"
-              } px-4 py-2 rounded-lg transition-all duration-300`}
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex gap-4 text-black font-medium items-center">
+          {navItems.map(({ name, href }) => (
+            <Link
+              key={name}
+              href={href}
+              className={`text-sm px-3 py-1 no-underline rounded-full transition-all duration-300 text-decoration-none text-black ${
+                pathname === href
+                  ? "bg-blue-950 text-white"
+                  : "hover:bg-gray-100"
+              }`}
             >
-              Home
-            </Nav.Link>
+              {name.toUpperCase()}
+            </Link>
+          ))}
+        </nav>
 
-            <Nav.Link
-              href="/Services"
-              className={`${
-                pathname === "/services" ? "!bg-[rgba(255,209,5,0.86)] !text-black" : "text-amber-900"
-              } px-4 py-2 rounded-lg transition-all duration-300`}
-            >
-              Services
-            </Nav.Link>
+        {/* Call Me Button */}
+        <a
+          href="tel:+123456789"
+          className="hidden md:inline-block bg-blue-950 text-white px-4 py-1 text-sm rounded-full no-underline font-medium text-decoration-none"
+        >
+          CALL ME
+        </a>
 
-            <Nav.Link
-              href="/About"
-              className={`${
-                pathname === "/works" ? "!bg-[rgba(255,209,5,0.86)] !text-black" : "text-amber-900"
-              } px-4 py-2 rounded-lg transition-all duration-300`}
+        {/* Mobile Menu Toggle */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden text-indigo-950"
+        >
+          {isMenuOpen ? (
+            <XMarkIcon className="w-6 h-6" />
+          ) : (
+            <Bars3Icon className="w-6 h-6" />
+          )}
+        </button>
+      </div>
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-white border-t border-gray-200 shadow-sm">
+          <nav className="flex flex-col px-4 py-2 space-y-2 text-black font-medium">
+            {navItems.map(({ name, href }) => (
+              <Link
+                key={name}
+                href={href}
+                className={`px-4 py-2 no-underline rounded-full ${
+                  pathname === href
+                    ? "bg-indigo-800 text-white"
+                    : "hover:bg-gray-100"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {name.toUpperCase()}
+              </Link>
+            ))}
+            <a
+              href="tel:+123456789"
+              className="bg-indigo-950 text-white px-4 py-2 rounded-full text-center no-underline font-semibold"
             >
-              About Us
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+              CALL ME
+            </a>
+          </nav>
+        </div>
+      )}
+    </header>
   );
 }

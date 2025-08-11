@@ -8,23 +8,16 @@ export default function TechStackMarquee() {
     { src: "/angular.png", alt: "Angular" },
     { src: "/vercel.png", alt: "Vercel" },
     { src: "/firebase.png", alt: "Firebase" },
-     { src: "/opencv.png", alt: "OpenCV" },
+    { src: "/opencv.png", alt: "OpenCV" },
     { src: "/scikit.png", alt: "Scikit-learn" },
     { src: "/angular.png", alt: "Angular" },
-    { src: "/vercel.png", alt: "Vercel" },
-    { src: "/firebase.png", alt: "Firebase" },
-     { src: "/opencv.png", alt: "OpenCV" },
-    { src: "/scikit.png", alt: "Scikit-learn" },
-    { src: "/angular.png", alt: "Angular" },
-    { src: "/vercel.png", alt: "Vercel" },
-    { src: "/firebase.png", alt: "Firebase" },
   ];
 
   return (
     <div className="bg-white py-6">
-      <h2 className="text-center text-2xl font-bold mb-4">
-        Our Technology Stack
-      </h2>
+      {/* <h2 className="text-center text-xl font-bold mb-4">
+       — Our Technology Stack —
+      </h2> */}
       <div className="overflow-hidden">
         <div className="flex whitespace-nowrap animate-scroll">
           {[...logos, ...logos].map((logo, index) => (

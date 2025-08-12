@@ -26,28 +26,30 @@ export default function OurServices() {
         <p className="uppercase tracking-wide text-sm text-gray-700">
           Certified Transport Service Provider based in Tamil Nadu, Chennai
         </p>
-        <h2 className="text-4xl font-semibold mt-2">
-          — Your trusted partner for cabs, cargo, and long-distance travel —
-        </h2>
+        <h2 className="text-base sm:text-lg md:text-xl font-semibold mt-2 text-center">
+  — Your trusted partner for cabs, cargo, and long-distance travel —
+</h2>
         <div className="w-26 h-[3px] bg-black mx-auto mt-4"></div>
       </div>
 
-      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
-        {services.map((service, index) => (
-          <div key={index} className="flex flex-col items-center">
-            <div className="overflow-hidden rounded-lg shadow-md w-full h-[400]  transition-transform duration-300 hover:scale-105 active:scale-95 ">
-              <Image
-                src={service.img}
-                alt={service.title}
-                width={450}
-                height={300}
-                className="object-cover object-bottom w-full h-full "
-              />
-            </div>
-            <p className="mt-4 text-lg font-medium">{service.title}</p>
-          </div>
-        ))}
+    <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+  {services.map((service, index) => (
+    <div key={index} className="flex flex-col items-center">
+      <div className="overflow-hidden rounded-lg shadow-md w-full h-[220px] sm:h-[300px] md:h-[400px] transition-transform duration-300 hover:scale-105 active:scale-95">
+        <Image
+          src={service.img}
+          alt={service.title}
+          className="object-cover object-bottom w-full h-full"
+        />
       </div>
+
+      <button className="mt-4 text-base sm:text-lg font-medium px-4 py-2 text-black border border-black rounded hover:bg-black hover:text-white transition-colors">
+        {service.title}
+      </button>
+    </div>
+  ))}
+</div>
+
     </section>
   );
 }

@@ -14,7 +14,7 @@ export default function TechStackMarquee() {
   ];
 
   return (
-    <div className="bg-white py-6">
+    <div className="bg-white pt-10">
       {/* <h2 className="text-center text-xl font-bold mb-4">
        — Our Technology Stack —
       </h2> */}

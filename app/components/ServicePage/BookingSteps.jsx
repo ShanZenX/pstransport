@@ -9,10 +9,10 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 const BookingSteps = () => {
   const steps = [
-    { icon: <FaMapMarkedAlt className="text-yellow-500" />, title: "Choose Destination" },
-    { icon: <FaClipboardList className="text-yellow-500" />, title: "Fill Details" },
-    { icon: <FaMoneyBillWave className="text-yellow-500" />, title: "Make Payment" },
-    { icon: <FaCheckCircle className="text-yellow-500" />, title: "Booking Confirmed" },
+    { icon: <FaMapMarkedAlt className="text-indigo-900" />, title: "Choose Destination" },
+    { icon: <FaClipboardList className="text-indigo-900" />, title: "Fill Details" },
+    { icon: <FaMoneyBillWave className="text-indigo-900" />, title: "Make Payment" },
+    { icon: <FaCheckCircle className="text-indigo-900" />, title: "Booking Confirmed" },
   ];
 
   return (

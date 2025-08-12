@@ -1,0 +1,47 @@
+[
+  {
+    "img": "https://via.placeholder.com/150",
+    "title": "Chennai to Trichy",
+    "price": "Rs.5520"
+  },
+  {
+    "img": "https://via.placeholder.com/150",
+    "title": "Chennai to Vellore",
+    "price": "Rs.2000"
+  },
+  {
+    "img": "https://via.placeholder.com/150",
+    "title": "Chennai to Pondicherry",
+    "price": "Rs.2950"
+  },
+  {
+    "img": "https://via.placeholder.com/150",
+    "title": "Chennai to Coimbatore",
+    "price": "Rs.8300"
+  },
+  {
+    "img": "https://via.placeholder.com/150",
+    "title": "Chennai to Madurai",
+    "price": "Rs.7350"
+  },
+  {
+    "img": "https://via.placeholder.com/150",
+    "title": "Chennai to Tirumala",
+    "price": "Rs.3300"
+  },
+  {
+    "img": "https://via.placeholder.com/150",
+    "title": "Chennai to Tiruvannamalai",
+    "price": "Rs.3280"
+  },
+  {
+    "img": "https://via.placeholder.com/150",
+    "title": "Chennai to Bangalore",
+    "price": "Rs.5600"
+  },
+  {
+    "img": "https://via.placeholder.com/150",
+    "title": "Chennai to Salem",
+    "price": "Rs.5770"
+  }
+]

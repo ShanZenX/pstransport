@@ -3,6 +3,7 @@ import WhyPage from "./components/MainPage/WhyPage";
 import ReviewsSection from "./components/MainPage/Review";
 import Why from "./components/Additional/Test2"
 import TransportPackagesCarousel from "./components/Additional/Curosal";
+import PopularTrips from "./components/MainPage/PopularTrips";
 // import SwiperSlider from "./components/Additional/Slider";
 // import TechStackMarquee from "./components/Additional/Slider";
 
@@ -12,7 +13,7 @@ export default function Home() {
       <WhyPage />
       <TransportPackagesCarousel/>
       <ReviewsSection/>
-      <Why/>
+      <PopularTrips/>
       <Fact />
 
     </div>

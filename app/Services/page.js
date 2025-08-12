@@ -2,9 +2,9 @@ import AddBanner from "../components/ServicePage/AddBanner";
 import ServiceSection from "../components/ServicePage/ServiceSection";
 import BookingSteps from "../components/ServicePage/BookingSteps";
 import OurServices from "../components/ServicePage/OurService";
-import TechStackMarquee from "../components/Additional/Slider";
 import Why from "../components/Additional/Test2";
 import CarsCarousel from "../components/ServicePage/CarCurosal";
+import TechStackMarquee from "../components/Additional/Slider";
 
 export default function Services() {
   return (
@@ -13,7 +13,7 @@ export default function Services() {
       {/* <AddBanner /> */}
       <OurServices />
       <BookingSteps />
-      <TechStackMarquee />
+<TechStackMarquee/>
       <CarsCarousel />
       <Why />
     </div>

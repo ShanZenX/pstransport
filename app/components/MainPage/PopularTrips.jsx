@@ -32,9 +32,9 @@ const PopularTrips = () => {
       <div className="flex flex-col justify-between p-3">
         <div>
           <h6 className="font-semibold text-sm sm:text-base leading-snug">
-            {trip.title} at {trip.price}
+            {trip.title}
           </h6>
-          <p className="text-xs sm:text-sm text-gray-500 m-0">One-way taxi</p>
+          <p className="text-xs sm:text-sm text-gray-500 m-0"> {trip.price}</p>
         </div>
         <button className="mt-1 text-orange-500 font-medium text-xs sm:text-sm text-start hover:underline">
           View more

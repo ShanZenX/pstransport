@@ -21,7 +21,7 @@ export default function TechStackMarquee() {
   ];
 
   return (
-    <div className="bg-white pt-10">
+    <div className="bg-white p-8 m-5 ">
       {/* <h2 className="text-center text-xl font-bold mb-4">
        — Our Technology Stack —
   </h2> */}
@@ -35,9 +35,9 @@ export default function TechStackMarquee() {
               <Image
                 src={logo.src}
                 alt={logo.alt}
-                width={80}
-                height={80}
-                className="w-20"
+                width={50}
+                height={50}
+                className="w-18"
               />
             </div>
           ))}

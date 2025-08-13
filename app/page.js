@@ -4,6 +4,7 @@ import ReviewsSection from "./components/MainPage/Review";
 import Why from "./components/Additional/Test2"
 import TransportPackagesCarousel from "./components/Additional/Curosal";
 import PopularTrips from "./components/MainPage/PopularTrips";
+import BrandsSection from "./components/MainPage/Brand";
 // import SwiperSlider from "./components/Additional/Slider";
 // import TechStackMarquee from "./components/Additional/Slider";
 
@@ -14,6 +15,7 @@ export default function Home() {
       <TransportPackagesCarousel/>
       <ReviewsSection/>
       <PopularTrips/>
+      <BrandsSection/>
       <Fact />
 
     </div>

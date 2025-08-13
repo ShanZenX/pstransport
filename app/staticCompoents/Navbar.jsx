@@ -29,7 +29,7 @@ export default function Navbar() {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/Services" },
-    { name: "About Us", href: "/about" },
+    { name: "About Us", href: "/About" },
   ];
 
   return (

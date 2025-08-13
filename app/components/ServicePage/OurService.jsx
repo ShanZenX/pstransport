@@ -21,7 +21,7 @@ const services = [
 
 export default function OurServices() {
   return (
-    <section className="py-12">
+    <section className="py-12 animate-fadeInUp ">
       <div className="text-center">
         <p className="uppercase tracking-wide text-sm text-gray-700">
           Certified Transport Service Provider based in Tamil Nadu, Chennai
@@ -32,7 +32,7 @@ export default function OurServices() {
         <div className="w-26 h-[3px] bg-black mx-auto mt-4"></div>
       </div>
 
-    <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+    <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4 animate-fadeInUp delay-300">
   {services.map((service, index) => (
     <div key={index} className="flex flex-col items-center">
       <div className="overflow-hidden rounded-lg shadow-md w-full h-[220px] sm:h-[300px] md:h-[400px] transition-transform duration-300 hover:scale-105 active:scale-95">

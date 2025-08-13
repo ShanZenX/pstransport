@@ -29,7 +29,7 @@ const services = [
 ];
 
 const ServiceSection = () => (
-  <section className="relative flex justify-center items-center flex-col w-full">
+  <section className="relative flex justify-center items-center flex-col w-full ">
     {/* Background Image */}
    <div className="relative w-full h-[220px] sm:h-[300px] md:h-[350px] xl:h-[400px]">
     <Image
@@ -39,11 +39,8 @@ const ServiceSection = () => (
       style={{ objectFit: "cover", objectPosition: "bottom" }}
       priority
     />
-      <h2 className="realative">
-          Once you Choose Hope , 
-          Everything is possible 
-        </h2>
-      <div className="absolute inset-0 bg-black opacity-60"> 
+     
+      <div className="absolute inset-0 bg-black opacity-60 "> 
       
       </div>
 <p className="absolute inset-0 flex items-center justify-center text-white text-2xl sm:text-3xl md:text-4xl font-bold text-center px-4">

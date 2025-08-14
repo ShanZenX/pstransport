@@ -1,6 +1,8 @@
+'use client';
+
 import Image from "next/image";
 import Carporatecabs from "@/public/assets/CarporateCabs.jpeg";
-
+import useInView from "@/app/About/useInView"
 import Innova from "@/public/assets/Innova.jpeg";
 import Truck from "@/public/assets/Truck.jpeg";
 
@@ -20,9 +22,15 @@ const services = [
 ];
 
 export default function OurServices() {
+    const [visionRef, visionVisible] = useInView({ threshold: 0.2 });
+
   return (
-    <section className="py-12 animate-fadeInUp ">
-      <div className="text-center">
+    <section className="py-12 animate-fadeInUp  
+     " 
+     ref={visionRef}>
+      <div className={`text-center ${
+            visionVisible ? "animate-slideInLeft" : "opacity-0"
+          }`}>
         <p className="uppercase tracking-wide text-sm text-gray-700">
           Certified Transport Service Provider based in Tamil Nadu, Chennai
         </p>

@@ -4,8 +4,8 @@
     "logo": "/assets/brands/jio.png"
   },
   {
-     "name": "q&q",
-    "logo": "/assets/brands/q&q.png"
+     "name": "qq",
+    "logo": "/assets/brands/qq.png"
   },
   {
      "name": "avalon",
@@ -16,5 +16,14 @@
   }, {
      "name": "Jio",
     "logo": "/assets/brands/techmahindra.png"
+  },{
+     "name": "PRD",
+    "logo": "/assets/brands/PRD.png"
+  },{
+     "name": "LT",
+    "logo": "/assets/brands/LT.png"
+  },{
+     "name": "Calbeer",
+    "logo": "/assets/brands/Calbeer.png"
   }
 ]

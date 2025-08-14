@@ -65,7 +65,7 @@ const ReviewsSection = () => (
     aria-labelledby="reviews-heading"
   >
    <h2 className="text-2xl font-bold text-gray-800">
-          — Popular Transport Packages —
+          User Testimonials
         </h2>
     <div className="flex flex-row justify-between m-2">
       <p>

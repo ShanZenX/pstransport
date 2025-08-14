@@ -1,12 +1,13 @@
 /* ✅ 1. Google Fonts must come FIRST */
+/* Uncomment if you use Google Fonts */
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap'); */
 
-/* ✅ 2. Then Tailwind import */
+/* ✅ 2. Tailwind import must be NEXT */
 @import "tailwindcss";
 
-/* ✅ 3. Then your custom CSS */
+/* ✅ 3. Root variables */
 :root {
   --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
                "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -14,83 +15,64 @@
                "Liberation Mono", "Courier New", monospace;
 }
 
+/* ✅ 4. Body styles */
 body {
   font-family: var(--font-sans);
   margin: 0;
-  /* padding-inline: 6%; */
 }
 
+/* ✅ 5. Tailwind layers */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom animations */
+/* ✅ 6. Custom animations */
 @layer utilities {
+  
+  /* Fade In Up */
   @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
   }
+  .animate-fadeInUp { animation: fadeInUp 1s ease-out forwards; }
 
-  .animate-fadeInUp {
-    animation: fadeInUp 0.8s ease-out forwards;
+  /* Slide In Left */
+  @keyframes slideInLeft {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
   }
+  .animate-slideInLeft { animation: slideInLeft 1s ease-out forwards; }
 
-  .delay-200 {
-    animation-delay: 0.2s;
+  /* Slide In Right */
+  @keyframes slideInRight {
+    0% { opacity: 0; transform: translateX(50px); }
+    100% { opacity: 1; transform: translateX(0); }
   }
+  .animate-slideInRight { animation: slideInRight 1s ease-out forwards; }
+
+  /* Zoom In */
+  @keyframes zoomIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  .animate-zoomIn { animation: zoomIn 0.8s ease-out forwards; }
+
+  /* Rotate In */
+  @keyframes rotateIn {
+    0% { opacity: 0; transform: rotate(-10deg) scale(0.95); }
+    100% { opacity: 1; transform: rotate(0) scale(1); }
+  }
+  .animate-rotateIn { animation: rotateIn 0.8s ease-out forwards; }
+
+  /* Utility for delay */
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-600 { animation-delay: 0.6s; }
 }
-/* globals.css */
-
-/* Fade In Up */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.animate-fadeInUp {
-  animation: fadeInUp 1s ease-out forwards;
-}
-
-/* Slide In Left */
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-slideInLeft {
-  animation: slideInLeft 1s ease-out forwards;
-}
-
-/* Slide In Right */
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-slideInRight {
-  animation: slideInRight 1s ease-out forwards;
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }

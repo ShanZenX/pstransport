@@ -1,19 +1,27 @@
 import React from "react";
 import trips from "@/app/data/tripsData.json";
 
+
+          
+
+
 const PopularTrips = () => {
   return (
     <section className="bg-gray-50 py-10 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl md:text-3xl font-bold"> Popular Trips</h2>
+          <div> <h2 className="text-2xl font-bold text-gray-800"> Popular Trips </h2>
+          <p>
+        These routes are booked the most popular for good reason..!!
+      </p></div>
           <button className="border border-gray-400 px-4 py-1 rounded hover:bg-gray-100 transition">
             View All
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 animate-fadeInUp delay-600">
           {trips.map((trip, index) => (
+            
             <div
               key={index}
               className="flex items-center rounded-lg shadow-md overflow-hidden bg-white hover:shadow-lg transition p-2"

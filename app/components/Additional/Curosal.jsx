@@ -103,11 +103,9 @@ const TransportPackagesCarousel = () => {
         <h2 className="text-2xl font-bold text-gray-800">
           — Popular Transport Packages —
         </h2>
-        <p className="text-gray-600 mt-2 max-w-xl mx-auto">
-          Explore Tamil Nadu with our premium cab-based packages — from
-          coastlines to hill stations.
-        </p>
-        <a className="mt-4 px-5 py-2 text-white rounded-full hover:bg-blue-700 transition bg-indigo-950 text-decoration-none">
+        <p className="text-gray-600 mb-10 max-w-xl mx-auto">
+Journey through Tamil Nadu in comfort, where every mile tells a story.        </p>
+        <a className="mt-4 px-5 py-2 text-white rounded-full hover:bg-indigo-700 transition bg-indigo-950 text-decoration-none">
           View all packages
         </a>
       </div>
@@ -175,7 +173,7 @@ const TransportPackagesCarousel = () => {
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <a className="bg-indigo-950 text-white text-sm px-4 py-2 rounded-full hover:bg-indigo-500 transition text-decoration-none">
+                    <a className="bg-indigo-950 text-white text-sm px-4 py-2 rounded-full hover:bg-indigo-700 transition text-decoration-none">
                       Call Now
                     </a>
 

@@ -3,15 +3,13 @@ import trips from "@/app/data/tripsData.json";
 import PopularTripCard from "./PopularTripCard";
 
 
-          
-
 
 const PopularTrips = () => {
   return (
     <section className="bg-gray-50 py-10 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between mb-6">
-          <div> <h2 className="text-2xl font-bold text-gray-800"> Popular Trips </h2>
+          <div> <p className="text-3xl  text-gray-80 font-raleway font-extrabold"> Popular Trips </p>
           <p>
         These routes are booked the most popular for good reason..!!
       </p></div>

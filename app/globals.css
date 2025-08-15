@@ -7,71 +7,153 @@
 /* ✅ 2. Tailwind import must be NEXT */
 @import "tailwindcss";
 
+@tailwind utilities;
+
+
 /* ✅ 3. Root variables */
 :root {
   --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-               "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-               "Liberation Mono", "Courier New", monospace;
+    "Liberation Mono", "Courier New", monospace;
+  /* Custom fonts imported via next/font */
+    --font-poppins: 'Poppins', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+  --font-raleway: 'Raleway', sans-serif;
+  --font-oswald: 'Oswald', sans-serif;
+  --font-geist-sans: 'Geist', sans-serif;
+  --font-geist-mono: 'Geist Mono', monospace;
+
+
+
 }
 
-/* ✅ 4. Body styles */
+@theme inline{
+     --font-poppins: 'Poppins', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+  --font-raleway: 'Raleway', sans-serif;
+  --font-oswald: 'Oswald', sans-serif;
+  --font-geist-sans: 'Geist', sans-serif;
+  --font-geist-mono: 'Geist Mono', monospace;
+}
+
+
+/* ✅ 3. Body default styles */
 body {
-  font-family: var(--font-sans);
   margin: 0;
+  font-family: var(--font-poppins);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ✅ 5. Tailwind layers */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 /* ✅ 6. Custom animations */
 @layer utilities {
-  
+
   /* Fade In Up */
   @keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(30px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-  .animate-fadeInUp { animation: fadeInUp 1s ease-out forwards; }
+
+  .animate-fadeInUp {
+    animation: fadeInUp 1s ease-out forwards;
+  }
 
   /* Slide In Left */
   @keyframes slideInLeft {
-    0% { opacity: 0; transform: translateX(-50px); }
-    100% { opacity: 1; transform: translateX(0); }
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
-  .animate-slideInLeft { animation: slideInLeft 1s ease-out forwards; }
+
+  .animate-slideInLeft {
+    animation: slideInLeft 1s ease-out forwards;
+  }
 
   /* Slide In Right */
   @keyframes slideInRight {
-    0% { opacity: 0; transform: translateX(50px); }
-    100% { opacity: 1; transform: translateX(0); }
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
-  .animate-slideInRight { animation: slideInRight 1s ease-out forwards; }
+
+  .animate-slideInRight {
+    animation: slideInRight 1s ease-out forwards;
+  }
 
   /* Zoom In */
   @keyframes zoomIn {
-    0% { opacity: 0; transform: scale(0.8); }
-    100% { opacity: 1; transform: scale(1); }
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
-  .animate-zoomIn { animation: zoomIn 0.8s ease-out forwards; }
+
+  .animate-zoomIn {
+    animation: zoomIn 0.8s ease-out forwards;
+  }
 
   /* Rotate In */
   @keyframes rotateIn {
-    0% { opacity: 0; transform: rotate(-10deg) scale(0.95); }
-    100% { opacity: 1; transform: rotate(0) scale(1); }
+    0% {
+      opacity: 0;
+      transform: rotate(-10deg) scale(0.95);
+    }
+
+    100% {
+      opacity: 1;
+      transform: rotate(0) scale(1);
+    }
   }
-  .animate-rotateIn { animation: rotateIn 0.8s ease-out forwards; }
+
+  .animate-rotateIn {
+    animation: rotateIn 0.8s ease-out forwards;
+  }
 
   /* Utility for delay */
-  .delay-200 { animation-delay: 0.2s; }
-  .delay-400 { animation-delay: 0.4s; }
-  .delay-600 { animation-delay: 0.6s; }
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .delay-600 {
+    animation-delay: 0.6s;
+  }
 }
+
 .card-hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .card-hover:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);

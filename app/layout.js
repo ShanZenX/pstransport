@@ -1,20 +1,36 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins, Roboto, Raleway, Oswald, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Fotter from "./staticCompoents/Fotter"
-import Section1 from "./components/MainPage/Fact";
 import Navbar from "./staticCompoents/Navbar";
+import Fotter from "./staticCompoents/Fotter";
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+// Google fonts with CSS variables
+const poppins = Poppins({
+  weight: ['100','200','300','400','500','600','700','800','900'],
+  subsets: ['latin'],
+  variable: '--font-poppins',
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const roboto = Roboto({
+  weight: ['100','200','300','400','500','600','700','800','900'],
+  subsets: ['latin'],
+  variable: '--font-roboto',
 });
+
+const raleway = Raleway({
+  weight: ['100','200','300','400','500','600','700','800','900'],
+  subsets: ['latin'],
+  variable: '--font-raleway',
+});
+
+const oswald = Oswald({
+  weight: ['200','300','400','500','600','700'],
+  subsets: ['latin'],
+  variable: '--font-oswald',
+});
+
+const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
 export const metadata = {
   title: "Create Next App",
@@ -24,12 +40,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbar/>
+      <body className={`${poppins.variable} ${roboto.variable} ${raleway.variable} ${oswald.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Navbar />
+
+      
+
         {children}
-        <Fotter/>
+
+        <Fotter />
       </body>
     </html>
   );

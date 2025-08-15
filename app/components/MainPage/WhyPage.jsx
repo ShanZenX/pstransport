@@ -27,7 +27,7 @@ const WhyPage = () => {
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
-      <p className=" font-raleway font-extrabold text-xl sm:text-2xl md:text-3xl text-center mb-2 sm:mb-6">
+      <p className=" text-2xl font-bold text-gray-800 text-xl sm:text-2xl md:text-3xl text-center mb-2 sm:mb-6">
         — Why choose Ps Transport —
       </p>
       <p className=" text-center">

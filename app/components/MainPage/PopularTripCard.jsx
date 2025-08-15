@@ -4,21 +4,21 @@ const PopularTripCard = ({ trip, index }) => {
   return (
     <div
       key={index}
-      className="flex items-center group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 p-2 sm:p-3"
+      className="flex items-center group bg-white rounded-md overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-[1.02] p-1 sm:p-2"
     >
       <img
         src={trip.img}
         alt={trip.title}
-        className="w-[60px] h-[60px] sm:w-[90px] sm:h-[90px] object-cover object-center rounded-md flex-shrink-0"
+        className="w-[48px] h-[48px] sm:w-[70px] sm:h-[70px] object-cover object-center rounded-md flex-shrink-0"
       />
-      <div className="flex flex-col justify-between pl-3 flex-1">
+      <div className="flex flex-col justify-between pl-2 flex-1">
         <div>
-          <h6 className="font-semibold text-sm sm:text-base leading-snug line-clamp-2">
+          <p className="font-semibold text-xs sm:text-sm leading-snug line-clamp-2">
             {trip.title}
-          </h6>
-          <p className="text-xs sm:text-sm text-gray-500">{trip.price}</p>
+          </p>
+          <p className="text-[10px] sm:text-xs text-gray-500">{trip.price}</p>
         </div>
-        <button className="mt-1 text-orange-600 text-start font-medium text-xs sm:text-sm hover:underline">
+        <button className="mt-0.5 text-orange-600 text-start font-medium text-[10px] sm:text-xs hover:underline">
           Book now
         </button>
       </div>
@@ -27,4 +27,3 @@ const PopularTripCard = ({ trip, index }) => {
 };
 
 export default PopularTripCard;
-

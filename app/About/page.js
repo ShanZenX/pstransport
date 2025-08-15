@@ -11,8 +11,8 @@ export default function About() {
     <div className="px-4 pt-6     bg-[#e6b31900]">
       <HeroPage />
       <OurVision />
-      <AboutCompany/>
       <BookingSteps />
+      <AboutCompany />
       <TechStackMarquee />
       <DriverJoinSection />
       <WhyPage />

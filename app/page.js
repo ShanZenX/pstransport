@@ -10,15 +10,16 @@ import BrandsSection from "./components/MainPage/Brand";
 
 export default function Home() {
   return (
-    <div className="">
+   <> <div className="">
       <WhyPage />
       <TransportPackagesCarousel/>
       <PopularTrips/>
       <BrandsSection/>
       <Fact />
-            <ReviewsSection/>
+      <ReviewsSection/>
 
 
     </div>
+    </>
   );
 }

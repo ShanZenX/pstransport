@@ -5,15 +5,19 @@ import OurServices from "../components/ServicePage/OurService";
 import Why from "../components/Additional/Test2";
 import CarsCarousel from "../components/ServicePage/CarCurosal";
 import TechStackMarquee from "../components/Additional/Slider";
+import LogisticsSection from "../components/ServicePage/LogisticsSection";
+import ContactAndSignup from "../components/ServicePage/ContactAndSignup";
 
 export default function Services() {
   return (
-    <div className="px-4 pt-6 md:h-[3000px]    bg-[#e6b31900]">
+    <div className="px-4 pt-6 md:h-[3500px]    bg-[#e6b31900]">
       <ServiceSection />
       {/* <AddBanner /> */}
       <OurServices />
       <TechStackMarquee />
       <CarsCarousel />
+      <LogisticsSection/>
+      <ContactAndSignup/>
       <Why />
     </div>
   );

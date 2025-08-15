@@ -2,7 +2,7 @@ import React from "react";
 import taxi from "@/public/taxi.png";
 import ServiceCard from "../miniComponent/ServiceCard";
 import Image from "next/image";
-import Cars from "@/public/assets/Cars.png";
+import Cars from "@/public/serviceHero.png";
 
 const services = [
   {
@@ -40,7 +40,7 @@ const ServiceSection = () => (
       priority
     />
      
-      <div className="absolute inset-0 bg-black opacity-60 "> 
+      <div className="absolute inset-0 bg-black opacity-30 "> 
       
       </div>
 <p className="absolute inset-0 flex items-center justify-center text-white text-2xl sm:text-3xl md:text-4xl font-bold text-center px-4">

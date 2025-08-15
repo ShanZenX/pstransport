@@ -1,29 +1,36 @@
 [
   {
     "name": "Jio",
-    "logo": "/assets/brands/jio.png"
+    "logo": "/assets/brands/techmahindra.png"
+  },
+
+  {
+    "name": "LT",
+    "logo": "/assets/brands/LT.png"
   },
   {
-     "name": "qq",
+    "name": "avalon",
+    "logo": "/assets/brands/avalon.png"
+  },
+  {
+    "name": "Calbeer",
+    "logo": "/assets/brands/Calbeer.png"
+  },
+  {
+    "name": "qq",
     "logo": "/assets/brands/qq.png"
   },
   {
-     "name": "avalon",
-    "logo": "/assets/brands/avalon.png"
-  }, {
-     "name": "Jio",
+    "name": "Jio",
+    "logo": "/assets/brands/jio.png"
+  },
+  {
+    "name": "Jio",
     "logo": "/assets/brands/saavari.png"
-  }, {
-     "name": "Jio",
-    "logo": "/assets/brands/techmahindra.png"
-  },{
-     "name": "PRD",
+  },
+
+  {
+    "name": "PRD",
     "logo": "/assets/brands/PRD.png"
-  },{
-     "name": "LT",
-    "logo": "/assets/brands/LT.png"
-  },{
-     "name": "Calbeer",
-    "logo": "/assets/brands/Calbeer.png"
   }
 ]

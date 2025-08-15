@@ -5,12 +5,14 @@ import Why from "./components/Additional/Test2"
 import TransportPackagesCarousel from "./components/Additional/Curosal";
 import PopularTrips from "./components/MainPage/PopularTrips";
 import BrandsSection from "./components/MainPage/Brand";
+import FormHolder from "./components/MainPage/FormHolder";
 // import SwiperSlider from "./components/Additional/Slider";
 // import TechStackMarquee from "./components/Additional/Slider";
 
 export default function Home() {
   return (
    <> <div className="">
+    <FormHolder/>
       <WhyPage />
       <TransportPackagesCarousel/>
       <PopularTrips/>

@@ -7,8 +7,10 @@ import {
   MdAccountBalanceWallet,
 } from "react-icons/md";
 import useInView from "@/app/About/useInView"; 
+
+
 const FeatureBox = ({ icons, title, text }) => (
-  <div className="p-4 rounded shadow bg-gray-50">
+  <div className="p-4 text-white rounded border hover:shadow-md transition-all transform  border-black bg-[#162455e7]">
     <span className="my-5">{icons}</span>
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
     <p>{text}</p>

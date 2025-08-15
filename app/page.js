@@ -13,10 +13,11 @@ export default function Home() {
     <div className="">
       <WhyPage />
       <TransportPackagesCarousel/>
-      <ReviewsSection/>
       <PopularTrips/>
       <BrandsSection/>
       <Fact />
+            <ReviewsSection/>
+
 
     </div>
   );

@@ -12,7 +12,6 @@ export default function Services() {
       <ServiceSection />
       {/* <AddBanner /> */}
       <OurServices />
-      <BookingSteps />
       <TechStackMarquee />
       <CarsCarousel />
       <Why />

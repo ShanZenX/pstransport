@@ -8,6 +8,7 @@ import { FaCar, FaHotel, FaMapMarkedAlt } from "react-icons/fa";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import PopularTripCard from "./PopularPackCard";
 
 const packages = [
   {
@@ -104,7 +105,8 @@ const TransportPackagesCarousel = () => {
           — Popular Transport Packages —
         </h2>
         <p className="text-gray-600 mb-10 max-w-xl mx-auto">
-Journey through Tamil Nadu in comfort, where every mile tells a story.        </p>
+          Journey through Tamil Nadu in comfort, where every mile tells a story.{" "}
+        </p>
         <a className="mt-4 px-5 py-2 text-white rounded-full hover:bg-indigo-700 transition bg-indigo-950 text-decoration-none">
           View all packages
         </a>
@@ -114,9 +116,9 @@ Journey through Tamil Nadu in comfort, where every mile tells a story.        </
         {/* Navigation Buttons */}
         <button
           ref={prevRef}
-          className="absolute -left-5 top-1/2 z-10 hidden md:flex items-center justify-center w-10 h-10 bg-white border rounded-full shadow hover:bg-slate-100 transition"
+          className="absolute rounded-full -left-5 top-1/2 z-10 hidden md:flex items-center justify-center w-10 h-10 bg-white border  shadow hover:bg-slate-100 transition"
         >
-          <IoIosArrowBack size={22} />
+          <IoIosArrowBack size={22} className="!rounded-full" />
         </button>
         <button
           ref={nextRef}
@@ -131,7 +133,7 @@ Journey through Tamil Nadu in comfort, where every mile tells a story.        </
           spaceBetween={20}
           slidesPerView={1.1}
           loop
-          autoplay={{ delay: 2000, disableOnInteraction: false }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
           onInit={(swiper) => {
             swiper.params.navigation.prevEl = prevRef.current;
             swiper.params.navigation.nextEl = nextRef.current;
@@ -139,51 +141,17 @@ Journey through Tamil Nadu in comfort, where every mile tells a story.        </
             swiper.navigation.update();
           }}
           breakpoints={{
-            640: { slidesPerView: 1.3 },
+            640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
         >
           {packages.map((pkg) => (
-            <SwiperSlide key={pkg.id}>
-              <div className="bg-white rounded-lg shadow hover:shadow-md transition overflow-hidden">
-                <img
-                  src={pkg.image}
-                  alt={pkg.name}
-                  className="w-full h-45 object-cover"
-                />
-                <div className="p-3">
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    {pkg.name}
-                  </h3>
-                  <p className="text-sm text-gray-500 mb-3">{pkg.nights}</p>
+              <SwiperSlide>
 
-                  <div className="flex flex-wrap gap-2 text-xs text-gray-600 mb-4">
-                    {pkg.includes.map((item, i) => (
-                      <span
-                        key={i}
-                        className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded"
-                      >
-                        {item.includes("Cab") && <FaCar />}
-                        {item.includes("Stay") && <FaHotel />}
-                        {item.includes("View") && <FaMapMarkedAlt />}
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <a className="bg-indigo-950 text-white text-sm px-4 py-2 rounded-full hover:bg-indigo-700 transition text-decoration-none">
-                      Call Now
-                    </a>
-
-                    <span className="text-lg font-bold text-indigo-950">
-                      {pkg.price}
-                    </span>
-                  </div>
-                </div>
-              </div>
+        <PopularTripCard pkg={pkg} />
             </SwiperSlide>
+
           ))}
         </Swiper>
       </div>

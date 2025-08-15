@@ -1,5 +1,6 @@
 import React from "react";
 import trips from "@/app/data/tripsData.json";
+import PopularTripCard from "./PopularTripCard";
 
 
           
@@ -21,28 +22,8 @@ const PopularTrips = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 animate-fadeInUp delay-600">
           {trips.map((trip, index) => (
+            <PopularTripCard key={index} trip={trip} index={index} />
             
-            <div
-              key={index}
-              className="flex items-center rounded-lg shadow-md overflow-hidden bg-white hover:shadow-lg transition p-2"
-            >
-              <img
-                src={trip.img}
-                alt={trip.title}
-                className="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] object-cover object-center rounded-md flex-shrink-0"
-              />
-              <div className="flex flex-col justify-between pl-3 flex-1">
-                <div>
-                  <h6 className="font-semibold text-sm sm:text-base leading-snug line-clamp-2">
-                    {trip.title}
-                  </h6>
-                  <p className="text-xs sm:text-sm text-gray-500">{trip.price}</p>
-                </div>
-                <button className="mt-1 text-yellow-500 font-medium text-xs sm:text-sm text-start hover:underline">
-                  Book now
-                </button>
-              </div>
-            </div>
           ))}
         </div>
       </div>

@@ -6,9 +6,9 @@ const BrandsSection = () => {
   return (
     <section className="bg-white py-5 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-2xl sm:text-3xl font-bold mb-8 sm:mb-10">
+        <p className="text-center text-2xl sm:text-3xl  mb-8 sm:mb-10 font-raleway font-extrabold">
           – Our Trusted Brands –
-        </h2>
+        </p>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 items-center">
           {brands.map((brand, index) => (
             <div

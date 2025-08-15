@@ -6,7 +6,7 @@ import {
   MdEmojiTransportation,
   MdAccountBalanceWallet,
 } from "react-icons/md";
-import useInView from "@/app/About/useInView"; 
+import useInView from "@/app/components/About/useInView"; 
 
 
 const FeatureBox = ({ icons, title, text }) => (
@@ -27,9 +27,9 @@ const WhyPage = () => {
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-2 sm:mb-6">
+      <p className=" font-raleway font-extrabold text-xl sm:text-2xl md:text-3xl text-center mb-2 sm:mb-6">
         — Why choose Ps Transport —
-      </h2>
+      </p>
       <p className=" text-center">
         Your trusted travel partner for every journey{" "}
       </p>

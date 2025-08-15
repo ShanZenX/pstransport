@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Carporatecabs from "@/public/assets/CarporateCabs.jpeg";
-import useInView from "@/app/About/useInView"
+import useInView from "@/app/components/About/useInView"
 import Innova from "@/public/assets/Innova.jpeg";
 import Truck from "@/public/assets/Truck.jpeg";
 

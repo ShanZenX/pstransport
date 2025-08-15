@@ -8,7 +8,7 @@ import cars from "@/app/data/carData.json";
 
 const CarsCarousel = () => {
   return (
-    <div className="max-w-7xl mx-auto px-2 sm:px-4 py-6">
+    <div className="max-w-7xl  mx-auto px-2 sm:px-4 py-6">
       <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-2 sm:mb-6">
   — Our Cars Portfolio —
 </h2>
@@ -21,7 +21,7 @@ const CarsCarousel = () => {
         spaceBetween={10}
         slidesPerView={1.1}
         navigation
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        autoplay={{ delay: 2500, disableOnInteraction: true }}
         breakpoints={{
           480: { slidesPerView: 1.5 },
           640: { slidesPerView: 2 },
@@ -31,7 +31,7 @@ const CarsCarousel = () => {
       >
         {cars.map((car, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+            <div className="bg-white  m-2 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
               <img
                 src={car.img}
                 alt={car.name}

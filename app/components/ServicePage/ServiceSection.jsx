@@ -31,7 +31,7 @@ const services = [
 const ServiceSection = () => (
   <section className="relative flex justify-center items-center flex-col w-full ">
     {/* Background Image */}
-   <div className="relative w-full h-[220px] sm:h-[300px] md:h-[350px] xl:h-[400px]">
+   <div className="relative w-full h-[700px] sm:h-[600px] md:h-[700px] xl:h-[400px]">
     <Image
       src={Cars}
       alt="Service Background"

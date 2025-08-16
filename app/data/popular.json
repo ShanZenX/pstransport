@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "name": "Chennai to Pondicherry",
+    "img": "/assets/trip/thiruchendur.png",
+    "nights": "2N/3D",
+    "price": "₹8,500",
+    "includes": ["AC Cab", "Beach View", "Hotel Stay"]
+  },
+  {
+    "id": 2,
+    "name": "Madurai Temple City Tour",
+        "img": "/assets/trip/thiruchendur.png",
+
+    "nights": "1N/2D",
+    "price": "₹5,000",
+    "includes": ["AC Cab", "Temple Visits", "Guide"]
+  },
+  {
+    "id": 3,
+    "name": "Hill Drive to Ooty",
+        "img": "/assets/trip/thiruchendur.png",
+
+    "nights": "3N/4D",
+    "price": "₹12,000",
+    "includes": ["AC Cab", "Hill Stay", "Sightseeing"]
+  },
+  {
+    "id": 4,
+    "name": "Rameswaram Pilgrimage",
+        "img": "/assets/trip/thiruchendur.png",
+
+    "nights": "2N/3D",
+    "price": "₹7,500",
+    "includes": ["Cab", "Temple Visit", "Bridge Walk"]
+  },
+  {
+    "id": 5,
+    "name": "Tiruchendur Temple Tour",
+        "img": "/assets/trip/thiruchendur.png",
+
+    "nights": "1N/2D",
+    "price": "₹4,500",
+    "includes": ["AC Cab", "Temple Visit", "Beach Walk"]
+  },
+  {
+    "id": 6,
+    "name": "Coimbatore City",
+        "img": "/assets/trip/thiruchendur.png",
+
+    "nights": "2N/3D",
+    "price": "₹6,500",
+    "includes": ["Cab", "Adiyogi Statue", "Local Sightseeing"]
+  },
+  {
+    "id": 7,
+    "name": "Kerala Backwater & Hills",
+    "nights": "4N/5D",
+    "price": "₹15,000",
+    "includes": ["Cab", "Houseboat", "Spice Plantation"]
+  },
+  {
+    "id": 8,
+    "name": "Kanyakumari Sunrise Tour",
+    "nights": "2N/3D",
+    "price": "₹8,000",
+    "includes": ["Cab", "Vivekananda Rock", "Sunrise View"]
+  },
+  {
+    "id": 9,
+    "name": "Trichy Andal Tour",
+    "nights": "1N/2D",
+    "price": "₹5,500",
+    "includes": ["Cab", "Rockfort Visit", "Srirangam Temple"]
+  },
+  {
+    "id": 10,
+    "name": "Yercaud Hills Nature Drive",
+    "nights": "2N/3D",
+    "price": "₹9,000",
+    "includes": ["AC Cab", "Lake Visit", "Viewpoints"]
+  }
+]

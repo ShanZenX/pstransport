@@ -150,10 +150,10 @@ const Form_1 = () => {
         <div className="w-[2px] sm:flex hidden h-full bg-black/20"></div>
 
         {/* Passenger Select */}
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-start w-[48%] sm:w-auto">
           <label htmlFor="passenger">Passengers</label>
           <Select
-            className="w-[150px] sm:w-[100px]"
+            className="w-full sm:w-[100px]"
             id="passenger"
             value={passenger}
             onChange={(e) => setPassenger(e.target.value)}
@@ -169,10 +169,10 @@ const Form_1 = () => {
         <div className="w-[2px] sm:flex hidden h-full bg-black/20"></div>
 
         {/* Luggage Select */}
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-start w-[48%] sm:w-auto">
           <label htmlFor="luggage">Luggage</label>
           <Select
-            className="w-[150px] sm:w-[100px]"
+            className="w-full sm:w-[100px]"
             id="luggage"
             value={luggage}
             onChange={(e) => setLuggage(e.target.value)}

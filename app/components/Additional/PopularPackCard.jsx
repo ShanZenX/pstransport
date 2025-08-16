@@ -4,7 +4,7 @@ import { FaCar, FaHotel, FaMapMarkedAlt } from "react-icons/fa";
 import { SwiperSlide } from "swiper/react";
 
 const PopularTripCard = ({ pkg }) => (
-  <div className="bg-white rounded-lg shadow-md m-2 border-black transition overflow-hidden">
+  <div className="bg-white w-full rounded-lg shadow-md m-2 border-black transition overflow-hidden">
     {" "}
     <img
       src={pkg.image}

@@ -72,21 +72,20 @@ const LogisticsSection = () => {
         </div>
       </div>
 
-      {/* Logos Section */}
-      <div
-        ref={logosRef}
-        className={`flex flex-wrap justify-center gap-10 mt-12 transition-all duration-1000 ease-out
-        ${logosInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-      >
-        {brands.slice(0, 5).map((brand, idx) => (
-          <img
-            key={idx}
-            src={brand.logo}
-            alt={brand.name || `Brand Logo ${idx + 1}`}
-            className="h-8 md:h-10 object-contain"
-          />
-        ))}
-      </div>
+     <div
+  ref={logosRef}
+  className={`flex overflow-x-auto md:overflow-hidden items-center justify-start md:justify-center gap-6 mt-12 transition-all duration-1000 ease-out
+  ${logosInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+>
+  {brands.slice(0, 5).map((brand, idx) => (
+    <img
+      key={idx}
+      src={brand.logo}
+      alt={brand.name || `Brand Logo ${idx + 1}`}
+      className="h-6 md:h-8 object-contain flex-shrink-0"
+    />
+  ))}
+</div>
     </section>
   );
 };

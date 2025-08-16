@@ -4,7 +4,7 @@ import Form_1 from "./Form_1";
 const FormHolder = () => {
   return (
     <div
-      className="h-[100vh]  gap-3 bg-black sm:pt-20 flex flex-col items-center justify-center sm:justify-start text-center"
+      className="h-[100vh]  gap-4 bg-black sm:pt-[13%] flex flex-col items-center justify-center sm:justify-start text-center"
       style={{
         backgroundImage: "url('/main-bg.png')",
         backgroundSize: "cover",

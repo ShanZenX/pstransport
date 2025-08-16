@@ -81,7 +81,7 @@ const Form_1 = () => {
     <LoadScript googleMapsApiKey="YOUR_GOOGLE_API_KEY" libraries={libraries}>
       <form
         onSubmit={handleSubmit}
-        className="w-10/12 mt-10  sm:mt-0 sm:w-10/12 flex flex-wrap sm:justify-around gap-2 sm:items-center bg-white p-6 rounded-lg shadow-lg"
+        className="w-10/12 mt-10  sm:mt-10 sm:w-10/12 flex flex-wrap sm:justify-around gap-2 sm:items-center bg-white p-6 rounded-lg shadow-lg"
       >
         {/* From Input */}
         <div className="flex w-full sm:w-auto flex-col items-start">

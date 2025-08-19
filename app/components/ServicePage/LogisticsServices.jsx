@@ -51,7 +51,7 @@ export default function Services() {
               </div>
 
               <div className="w-full md:w-1/2 p-6 flex flex-col justify-center">
-                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <h3 className="text-xl !font-semibold mb-2">{service.title}</h3>
                 <p className="text-gray-600 mb-4">{service.description}</p>
                 <ul className="space-y-2 text-gray-700 mb-4">
                   {service.features.map((feature, i) => (
@@ -60,7 +60,7 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
-                <a href="#" className="text-indigo-900 font-semibold">
+                <a href="#" className="!text-indigo-900 font-semibold text-decoration-none">
                   Read Details →
                 </a>
               </div>

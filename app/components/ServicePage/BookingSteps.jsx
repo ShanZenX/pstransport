@@ -17,7 +17,7 @@ const BookingSteps = () => {
 
   return (
     <section className="py-12 px-4 bg-gray-50">
-      <h3 className="font-bold text-center text-gray-800">
+      <h3 className="!text-xl sm:!text-4xl !font-bold text-gray-800 text-center">
         — How To Book With PS Transport —
       </h3>
       <p className="text-sm text-center text-gray-600 mt-2 mx-auto max-w-md">

@@ -27,7 +27,7 @@ const LogisticsSection = () => {
 
         {/* Right Content */}
         <div>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold my-2 sm:mb-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold my-2 sm:mb-6 !text-xl sm:!text-4xl !font-bold text-gray-800">
             — Who we are —
           </h2>
           <h6 className="text-2xl md:text-4xl font-bold leading-snug mb-4">

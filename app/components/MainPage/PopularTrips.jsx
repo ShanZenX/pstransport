@@ -9,7 +9,7 @@ const PopularTrips = () => {
     <section className="bg-gray-50 py-10 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between mb-6">
-          <div> <p className="text-3xl  text-gray-80 font-raleway font-extrabold"> Popular Trips </p>
+          <div> <p className="text-xl  sm:text-4xl  font-extrabold text-gray-800"> Popular Trips </p>
           <p>
         These routes are booked the most popular for good reason..!!
       </p></div>

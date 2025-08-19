@@ -42,7 +42,7 @@ const Fact = () => {
         priority
       />
       <div className="relative z-10 text-center py-14 px-4">
-        <p className="text-3xl sm:text-4xl font-extrabold  text-gray-900 mb-3">
+        <p className="text-xl  sm:text-4xl  font-extrabold text-gray-800 mb-3 text-center">
           Facts In Numbers
         </p>
         <p className="text-gray-700 max-w-xl mx-auto mb-8 font-medium">

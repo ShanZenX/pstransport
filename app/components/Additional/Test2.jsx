@@ -72,7 +72,7 @@ const Why = () => {
   return (
     <section className="py-[50px] px-[6%] bg-gray-50">
       <motion.h2
-        className="md:text-[32px] text-[24px] font-semibold text-gray-800"
+        className="text-[18px] sm:text-[24px] md:text-[32px] !text-xl sm:!text-4xl !font-bold text-gray-800 "
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
@@ -82,13 +82,14 @@ const Why = () => {
       </motion.h2>
 
       <motion.p
-        className="md:w-[40%] w-full md:text-[18px] text-[14px] text-gray-600"
+        className="w-full md:w-[40%] text-[13px] sm:text-[15px] md:text-[18px] text-gray-600"
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.6 }}
         variants={sub}
       >
-        Delivering excellence across Tamil Nadu through reliable logistics, modern fleets, and cost-effective pricing.
+        Delivering excellence across Tamil Nadu through reliable logistics,
+        modern fleets, and cost-effective pricing.
       </motion.p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-8">

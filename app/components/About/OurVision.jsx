@@ -34,7 +34,7 @@ const OurVision = () => {
             visionVisible ? "animate-slideInRight" : "opacity-0"
           }`}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 text-start">
+          <h2 className="!text-xl sm:!text-4xl !font-bold text-gray-800  text-3xl md:text-4xl text-gray-900 mb-2 text-start">
             Our Vision
           </h2>
           <div className="h-[3px] w-20 bg-black mb-4 rounded"></div>
@@ -57,7 +57,7 @@ const OurVision = () => {
             missionVisible ? "animate-slideInRight" : "opacity-0"
           }`}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 text-start">
+          <h2 className="!text-xl sm:!text-4xl !font-bold text-gray-800  text-3xl md:text-4xl text-gray-900 mb-2 text-start">
             Our Mission
           </h2>
           <div className="h-[3px] w-20 bg-black mb-4 rounded"></div>

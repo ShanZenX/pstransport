@@ -6,9 +6,9 @@ const HeroPage = () => {
       className="w-full h-[300px] sm:h-[400px] md:h-[500px] bg-cover bg-center flex flex-col items-center justify-center text-center px-4 opacity-90"
       style={{ backgroundImage: "url('/About-Bg1.png')" }}
     >
-      <p className="text-base sm:text-xl md:text-4xl font-semibold text-white leading-tight animate-fadeInUp">
+      <h2 className="text-base sm:text-xl md:text-4xl text-white leading-tight animate-fadeInUp !text-xl sm:!text-4xl !font-extrabold text-gray-800 ">
   Book a City Taxi to your Destination
-</p>
+</h2>
 <h5 className="text-xs sm:text-sm md:text-lg  text-white mt-2 sm:mt-1 sm:text-white opacity-8 animate-fadeInUp delay-200">
   Choose from a range of categories and prices
 </h5>

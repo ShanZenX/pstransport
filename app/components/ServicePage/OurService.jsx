@@ -34,7 +34,7 @@ export default function OurServices() {
         <p className="uppercase tracking-wide text-sm text-gray-700">
           Certified Transport Service Provider based in Tamil Nadu, Chennai
         </p>
-        <h2 className="text-base sm:text-lg md:text-xl font-semibold mt-2 text-center">
+       <h2 className="!text-xl sm:!text-4xl !font-bold text-gray-800 text-center">
   — Your trusted partner for cabs, cargo, and long-distance travel —
 </h2>
         <div className="w-26 h-[3px] bg-black mx-auto mt-4"></div>

@@ -27,8 +27,8 @@ export default function Services() {
   return (
     <section className="py-12">
       <div className="m-3 sm:m-0">
-       <h2 className="text-2xl md:text-[32px] font-bold mb-4 flex justify-center items-center gap-2 text-center">
-<span className="h-[3px] w-[20px] bg-black block"></span>
+       <h2 className="text-2xl md:text-[32px] font-bold mb-4 flex justify-center items-center gap-2 text-center !text-xl sm:!text-4xl !font-bold text-gray-800 text-center">
+<span className="h-[3px] w-[20px] bg-black block "></span>
   Our Services To Explore
 <span className="h-[3px] w-[20px] bg-black block"></span>
 </h2>

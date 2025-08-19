@@ -31,21 +31,19 @@ const services = [
 const ServiceSection = () => (
   <section className="relative flex justify-center items-center flex-col w-full ">
     {/* Background Image */}
-   <div className="relative w-full h-[700px] sm:h-[600px] md:h-[700px] xl:h-[400px]">
-    <Image
-      src={Cars}
-      alt="Service Background"
-      fill
-      style={{ objectFit: "cover", objectPosition: "bottom" }}
-      priority
-    />
-     
-      <div className="absolute inset-0 bg-black opacity-30 "> 
-      
-      </div>
-<p className="absolute inset-0 flex items-center justify-center text-white text-2xl sm:text-3xl md:text-4xl font-bold text-center px-4">
-    Once you Choose Hope, Everything is possible
-  </p> 
+    <div className="relative w-full h-[700px] sm:h-[600px] md:h-[700px] xl:h-[400px]">
+      <Image
+        src={Cars}
+        alt="Service Background"
+        fill
+        style={{ objectFit: "cover", objectPosition: "bottom" }}
+        priority
+      />
+
+      <div className="absolute inset-0 bg-black opacity-30 "></div>
+      <h2 className="absolute inset-0 flex items-center justify-center text-white text-xl  sm:text-4xl  font-extrabold text-gray-800 text-2xl sm:text-3xl md:text-4xl font-bold text-center px-4 !text-xl sm:!text-4xl !font-extrabold text-gray-800 ">
+        Once you Choose Hope, Everything is possible
+      </h2>
     </div>
 
     {/* Cards Section

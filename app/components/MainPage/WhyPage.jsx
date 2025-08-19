@@ -27,9 +27,9 @@ const WhyPage = () => {
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
-      <p className="  font-bold text-gray-800 text-xl  sm:text-2xl md:text-3xl text-center mb-2 sm:mb-6">
+      <h2 className=" !text-xl sm:!text-4xl !font-bold text-gray-800  text-xl  sm:text-2xl md:text-3xl text-center mb-2 sm:mb-6">
         — Why choose Ps Transport —
-      </p>
+      </h2>
       <p className=" text-center text-[16px]  text-gray-600 mb-10">
         Your trusted travel partner for every journey{" "}
       </p>

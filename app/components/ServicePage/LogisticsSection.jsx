@@ -30,9 +30,9 @@ const LogisticsSection = () => {
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold my-2 sm:mb-6">
             — Who we are —
           </h2>
-          <h2 className="text-2xl md:text-4xl font-bold leading-snug mb-4">
+          <h6 className="text-2xl md:text-4xl font-bold leading-snug mb-4">
             Leading global logistic and transport agency
-          </h2>
+          </h6>
           <p className="text-gray-600 mb-6">
             We provide efficient and reliable logistics solutions, ensuring safe
             and timely transportation of goods across local and global
@@ -46,8 +46,6 @@ const LogisticsSection = () => {
               "Highly Professional Staff",
               "Quality Control System",
               "Supply Chain Solutions",
-              "Highly Professional Staff",
-              "Supply Chain Solutions",
             ].map((item, idx) => (
               <div key={idx} className="flex items-center gap-2">
                 <FaCheckCircle className="text-indigo-900" />
@@ -58,10 +56,10 @@ const LogisticsSection = () => {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <button className="bg-indigo-900 hover:bg-indigo-600 text-white px-6 py-3 rounded-lg shadow-md font-medium transition">
+            <button className="bg-indigo-900 hover:bg-indigo-600 text-white p-2 sm:p-4 md:p-6 lg:p-8 rounded-lg shadow-md font-medium transition">
               Request a Quote
             </button>
-            <div className="flex items-center gap-3 text-indigo-900">
+            <div className="flex items-center gap-3  text-indigo-900">
               <FaPhoneAlt size={24} />
               <div>
                 <p className="text-gray-700 text-sm">Call for free</p>

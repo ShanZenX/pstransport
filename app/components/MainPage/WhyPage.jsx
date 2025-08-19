@@ -10,11 +10,11 @@ import useInView from "@/app/components/About/useInView";
 
 
 const FeatureBox = ({ icons, title, text }) => (
-  <div className="p-4 w-11/12 sm:w-auto text-white rounded border hover:shadow-md transition-all transform  border-black bg-[#162455e7]">
-    <span className="my-5">{icons}</span>
-    <h3 className="text-xl font-semibold mb-2">{title}</h3>
-    <p>{text}</p>
-  </div>
+ <div className="p-2 w-10/12 sm:w-auto text-white rounded border hover:shadow-md transition-all transform border-black bg-[#162455e7]">
+  <span className="my-2">{icons}</span>
+  <h3 className="text-lg sm:text-xl font-semibold mb-2">{title}</h3>
+  <p className="text-[10px] sm:text-sm">{text}</p>
+</div>
 );
 
 const WhyPage = () => {
@@ -30,7 +30,7 @@ const WhyPage = () => {
       <p className="  font-bold text-gray-800 text-xl  sm:text-2xl md:text-3xl text-center mb-2 sm:mb-6">
         — Why choose Ps Transport —
       </p>
-      <p className=" text-center text-[14px] sm:text-2xl md:text-3xl text-gray-600 mb-10">
+      <p className=" text-center text-[16px]  text-gray-600 mb-10">
         Your trusted travel partner for every journey{" "}
       </p>
 

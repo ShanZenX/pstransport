@@ -4,13 +4,21 @@ const services = [
   {
     title: "Container Freight",
     description: "We keep your items damage free solution",
-    features: ["Flexibility & Versatility", "Controlled Environment", "Speed and Efficiency"],
+    features: [
+      "Flexibility & Versatility",
+      "Controlled Environment",
+      "Speed and Efficiency",
+    ],
     image: "/LogisticsLorry.png",
   },
   {
     title: "Supply Freight",
     description: "We keep your items damage free solution",
-    features: ["Flexibility & Versatility", "Controlled Environment", "Speed and Efficiency"],
+    features: [
+      "Flexibility & Versatility",
+      "Controlled Environment",
+      "Speed and Efficiency",
+    ],
     image: "/LogisticsLorry.png",
   },
 ];
@@ -18,10 +26,13 @@ const services = [
 export default function Services() {
   return (
     <section className="py-12">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-base sm:text-lg md:text-xl font-semibold mt-2 text-center m-10">
-          — Our Services To Explore —
-        </h2>
+      <div className="m-3 sm:m-0">
+       <h2 className="text-2xl md:text-[32px] font-bold mb-4 flex justify-center items-center gap-2 text-center">
+<span className="h-[3px] w-[20px] bg-black block"></span>
+  Our Services To Explore
+<span className="h-[3px] w-[20px] bg-black block"></span>
+</h2>
+
 
         <div className="grid md:grid-cols-2 gap-8 mt-10">
           {services.map((service, index) => (

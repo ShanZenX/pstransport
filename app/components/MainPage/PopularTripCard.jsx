@@ -9,18 +9,20 @@ const PopularTripCard = ({ trip, index }) => {
       <img
         src={trip.img}
         alt={trip.title}
-        className="w-[48px] h-[48px] sm:w-[70px] sm:h-[70px] object-cover object-center rounded-md flex-shrink-0"
+        className="w-[52px] h-[52px] sm:w-[70px] sm:h-[70px] object-cover object-center rounded-md flex-shrink-0"
       />
       <div className="flex flex-col justify-between pl-2 flex-1">
         <div>
-          <p className="font-semibold text-xs sm:text-sm leading-snug line-clamp-2">
+          <p className="m-0 p-1 sm:m-0 font-semibold text-xs sm:text-sm leading-snug line-clamp-2">
             {trip.title}
           </p>
-          <p className="text-[10px] sm:text-xs text-gray-500">{trip.price}</p>
+          <p className="m-0 p-1 sm:m-0 text-[10px] sm:text-xs text-gray-500">
+            {trip.price}
+          </p>
         </div>
-        <button className="mt-0.5 text-orange-600 text-start font-medium text-[10px] sm:text-xs hover:underline">
-          Book now
-        </button>
+     <button className="m-0 p-1 sm:ml-3 text-orange-600 text-start font-medium text-[8px] sm:text-[10px] hover:underline">
+  Book now
+</button>
       </div>
     </div>
   );

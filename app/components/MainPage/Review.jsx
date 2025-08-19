@@ -64,22 +64,22 @@ const ReviewsSection = () => (
     className="max-w-7xl mx-auto px-4 py-16  "
     aria-labelledby="reviews-heading"
   >
-      <h2 className=" !text-xl sm:!text-4xl !font-bold text-gray-800  text-xl  sm:text-2xl md:text-3xl mb-2 sm:mb-6 text-start  ">
-          User Testimonials
-        </h2>
+    <h2 className=" text-2xl md:text-[32px] !font-bold mb-4 text-centermb-2 sm:mb-6  ">
+      User Testimonials
+    </h2>
     <div className="flex flex-row justify-between m-2">
       <p className="!sm:text-sm">
         Real Stories. Real Smiles. Trusted by Hundreds of Families &
         Transporters.
       </p>{" "}
-     <a
-  href="https://maps.app.goo.gl/1mAp2JRjA6zg3g4BA"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="border bg-black text-white p-2 rounded-lg mx-2 no-underline hover:underline text-sm sm:text-[10px] md:text-lg px-3 py-2 sm:px-1 sm:py-1 text-decoration-none "
->
-  Write review
-</a>
+      <a
+        href="https://maps.app.goo.gl/1mAp2JRjA6zg3g4BA"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="border bg-black text-white p-2 rounded-lg mx-2 no-underline hover:underline text-sm sm:text-[10px] md:text-lg px-3 py-2 sm:px-1 sm:py-1 text-decoration-none "
+      >
+        Write review
+      </a>
     </div>
 
     <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">

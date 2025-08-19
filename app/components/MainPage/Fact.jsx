@@ -42,9 +42,10 @@ const Fact = () => {
         priority
       />
       <div className="relative z-10 text-center py-14 px-4">
-        <p className="text-xl  sm:text-4xl  font-extrabold text-gray-800 mb-3 text-center">
-          Facts In Numbers
-        </p>
+
+        <h2 className=" text-2xl md:text-[32px] !font-bold mb-4 flex justify-center items-center gap-2 text-centermb-2 sm:mb-6 flex justify-center items-center gap-3  ">
+               Facts In Numbers
+        </h2>
         <p className="text-gray-700 max-w-xl mx-auto mb-8 font-medium">
           Discover our journey through numbers — showcasing the clients we've
           served, cars delivered, happy customers, and years of excellence.

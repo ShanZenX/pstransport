@@ -85,10 +85,10 @@ const TransportPackagesCarousel = () => {
   return (
     <section className="py-12 bg-gray-50 sm:mt-4 lg:mt-8 font-roboto">
       <div className="text-center mb-8 px-4">
-        <p className="text-xl  sm:text-4xl  font-extrabold text-gray-800">
+        <h2 className="text-xl  !sm:text-6xl  !font-bold text-gray-800">
           — Popular Transport Packages —
-        </p>
-        <p className="text-gray-600 text-[14px] sm:text-lg mb-10 max-w-xl mx-auto">
+        </h2>
+        <p className="text-gray-600 text-[14px] sm:text-sm mb-10 max-w-xl mx-auto">
           Journey through Tamil Nadu in comfort, where every mile tells a story.{" "}
         </p>
         <a className="mt-4 px-5 py-2 text-white rounded-full hover:bg-indigo-700 transition bg-indigo-950 text-decoration-none">

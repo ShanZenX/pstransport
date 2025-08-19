@@ -43,16 +43,13 @@ html, body {
   font-family: 'Roboto', sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Raleway', sans-serif; /* Heading font */
+  font-family: 'Roboto', sans-serif; /* Heading font */
 }
 
 p, span, li, a, button {
   font-family: 'Raleway', sans-serif; /* Paragraph / UI font */
 }
-h2 {
-  font-size: 16px;
-  font-weight: normal;
-}
+
 /* ✅ 1. Google Fonts must come FIRST */
 /* Uncomment if you use Google Fonts */
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@400;700&display=swap');

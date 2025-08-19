@@ -64,11 +64,11 @@ const ReviewsSection = () => (
     className="max-w-7xl mx-auto px-4 py-16  "
     aria-labelledby="reviews-heading"
   >
-   <p className="text-xl  sm:text-4xl  font-extrabold text-gray-800">
+      <h2 className=" !text-xl sm:!text-4xl !font-bold text-gray-800  text-xl  sm:text-2xl md:text-3xl mb-2 sm:mb-6 text-start  ">
           User Testimonials
-        </p>
+        </h2>
     <div className="flex flex-row justify-between m-2">
-      <p>
+      <p className="!sm:text-sm">
         Real Stories. Real Smiles. Trusted by Hundreds of Families &
         Transporters.
       </p>{" "}

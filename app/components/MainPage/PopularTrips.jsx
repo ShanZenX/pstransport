@@ -9,10 +9,12 @@ const PopularTrips = () => {
     <section className="bg-gray-50 py-10 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between mb-6">
-          <div> <p className="text-xl  sm:text-4xl  font-extrabold text-gray-800"> Popular Trips </p>
-          <p>
-        These routes are booked the most popular for good reason..!!
-      </p></div>
+          <div> <h2 className=" !text-xl sm:!text-4xl !font-bold text-gray-800  text-xl  sm:text-2xl md:text-3xl mb-2 sm:mb-6 text-start  ">
+          Popular Trips
+        </h2>
+        <p>These routes are booked the most popular for good reason..!!
+      </p>
+      </div>
          
         </div>
 

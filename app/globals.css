@@ -1,3 +1,46 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap');
+/* Custom font utility classes */
+/* ✅ Existing */
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.font-raleway {
+  font-family: 'Raleway', sans-serif;
+}
+
+.font-oswald {
+  font-family: 'Oswald', sans-serif;
+}
+
+/* ✅ New Good Fonts */
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif; /* Great for modern headings */
+}
+
+.font-lora {
+  font-family: 'Lora', serif; /* Elegant serif for paragraphs */
+}
+
+.font-open-sans {
+  font-family: 'Open Sans', sans-serif; /* Clean for body text */
+}
+
+.font-merriweather {
+  font-family: 'Merriweather', serif; /* Strong readable body text */
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif; /* Premium stylish headings */
+}
+
+
+
 /* ✅ 1. Google Fonts must come FIRST */
 /* Uncomment if you use Google Fonts */
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@400;700&display=swap');
@@ -10,13 +53,11 @@
 @tailwind utilities;
 
 
-/* ✅ 3. Root variables */
-:root {
+/* :root {
   --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
-  /* Custom fonts imported via next/font */
     --font-poppins: 'Poppins', sans-serif;
   --font-roboto: 'Roboto', sans-serif;
   --font-raleway: 'Raleway', sans-serif;
@@ -35,7 +76,9 @@
   --font-oswald: 'Oswald', sans-serif;
   --font-geist-sans: 'Geist', sans-serif;
   --font-geist-mono: 'Geist Mono', monospace;
-}
+} */
+
+
 
 
 /* ✅ 3. Body default styles */

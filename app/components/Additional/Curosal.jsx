@@ -85,7 +85,7 @@ const TransportPackagesCarousel = () => {
   return (
     <section className="py-12 bg-gray-50 sm:mt-4 lg:mt-8 font-roboto">
       <div className="text-center mb-8 px-4">
-      <h2 className=" text-2xl md:text-[32px] !font-bold mb-4 flex justify-center items-center gap-2 text-centermb-2 sm:mb-6 flex justify-center items-center gap-3  ">
+      <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-4 flex justify-center items-center gap-2 sm:mb-6 flex justify-center items-center gap-3  ">
   <span className="h-[4px] w-[20px] bg-gray-800 block"></span>
   Popular Transport Packages
   <span className="h-[4px] w-[20px] bg-gray-800 block"></span>

@@ -8,25 +8,25 @@ import StatisticCard from "../miniComponent/StatisticCard";
 const Facts = [
   {
     id: 1,
-    icon: <FaCarSide size={28} className="text-white" />,
+    icon: <FaCarSide size={18} className="text-white" />, // smaller
     value: "150+",
     label: "Cars",
   },
   {
     id: 2,
-    icon: <IoMdPeople size={28} className="text-white" />,
+    icon: <IoMdPeople size={18} className="text-white" />,
     value: "5k+",
-    label: "Customers",
+    label: "Clients",
   },
   {
     id: 3,
-    icon: <FaRegCalendarAlt size={28} className="text-white" />,
+    icon: <FaRegCalendarAlt size={18} className="text-white" />,
     value: "4+",
     label: "Years",
   },
   {
     id: 4,
-    icon: <IoIosSpeedometer size={28} className="text-white" />,
+    icon: <IoIosSpeedometer size={18} className="text-white" />,
     value: "10m+",
     label: "Miles",
   },
@@ -41,19 +41,19 @@ const Fact = () => {
         className="absolute inset-0 w-full h-full object-cover z-0"
         priority
       />
-      <div className="relative z-10 text-center py-14 px-4">
-
-        <h2 className=" text-2xl md:text-[32px] !font-bold mb-4 flex justify-center items-center gap-2 text-centermb-2 sm:mb-6 flex justify-center items-center gap-3  ">
-               Facts In Numbers
+      <div className="relative z-10 text-center py-10 px-2"> 
+            <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-4  text-center mb-2 sm:mb-6  ">
+          Facts In Numbers
         </h2>
-        <p className="text-gray-700 max-w-xl mx-auto mb-8 font-medium">
+
+        <p className="text-gray-700 text-xs max-w-md mx-auto mb-4 leading-snug">
           Discover our journey through numbers — showcasing the clients we've
           served, cars delivered, happy customers, and years of excellence.
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl my-10 mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-2xl mx-auto mt-4">
           {Facts.map((item) => (
-           <StatisticCard key={item.id} item={item} />
+            <StatisticCard key={item.id} item={item} />
           ))}
         </div>
       </div>

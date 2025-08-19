@@ -14,7 +14,7 @@ export default function Home() {
     <>
       {" "}
       <div className=" mt-[50px] sm:mt-[0px]">
-        <FormHolder />
+        {/* <FormHolder /> */}
         <TransportPackagesCarousel />
         <WhyPage />
         <PopularTrips />

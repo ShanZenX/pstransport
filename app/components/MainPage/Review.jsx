@@ -1,5 +1,4 @@
 import React from "react";
-// import "./animation.css"
 
 const StarRating = ({ rating, max = 5 }) => (
   <div
@@ -9,7 +8,7 @@ const StarRating = ({ rating, max = 5 }) => (
     {[...Array(max)].map((_, i) => (
       <svg
         key={i}
-        className={`w-5 h-5 ${
+        className={`w-3 h-3 ${
           i < rating ? "text-yellow-400" : "text-gray-300"
         }`}
         fill="currentColor"
@@ -24,14 +23,14 @@ const StarRating = ({ rating, max = 5 }) => (
 
 const ReviewCard = ({ review }) => (
   <article
-    className="bg-shadow-lg border border-gray-200  rounded-lg p-3 hover:shadow-xl transition-shadow duration-300 animate-slideUp"
+    className="shadow-sm border border-gray-200 rounded-md p-2 hover:shadow-md transition-shadow duration-300 text-xs"
     role="region"
     aria-label={`Review by ${review.name}`}
   >
-    <h3 className="text-xl font-semibold text-gray-900">{review.name}</h3>
-    <p className="text-sm text-gray-500 mb-2">{review.position}</p>
+    <h3 className="text-sm font-semibold text-gray-900">{review.name}</h3>
+    <p className="text-[10px] text-gray-500 mb-1">{review.position}</p>
     <StarRating rating={review.rating} />
-    <p className="mt-4 text-gray-700 leading-relaxed">{review.feedback}</p>
+    <p className="mt-2 text-gray-700 leading-snug">{review.feedback}</p>
   </article>
 );
 
@@ -41,48 +40,48 @@ const reviewsData = [
     position: "Logistics Manager at FreightWay",
     rating: 5,
     feedback:
-      "PS Transport has revolutionized our freight operations with their reliable and timely services. Their fleet is well-maintained, and the drivers are highly professional. I highly recommend their transport solutions for any business seeking efficiency.",
+      "PS Transport has revolutionized our freight operations with their reliable and timely services. Their fleet is well-maintained, and the drivers are highly professional.",
   },
   {
     name: "Rahul Singh",
     position: "Supply Chain Director, GreenFields",
     rating: 4,
     feedback:
-      "We have been using PS Transport for over a year now. Their dedicated customer service and robust tracking system ensure peace of mind. Minor delays were promptly communicated, which shows their commitment to transparency.",
+      "We have been using PS Transport for over a year now. Their dedicated customer service and robust tracking system ensure peace of mind.",
   },
   {
     name: "Sanjay Kapoor",
     position: "Operations Head, Metro Retailers",
     rating: 5,
     feedback:
-      "Exceptional service! The team at PS Transport understands the nuances of the logistics industry and adapts quickly to last-minute changes. Their app integration made scheduling and monitoring effortless for our team.",
+      "Exceptional service! The team adapts quickly to last-minute changes. Their app integration made scheduling and monitoring effortless.",
   },
 ];
 
 const ReviewsSection = () => (
   <section
-    className="max-w-7xl mx-auto px-4 py-16  "
+    className="max-w-5xl mx-auto px-2 py-6"
     aria-labelledby="reviews-heading"
   >
-    <h2 className=" text-2xl md:text-[32px] !font-bold mb-4 text-centermb-2 sm:mb-6  ">
-      User Testimonials
-    </h2>
-    <div className="flex flex-row justify-between m-2">
-      <p className="!sm:text-sm">
+    <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-2 sm:mb-3 ">
+      {" "}
+      User Testimonials{" "}
+    </h2>{" "}
+    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-4">
+      <p className="text-xs text-gray-600">
         Real Stories. Real Smiles. Trusted by Hundreds of Families &
         Transporters.
-      </p>{" "}
+      </p>
       <a
         href="https://maps.app.goo.gl/1mAp2JRjA6zg3g4BA"
         target="_blank"
         rel="noopener noreferrer"
-        className="border bg-black text-white p-2 rounded-lg mx-2 no-underline hover:underline text-sm sm:text-[10px] md:text-lg px-3 py-2 sm:px-1 sm:py-1 text-decoration-none "
+        className="border bg-black text-white rounded-md px-2 py-1 text-[10px] hover:underline"
       >
         Write review
       </a>
     </div>
-
-    <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {reviewsData.map((review, idx) => (
         <ReviewCard key={idx} review={review} />
       ))}

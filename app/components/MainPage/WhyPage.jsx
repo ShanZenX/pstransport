@@ -26,9 +26,9 @@ const WhyPage = () => {
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
-      <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-4 flex justify-center items-center gap-2 sm:mb-6 flex justify-center items-center gap-3  ">
+      <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-4 flex justify-center items-center gap-2 sm:mb-6 ">
         <span className="h-[4px] w-[20px] bg-gray-800 block "></span>
-        Why choose Ps Transport{" "}
+        Why choose Ps Transport
         <span className="h-[4px] w-[20px] bg-gray-800 block "></span>
       </h2>
       <p className=" text-center text-[16px]  text-gray-600 mb-10">

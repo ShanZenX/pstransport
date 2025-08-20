@@ -84,15 +84,15 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 shadow-sm">
+        <div className="md:hidden bg-white border-t border-gray-200 shadow-sm ">
           <nav className="flex flex-col px-4 py-2 space-y-2 text-black font-medium">
             {navItems.map(({ name, href }) => (
               <Link
                 key={name}
                 href={href}
-                className={`px-4 py-2 no-underline rounded-full ${
+                className={`px-4 py-2 !no-underline  !text-gray-800 ${
                   pathname === href
-                    ? "bg-indigo-800 text-white"
+                    ? "bg-gray-100 text-white"
                     : "hover:bg-gray-100"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -102,7 +102,7 @@ export default function Navbar() {
             ))}
             <a
               href="tel:+123456789"
-              className="bg-indigo-950 text-white px-4 py-2 rounded-full text-center no-underline font-semibold"
+              className=" w-[150] bg-indigo-950 text-white px-1 py-2 mt-50  text-center !no-underline font-semibold"
             >
               CALL ME
             </a>

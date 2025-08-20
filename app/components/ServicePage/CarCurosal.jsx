@@ -8,8 +8,8 @@ import cars from "@/app/data/carData.json";
 
 const CarsCarousel = () => {
   return (
-    <div className="max-w-7xl  mx-auto px-2 sm:px-4 py-6">
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-2 sm:mb-6 !text-xl sm:!text-4xl !font-bold text-gray-800 text-center ">
+    <div className="max-w-7xl  mx-auto px-2 sm:px-8 py-6">
+      <h2 className="text-2xl md:text-[32px] !font-extrabold mb-2 !sm:my-5 text-gray-800 text-center ">
   — Our Cars Portfolio —
 </h2>
       <p className="text-center mb-2 text-sm">

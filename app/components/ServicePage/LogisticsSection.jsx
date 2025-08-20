@@ -11,7 +11,7 @@ const LogisticsSection = () => {
   const [logosRef, logosInView] = useInView({ threshold: 0.2 });
 
   return (
-    <section ref={sectionRef} className="bg-white py-6 px-3">
+    <section ref={sectionRef} className="bg-white py-6 px-3 mt-10 sm:mt-20">
       <div
         className={`max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 items-center transition-all duration-1000 ease-out
         ${sectionInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
@@ -26,7 +26,7 @@ const LogisticsSection = () => {
         </div>
 
         <div>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold my-2 sm:mb-4 !text-xl sm:!text-4xl !font-bold text-gray-800">
+          <h2 className="text-2xl md:text-[32px] !font-extrabold mb-4  sm:mb-6  text-gray-800">
             — Who we are —
           </h2>
 

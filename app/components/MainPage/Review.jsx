@@ -36,21 +36,21 @@ const ReviewCard = ({ review }) => (
 
 const reviewsData = [
   {
-    name: "Anjali Verma",
+    name: "Karan K",
     position: "Logistics Manager at FreightWay",
     rating: 5,
     feedback:
       "PS Transport has revolutionized our freight operations with their reliable and timely services. Their fleet is well-maintained, and the drivers are highly professional.",
   },
   {
-    name: "Rahul Singh",
+    name: "Madhu S",
     position: "Supply Chain Director, GreenFields",
     rating: 4,
     feedback:
       "We have been using PS Transport for over a year now. Their dedicated customer service and robust tracking system ensure peace of mind.",
   },
   {
-    name: "Sanjay Kapoor",
+    name: " Srivarsha A",
     position: "Operations Head, Metro Retailers",
     rating: 5,
     feedback:
@@ -60,7 +60,7 @@ const reviewsData = [
 
 const ReviewsSection = () => (
   <section
-    className="max-w-5xl mx-auto px-2 py-6"
+    className="max-w-5xl mx-auto px-2 py-6 my-8 sm:my-25"
     aria-labelledby="reviews-heading"
   >
     <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-2 sm:mb-3 ">

@@ -4,7 +4,7 @@ import brands from "@/app/data/brandData.json";
 
 const BrandsSection = () => {
   return (
-    <section className="bg-white py-5">
+    <section className="bg-white my-5 !sm:my-20">
       <div className="max-w-6xl mx-auto px-3">
         {/* ↑ heading slightly bigger */}
       <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-4  sm:mb-6 flex justify-center items-center gap-3  ">

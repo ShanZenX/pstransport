@@ -9,7 +9,7 @@ import BookingSteps from "../components/ServicePage/BookingSteps";
 
 export default function About() {
   return (
-    <div className="px-4 pt-6     bg-[#e6b31900]">
+    <div className="px-4 pt-6    md:h-[4000px]  bg-[#e6b31900]">
       <HeroPage />
       <OurVision />
       <BookingSteps />

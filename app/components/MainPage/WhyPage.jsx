@@ -12,7 +12,7 @@ const FeatureBox = ({ icons, title, text }) => (
   <div className="p-2 w-10/12 sm:w-auto text-white rounded border hover:shadow-md transition-all transform border-black bg-[#162455e7]">
     <span className="my-2">{icons}</span>
     <h3 className="text-lg sm:text-xl font-semibold mb-2">{title}</h3>
-    <p className="text-[10px] sm:text-sm">{text}</p>
+    <p className="text-[14px] sm:text-l">{text}</p>
   </div>
 );
 
@@ -22,11 +22,11 @@ const WhyPage = () => {
   return (
     <div
       ref={ref}
-      className={`my-10 transition-all duration-1000 ease-out transform ${
+      className={`my-15  transition-all duration-1000 ease-out transform ${
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
-      <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-4 flex justify-center items-center gap-2 sm:mb-6 ">
+      <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-4 text-center flex justify-center items-center gap-2 sm:mb-6 ">
         <span className="h-[4px] w-[20px] bg-gray-800 block "></span>
         Why choose Ps Transport
         <span className="h-[4px] w-[20px] bg-gray-800 block "></span>

@@ -34,14 +34,14 @@ const Facts = [
 
 const Fact = () => {
   return (
-    <section className="relative w-full bg-yellow-400 overflow-hidden">
+    <section className="relative w-full bg-yellow-400 overflow-hidden ">
       <Image
         src={Background}
         alt="background"
         className="absolute inset-0 w-full h-full object-cover z-0"
         priority
       />
-      <div className="relative z-10 text-center py-10 px-2"> 
+      <div className="relative z-10 text-center py-10 sm:py-20 px-2"> 
             <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-4  text-center mb-2 sm:mb-6  ">
           Facts In Numbers
         </h2>

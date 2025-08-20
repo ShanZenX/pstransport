@@ -9,7 +9,7 @@ const services = [
       "Controlled Environment",
       "Speed and Efficiency",
     ],
-    image: "/LogisticsLorry.png",
+    image: "/LogisticsContainer.png",
   },
   {
     title: "Supply Freight",
@@ -25,14 +25,13 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-12">
+    <section className="py-12 mt-10">
       <div className="m-3 sm:m-0">
-       <h2 className="text-2xl md:text-[32px] font-bold mb-4 flex justify-center items-center gap-2 text-center !text-xl sm:!text-4xl !font-bold text-gray-800 text-center">
-<span className="h-[3px] w-[20px] bg-black block "></span>
-  Our Services To Explore
-<span className="h-[3px] w-[20px] bg-black block"></span>
-</h2>
-
+        <h2 className="text-2xl md:text-[32px] !font-extrabold mb-2 !sm:my-5 flex justify-center items-center gap-2 text-center text-gray-800 ">
+          <span className="h-[3px] w-[20px] bg-black block "></span>
+          Our Services To Explore
+          <span className="h-[3px] w-[20px] bg-black block"></span>
+        </h2>
 
         <div className="grid md:grid-cols-2 gap-8 mt-10">
           {services.map((service, index) => (
@@ -60,7 +59,10 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
-                <a href="#" className="!text-indigo-900 font-semibold text-decoration-none">
+                <a
+                  href="#"
+                  className="!text-indigo-900 font-semibold text-decoration-none"
+                >
                   Read Details →
                 </a>
               </div>

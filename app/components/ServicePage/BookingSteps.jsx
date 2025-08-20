@@ -9,16 +9,30 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 const BookingSteps = () => {
   const steps = [
-    { icon: <FaMapMarkedAlt className="text-indigo-900" />, title: "Choose Destination" },
-    { icon: <FaClipboardList className="text-indigo-900" />, title: "Fill Details" },
-    { icon: <FaMoneyBillWave className="text-indigo-900" />, title: "Make Payment" },
-    { icon: <FaCheckCircle className="text-indigo-900" />, title: "Booking Confirmed" },
+    {
+      icon: <FaMapMarkedAlt className="text-indigo-900" />,
+      title: "Choose Destination",
+    },
+    {
+      icon: <FaClipboardList className="text-indigo-900" />,
+      title: "Fill Details",
+    },
+    {
+      icon: <FaMoneyBillWave className="text-indigo-900" />,
+      title: "Make Payment",
+    },
+    {
+      icon: <FaCheckCircle className="text-indigo-900" />,
+      title: "Booking Confirmed",
+    },
   ];
 
   return (
     <section className="py-12 px-4 bg-gray-50">
-      <h3 className="!text-xl sm:!text-4xl !font-bold text-gray-800 text-center">
-        — How To Book With PS Transport —
+      <h3 className="!text-xl sm:!text-4xl !font-bold text-gray-800 text-center flex justify-center items-center gap-2 ">
+        <span className="h-[3px] w-[20px] bg-black block "></span>
+        How To Book With PS Transport{" "}
+        <span className="h-[3px] w-[20px] bg-black block "></span>
       </h3>
       <p className="text-sm text-center text-gray-600 mt-2 mx-auto max-w-md">
         Your journey is just a few steps away — book quickly
@@ -28,7 +42,9 @@ const BookingSteps = () => {
         {steps.map((step, index) => (
           <React.Fragment key={index}>
             <div className="flex flex-col items-center text-center flex-1">
-              <div className="text-3xl sm:text-3xl md:text-4xl">{step.icon}</div>
+              <div className="text-3xl sm:text-3xl md:text-4xl">
+                {step.icon}
+              </div>
               <p className="text-sm sm:text-xs md:text-sm xl:text-xl font-semibold text-gray-800 my-2">
                 {step.title}
               </p>

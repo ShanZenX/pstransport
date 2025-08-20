@@ -2,6 +2,7 @@ import AboutCompany from "../components/About/AboutCompany";
 import DriverJoinSection from "../components/About/DriverJoin";
 import HeroPage from "../components/About/HeroPage";
 import OurVision from "../components/About/OurVision";
+import ThreeSection from "../components/About/ThreeTypes";
 import TechStackMarquee from "../components/Additional/Slider";
 import FormHolder from "../components/MainPage/FormHolder";
 import WhyPage from "../components/MainPage/WhyPage";
@@ -16,7 +17,8 @@ export default function About() {
       <AboutCompany />
       <TechStackMarquee />
       <DriverJoinSection />
-      <WhyPage />
+      {/* <WhyPage /> */}
+      <ThreeSection/>
     </div>
   );
 }

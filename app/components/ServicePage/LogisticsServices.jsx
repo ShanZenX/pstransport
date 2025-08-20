@@ -23,7 +23,8 @@ const services = [
   },
 ];
 
-export default function Services() {
+export default function 
+Services() {
   return (
     <section className="py-12 mt-10">
       <div className="m-3 sm:m-0">

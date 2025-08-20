@@ -8,13 +8,13 @@ import { Button } from "react-bootstrap";
 
 const AboutCompany = () => {
   return (
-    <div className="w-11/12 h-full sm:h-[400px] flex justify-center flex-wrap mx-auto my-10">
+    <div className="w-11/12 h-full sm:h-[400px] flex justify-center flex-wrap mx-auto my-10 sm:my-30">
       <div className="w-full sm:w-[48%] sm:relative">
         <Image src={s1} alt="Vision" className="w-full sm:w-1/2 h-auto sm:absolute sm:rounded-4xl" />
         <Image src={s2} alt="Vision" className="hidden sm:flex w-1/2 h-auto absolute left-[200px] top-[130px] rounded-4xl" />
       </div>
       <div className="w-full flex flex-col sm:flex    sm:w-[48%] ">
-        <p className="font-extrabold font-poppins text-4xl pt-[40px]">
+         <p className="font-extrabold  text-4xl pt-[40px]">  {/* font-poppins */}
           Reliable And Convenient Taxi Services At Your Doorstep
         </p>
         <div className="shadow-inner  bg-white p-4 mt-4">

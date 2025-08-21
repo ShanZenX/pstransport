@@ -8,10 +8,11 @@ import TechStackMarquee from "../components/Additional/Slider";
 import LogisticsSection from "../components/ServicePage/LogisticsSection";
 import LogisticsServices from "../components/ServicePage/LogisticsServices";
 import CorporateCollaboration from "../components/ServicePage/Coporate";
+import ReviewsSection from "../components/MainPage/Review";
 
 export default function Services() {
   return (
-    <div className="px-4 pt-6 md:h-[4000px]    bg-[#e6b31900]">
+    <div className="px-4 pt-6    bg-[#e6b31900]">
       <ServiceSection />
       {/* <AddBanner /> */}
       <OurServices />
@@ -21,6 +22,7 @@ export default function Services() {
       <LogisticsServices/>
       <Why/>
       <CorporateCollaboration/>
+      <ReviewsSection/>
     </div>
   );
 }

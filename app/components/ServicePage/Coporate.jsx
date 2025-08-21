@@ -10,7 +10,7 @@ const CorporateCollaboration = () => {
 
   return (
     <section className="bg-white py-20 px-4 sm:px-8 ">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center  my-10 sm:my-2 ">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center mt-2 lg:mt-10 my-10 sm:my-2 ">
         <div
           ref={refLeft}
           className={`transition-all duration-1000 ease-out transform flex justify-center ${

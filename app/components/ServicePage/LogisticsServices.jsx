@@ -42,8 +42,8 @@ const cardVariants = {
 
 export default function Services() {
   return (
-    <section className="py-12 mt-10">
-      <div className="m-3 sm:m-0">
+       <section className="py-16 mt-12">
+      <div className="max-w-[1600px] mx-auto px-4 lg:px-10 xl:px-16">
         <h2 className="text-2xl md:text-[32px] !font-extrabold mb-2 !sm:my-5 flex justify-center items-center gap-2 text-center text-gray-800">
           <span className="h-[3px] w-[20px] bg-black block"></span>
           Our Logistics Services

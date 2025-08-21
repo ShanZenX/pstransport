@@ -11,9 +11,9 @@ const LogisticsSection = () => {
   const [logosRef, logosInView] = useInView({ threshold: 0.2 });
 
   return (
-    <section ref={sectionRef} className="bg-white py-6 px-3 mt-10 sm:mt-20">
+    <section ref={sectionRef} className="bg-white py-5 px-3 mt-8 sm:mt-16">
       <div
-        className={`max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 items-center transition-all duration-1000 ease-out
+        className={`max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5 items-center transition-all duration-1000 ease-out
         ${sectionInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
       >
         {/* Left Image */}
@@ -21,20 +21,21 @@ const LogisticsSection = () => {
           <Image
             src={Trucks}
             alt="Cargo Ship"
-            className="rounded-md shadow-md w-full"
+            className="rounded-md shadow-md w-full max-h-[340px] object-cover"
           />
         </div>
 
+        {/* Right Content */}
         <div>
-          <h2 className="text-2xl md:text-[32px] !font-extrabold mb-4  sm:mb-6  text-gray-800">
-            — Who we are —
+          <h2 className="text-2xl md:text-[32px] !font-extrabold mb-4 sm:mb-5 text-gray-800">
+            Who we are
           </h2>
 
-          <h6 className="text-lg md:text-2xl font-bold leading-snug my-3">
+          <h6 className="text-lg md:text-2xl font-bold leading-snug mb-3">
             Leading global logistic and transport agency
           </h6>
 
-          <p className="text-gray-600 text-sm mb-4 leading-snug">
+          <p className="text-gray-600 text-[16] text-sm mb-4 leading-snug">
             We provide efficient and reliable logistics solutions, ensuring safe
             and timely transportation of goods across local and global
             destinations, backed by expert handling and modern fleet support.
@@ -57,11 +58,11 @@ const LogisticsSection = () => {
 
           {/* ↓ Buttons */}
           <div className="flex flex-col sm:flex-row items-center gap-3">
-            <button className="bg-indigo-900 hover:bg-indigo-600 text-white px-2 py-2 rounded-md shadow-sm font-medium text-sm transition">
+            <button className="bg-indigo-900 hover:bg-indigo-600 text-white px-4 py-2 rounded-md shadow-sm font-medium text-sm transition">
               Request a Quote
             </button>
             <div className="flex items-center gap-2 text-indigo-900">
-              <FaPhoneAlt size={18} />
+              <FaPhoneAlt size={16} />
               <div>
                 <p className="text-gray-700 text-xs">Call for free</p>
                 <p className="font-bold text-sm">+00 (9999) 6868</p>
@@ -71,10 +72,10 @@ const LogisticsSection = () => {
         </div>
       </div>
 
-      {/* ↓ Brand logos smaller */}
+      {/* ↓ Brand logos slightly smaller */}
       <div
         ref={logosRef}
-        className={`flex overflow-x-auto md:overflow-hidden items-center justify-start md:justify-center gap-4 my-10 transition-all duration-1000 ease-out
+        className={`flex overflow-x-auto md:overflow-hidden items-center justify-start md:justify-center gap-4 my-8 transition-all duration-1000 ease-out
         ${logosInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
       >
         {brands.slice(0, 5).map((brand, idx) => (
@@ -82,7 +83,7 @@ const LogisticsSection = () => {
             key={idx}
             src={brand.logo}
             alt={brand.name || `Brand Logo ${idx + 1}`}
-            className="h-5 md:h-6 object-contain flex-shrink-0"
+            className="h-6 md:h-7 object-contain flex-shrink-0"
           />
         ))}
       </div>

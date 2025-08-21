@@ -7,6 +7,7 @@ import CarsCarousel from "../components/ServicePage/CarCurosal";
 import TechStackMarquee from "../components/Additional/Slider";
 import LogisticsSection from "../components/ServicePage/LogisticsSection";
 import LogisticsServices from "../components/ServicePage/LogisticsServices";
+import CorporateCollaboration from "../components/ServicePage/Coporate";
 
 export default function Services() {
   return (
@@ -18,7 +19,8 @@ export default function Services() {
       <CarsCarousel />
       <LogisticsSection/>
       <LogisticsServices/>
-      <Why />
+      <Why/>
+      <CorporateCollaboration/>
     </div>
   );
 }

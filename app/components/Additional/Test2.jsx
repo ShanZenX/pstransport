@@ -1,4 +1,4 @@
-"use client";
+"use client" ;
 
 
 import React from "react";
@@ -12,21 +12,21 @@ const STAGGER = 0.08;
 export const WhyData = [
   {
     id: 1,
-    icon: <FaShippingFast size={44} className="text-indigo-950" />, // slightly smaller
+    icon: <FaShippingFast size={36} className="text-indigo-950" />,
     title: "Trusted & Timely Logistics",
     description:
       "With real-time tracking and guaranteed delivery schedules, PS Transport ensures your goods or passengers arrive on time, every time.",
   },
   {
     id: 2,
-    icon: <FaBusAlt size={44} className="text-indigo-950" />,
-    title: "Reliable & Strong Partner Network",
+    icon: <FaBusAlt size={36} className="text-indigo-950" />,
+    title: "Reliable & Strong Partner",
     description:
       "Our fleet is professionally maintained and equipped for safety, comfort, and performance — whether for cargo or cab services.",
   },
   {
     id: 3,
-    icon: <FaMoneyBillWave size={44} className="text-indigo-950" />,
+    icon: <FaMoneyBillWave size={36} className="text-indigo-950" />,
     title: "Affordable & Transparent Pricing",
     description:
       "Competitive rates with zero hidden charges. Get premium logistics and transport solutions that fit your budget.",
@@ -72,7 +72,7 @@ const Why = () => {
   };
 
   return (
-    <section className="py-[45px] px-[5%] bg-gray-50">
+    <section className="py-[45px] px-[5%] m-5 md:mt-15 bg-gray-50">
       <motion.h2
         className="text-[17px] sm:text-[23px] md:text-[30px] !text-xl sm:!text-4xl !font-bold text-gray-800"
         initial="hidden"
@@ -80,11 +80,11 @@ const Why = () => {
         viewport={{ once: true, amount: 0.3 }}
         variants={heading}
       >
-        Why Choose PS Transport Logistics?
+        Why Choose PS Transport Logistics..?
       </motion.h2>
 
       <motion.p
-        className="w-full my-3 md:w-[38%] text-[12px] sm:text-[14px] md:text-[17px] text-gray-600"
+        className="w-full my-3 md:w-[38%] text-[11px] sm:text-[13px] md:text-[15px] text-gray-600" // 10% smaller
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.6 }}
@@ -98,7 +98,7 @@ const Why = () => {
         {WhyData.map((item, idx) => (
           <motion.div
             key={item.id}
-            className="flex flex-col gap-3 border border-black/10 bg-white rounded-[18px] p-[26px] shadow-sm transition-shadow will-change-transform"
+            className="flex flex-col gap-3 border border-black/10 bg-white rounded-[18px] p-[24px] shadow-sm transition-shadow will-change-transform" // padding slightly reduced
             custom={idx}
             initial="hidden"
             whileInView="show"
@@ -113,10 +113,10 @@ const Why = () => {
             whileTap={{ scale: 0.995 }}
           >
             <div>{item.icon}</div>
-            <h3 className="text-[17px] md:text-[19px] !font-semibold text-gray-900">
+            <h5 className="text-[15px] md:text-[17px] !font-semibold text-gray-900"> {/* 10% smaller */}
               {item.title}
-            </h3>
-            <p className="leading-6 text-[13px] text-gray-600">
+            </h5>
+            <p className="leading-6 text-[16px] md:text-[16px] text-gray-600"> {/* 10% smaller */}
               {item.description}
             </p>
           </motion.div>

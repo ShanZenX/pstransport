@@ -3,7 +3,7 @@ import React from "react";
 
 const DriverJoinSection = () => {
   return (
-<section className="relative bg-gray-50 py-14 sm:py-20 my-3 sm:my-20">
+    <section className="relative bg-gray-50 py-14 sm:py-20 my-3 sm:my-20">
       <div className="max-w-6xl mx-auto px-4 md:flex items-center justify-between ">
         <div className="md:w-2/3 mb-6 md:mb-0">
           <h2 className="text-2xl md:text-[32px] !font-extrabold mb-2 !sm:my-5  uppercase tracking-widest text-gray-500">
@@ -19,18 +19,12 @@ const DriverJoinSection = () => {
           </p>
         </div>
 
-        <div className="md:w-1/3 flex flex-col gap-3">
+        <div className="md:w-1/6 flex flex-col gap-3">
           <a
             href="#apply"
-            className="bg-indigo-900 text-white text-base font-medium py-2.5 px-5 rounded-lg text-center shadow hover:bg-indigo-700 transition-all"
+            className="bg-indigo-900 text-white text-base font-medium py-2.5 px-2 rounded-lg !no-underline text-center shadow hover:bg-indigo-600 transition-all"
           >
-            Apply for Your Choice
-          </a>
-          <a
-            href="#why-join"
-            className="border border-green-600 text-green-600 text-base font-medium py-2.5 px-5 rounded-lg hover:bg-green-50 transition-all"
-          >
-            See Why You Should Join PS Transport
+            Become a Member
           </a>
         </div>
       </div>

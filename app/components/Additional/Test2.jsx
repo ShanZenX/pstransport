@@ -72,7 +72,7 @@ const Why = () => {
   };
 
   return (
-    <section className="py-[45px] px-[5%] m-5 md:mt-15 bg-gray-50">
+    <section className="py-[45px] px-[5%] md:mt-15 bg-gray-50">
       <motion.h2
         className="text-[17px] sm:text-[23px] md:text-[30px] !text-xl sm:!text-4xl !font-bold text-gray-800"
         initial="hidden"

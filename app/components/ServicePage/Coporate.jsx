@@ -22,7 +22,7 @@ const CorporateCollaboration = () => {
           <Image
             src={CorporateCars}
             alt="Corporate Collaboration"
-            className="rounded-2xl shadow-md object-cover w-[60%] md:w-[70%] lg:w-[90%] h-auto"
+            className="rounded-2xl shadow-md object-cover w-[90%] md:w-[90%] lg:w-[90%] h-auto"
           />
         </div>
 

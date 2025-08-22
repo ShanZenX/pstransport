@@ -67,7 +67,7 @@ const packages = [
     price: "₹15,000",
     includes: ["Cab", "Houseboat", "Spice Plantation"],
   },
- 
+
   {
     id: 8,
     name: "Yercaud Hills Nature Drive",
@@ -85,17 +85,17 @@ const TransportPackagesCarousel = () => {
   return (
     <section className="py-12 bg-gray-50 !sm:mt-10 lg:mt-8 font-roboto ">
       <div className="text-center mb-8 px-4">
-      <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-4 flex justify-center items-center gap-2 sm:mb-6 flex justify-center items-center gap-3  ">
-  <span className="h-[4px] w-[20px] bg-gray-800 block"></span>
-  Popular Transport Packages
-  <span className="h-[4px] w-[20px] bg-gray-800 block"></span>
-</h2>
+        <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-4 flex justify-center items-center gap-2 sm:mb-6 flex justify-center items-center gap-3  ">
+          <span className="h-[4px] w-[20px] bg-gray-800 block"></span>
+          Popular Transport Packages
+          <span className="h-[4px] w-[20px] bg-gray-800 block"></span>
+        </h2>
         <p className="text-gray-600 text-[14px] !sm:text-sm mb-10 max-w-xl mx-auto">
           Journey through Tamil Nadu in comfort, where every mile tells a story.{" "}
         </p>
-        <a className="mt-4 px-5 py-2 text-white rounded-full hover:bg-indigo-700 transition bg-indigo-950 text-decoration-none">
+        {/* <a className="mt-4 px-5 py-2 text-white rounded-full hover:bg-indigo-700 transition bg-indigo-950 text-decoration-none">
           View all packages
-        </a>
+        </a> */}
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4">
@@ -133,11 +133,9 @@ const TransportPackagesCarousel = () => {
           }}
         >
           {packages.map((pkg) => (
-              <SwiperSlide>
-
-        <PopularTripCard pkg={pkg} />
+            <SwiperSlide>
+              <PopularTripCard pkg={pkg} />
             </SwiperSlide>
-
           ))}
         </Swiper>
       </div>

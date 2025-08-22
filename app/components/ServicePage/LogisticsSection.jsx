@@ -42,32 +42,28 @@ const LogisticsSection = () => {
           </p>
 
           {/* ↓ Features List */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2  gap-2 mb-4">
             {[
               "Intermodal Shipping",
               "Highly Professional Staff",
               "Quality Control System",
               "Supply Chain Solutions",
             ].map((item, idx) => (
-              <div key={idx} className="flex items-center gap-2 text-sm">
+              <div key={idx} className="flex  items-center gap-2 text-lg">
                 <FaCheckCircle className="text-indigo-900 text-sm" />
-                <span className="text-gray-700">{item}</span>
+                <h6 className="text-gray-700 mb-0">{item}</h6>
               </div>
             ))}
           </div>
 
           {/* ↓ Buttons */}
-          <div className="flex flex-col sm:flex-row items-center gap-3">
-            <button className="bg-indigo-900 hover:bg-indigo-600 text-white px-4 py-2 rounded-md shadow-sm font-medium text-sm transition">
+          <div className="flex  items-center gap-3">
+            <button className="bg-indigo-900 flex items-center gap-3 hover:bg-indigo-600 text-white px-4 py-2 rounded-md shadow-sm font-medium text-sm transition">
+                            <FaPhoneAlt size={16} />
+
               Request a Quote
             </button>
-            <div className="flex items-center gap-2 text-indigo-900">
-              <FaPhoneAlt size={16} />
-              <div>
-                <p className="text-gray-700 text-xs">Call for free</p>
-                <p className="font-bold text-sm">+00 (9999) 6868</p>
-              </div>
-            </div>
+           
           </div>
         </div>
       </div>
@@ -83,7 +79,7 @@ const LogisticsSection = () => {
             key={idx}
             src={brand.logo}
             alt={brand.name || `Brand Logo ${idx + 1}`}
-            className="h-6 md:h-7 object-contain flex-shrink-0"
+            className="h-6 md:h-7  object-contain flex-shrink-0"
           />
         ))}
       </div>

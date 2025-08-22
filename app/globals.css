@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Raleway', sans-serif; /* Heading font */
 }
 
-p, span, li, a, button {
+p,  li, a, button {
   font-family: 'Raleway', sans-serif; /* Paragraph / UI font */
 }
 
@@ -60,11 +60,8 @@ p, span, li, a, button {
 @import "tailwindcss";
 
 @tailwind utilities;
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-/* :root {
+ :root {
   --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
@@ -87,7 +84,7 @@ p, span, li, a, button {
   --font-oswald: 'Oswald', sans-serif;
   --font-geist-sans: 'Geist', sans-serif;
   --font-geist-mono: 'Geist Mono', monospace;
-} */
+} 
 
 
 

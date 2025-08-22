@@ -105,7 +105,6 @@ const ReviewsSection = () => {
       </a>
       </div>
 
-      {/* 🚀 Infinite Left-Scrolling Carousel */}
       <div className="relative overflow-hidden">
         <motion.div
           className="flex"
@@ -116,7 +115,6 @@ const ReviewsSection = () => {
             ease: "linear",
           }}
         >
-          {/* Duplicate data so it loops seamlessly */}
           {reviewsData.concat(reviewsData).map((review, idx) => (
             <ReviewCard key={idx} review={review} />
           ))}

@@ -1,11 +1,11 @@
 [
   {
-    "img": "/assets/trip/pondicherry.png",
+    "img": "/assets/trip/Pondi-2.png",
     "title": "Chennai to Pondicherry to Chennai",
     "price": "(Sedan 4+1 Rs.5500 ) (SUV 6+1 Rs.7200)"
   },
   {
-    "img": "/assets/trip/yercadu.png",
+    "img": "/assets/trip/munnar.png",
     "title": "Chennai to Yercaud to Chennai  ( 4days trips )",
     "price": "(Sedan 4+1 Rs.12000 ) (SUV 6+1 Rs.17000)"
   },
@@ -33,16 +33,7 @@
     "img": "/assets/trip/thiruchendur.png",
     "title": "Chennai to Tiruchendur to Chennai  ( 2days trip)",
     "price": "( Sedan 4 + 1 Rs.16500 ) (SUV 6+1 Rs.22500)"
-  },
-{
-    "img": "/assets/trip/munnar.png",
-    "title": "Chennai to Munnar to Chennai  ( 4days trips )",
-    "price": "( Sedan 4 + 1 Rs.17000 ) (SUV 6+1 Rs.24000)"
-  },
-  {
-    "img": "/assets/trip/Pondi-2.png",
-    "title": "Chennai to Bengaluru  (1day trip)",
-    "price": "( Sedan 4 + 1 Rs.5500 ) (SUV 6+1 Rs.7200)"
   }
+
 
 ]

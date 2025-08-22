@@ -4,12 +4,13 @@ import React, { useState, useRef } from "react";
 import { DatePicker } from "@mui/x-date-pickers";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { Select, MenuItem, TextField } from "@mui/material";
+import { Select, MenuItem, TextField, Radio, RadioGroup, FormControlLabel } from "@mui/material";
 import { Autocomplete, LoadScript } from "@react-google-maps/api";
 
 const libraries = ["places"];
 
 const Form_1 = () => {
+  const [tripType, setTripType] = useState("oneway");
   const [from, setFrom] = useState("");
   const [drop, setDrop] = useState("");
   const [date, setDate] = useState(null);
@@ -67,6 +68,7 @@ const Form_1 = () => {
     calculateDistance();
 
     console.log({
+      tripType,
       from,
       drop,
       date: date ? date.format("YYYY-MM-DD") : null,
@@ -81,11 +83,26 @@ const Form_1 = () => {
     <LoadScript googleMapsApiKey="YOUR_GOOGLE_API_KEY" libraries={libraries}>
       <form
         onSubmit={handleSubmit}
-        className="w-10/12 mt-10  sm:mt-10 sm:w-10/12 flex flex-wrap sm:justify-around gap-2 sm:items-center bg-white p-6 rounded-lg shadow-lg"
+        className="w-10/12 sm:w-9/12 mt-8 flex flex-wrap sm:justify-around gap-2 sm:items-center 
+          backdrop-blur-lg bg-white/20 border border-white/30 p-4 rounded-xl shadow-md text-sm"
       >
+        {/* Trip Type Radio */}
+        <div className="w-full flex justify-center mb-4">
+          <RadioGroup
+            row
+            value={tripType}
+            onChange={(e) => setTripType(e.target.value)}
+            className="text-xs"
+          >
+            <FormControlLabel value="oneway" control={<Radio size="small" />} label="One Way" />
+            <FormControlLabel value="twoway" control={<Radio size="small" />} label="Two Way" />
+            <FormControlLabel value="airport" control={<Radio size="small" />} label="Airport" />
+          </RadioGroup>
+        </div>
+
         {/* From Input */}
         <div className="flex w-full sm:w-auto flex-col items-start">
-          <label htmlFor="from">From</label>
+          <h6 className="text-xs font-semibold mb-1">From</h6>
           <Autocomplete
             onLoad={(auto) => (fromRef.current = auto)}
             onPlaceChanged={() => {
@@ -97,19 +114,21 @@ const Form_1 = () => {
           >
             <TextField
               id="from"
-              placeholder="Enter pickup location"
+              placeholder="Enter pickup"
               variant="outlined"
               onClick={handleGetCurrentLocation}
+              size="small"
               fullWidth
             />
           </Autocomplete>
         </div>
 
-        <div className="w-[2px] sm:flex hidden h-full bg-black/20"></div>
+        {/* Divider */}
+        <div className="w-[1px] sm:flex hidden h-10 bg-white/40"></div>
 
         {/* Drop Input */}
         <div className="flex w-full sm:w-auto flex-col items-start">
-          <label htmlFor="drop">Drop</label>
+          <h6 className="text-xs font-semibold mb-1">To</h6>
           <Autocomplete
             onLoad={(auto) => (dropRef.current = auto)}
             onPlaceChanged={() => {
@@ -121,42 +140,42 @@ const Form_1 = () => {
           >
             <TextField
               id="drop"
-              placeholder="Enter drop location"
+              placeholder="Enter drop"
               variant="outlined"
+              size="small"
               fullWidth
             />
           </Autocomplete>
         </div>
 
-        <div className="w-[2px] sm:flex hidden h-full bg-black/20"></div>
+        {/* Divider */}
+        <div className="w-[1px] sm:flex hidden h-10 bg-white/40"></div>
 
         {/* Date Picker */}
         <div className="w-full sm:w-auto flex flex-col items-start">
-          <label htmlFor="date">Date</label>
-          <LocalizationProvider
-            dateAdapter={AdapterDayjs}
-            className="w-full sm:w-auto"
-          >
+          <h6 className="text-xs font-semibold mb-1">Date</h6>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker
-              label="Select date"
+              label="Select"
               value={date}
               onChange={(newDate) => setDate(newDate)}
-              className="w-full sm:w-auto"
-              fullWidth
+              slotProps={{ textField: { size: "small" } }}
             />
           </LocalizationProvider>
         </div>
 
-        <div className="w-[2px] sm:flex hidden h-full bg-black/20"></div>
+        {/* Divider */}
+        <div className="w-[1px] sm:flex hidden h-10 bg-white/40"></div>
 
         {/* Passenger Select */}
         <div className="flex flex-col items-start w-[48%] sm:w-auto">
-          <label htmlFor="passenger">Passengers</label>
+          <h6 className="text-xs font-semibold mb-1">Passengers</h6>
           <Select
-            className="w-full sm:w-[100px]"
+            className="w-full sm:w-[90px]"
             id="passenger"
             value={passenger}
             onChange={(e) => setPassenger(e.target.value)}
+            size="small"
           >
             {Array.from({ length: 14 }, (_, i) => (
               <MenuItem key={i + 1} value={i + 1}>
@@ -166,16 +185,18 @@ const Form_1 = () => {
           </Select>
         </div>
 
-        <div className="w-[2px] sm:flex hidden h-full bg-black/20"></div>
+        {/* Divider */}
+        <div className="w-[1px] sm:flex hidden h-10 bg-white/40"></div>
 
         {/* Luggage Select */}
         <div className="flex flex-col items-start w-[48%] sm:w-auto">
-          <label htmlFor="luggage">Luggage</label>
+          <h6 className="text-xs font-semibold mb-1">Luggage</h6>
           <Select
-            className="w-full sm:w-[100px]"
+            className="w-full sm:w-[90px]"
             id="luggage"
             value={luggage}
             onChange={(e) => setLuggage(e.target.value)}
+            size="small"
           >
             {Array.from({ length: 5 }, (_, i) => (
               <MenuItem key={i + 1} value={i + 1}>
@@ -185,13 +206,14 @@ const Form_1 = () => {
           </Select>
         </div>
 
-        <div className="w-[2px] sm:flex hidden h-full bg-black/20"></div>
+        {/* Divider */}
+        <div className="w-[1px] sm:flex hidden h-10 bg-white/40"></div>
 
         {/* Submit */}
-        <div className="flex w-full sm:w-auto  mt-2 flex-col">
+        <div className="flex w-full sm:w-auto mt-2 flex-col">
           <button
             type="submit"
-            className="px-4 py-2 top-[30px] h-[50px] w-full sm:w-[160px] bg-black text-white rounded hover:bg-gray-700"
+            className="px-3 py-2 h-[40px] w-full sm:w-[140px] bg-black/80 text-white rounded-md hover:bg-black"
           >
             Get Taxi
           </button>
@@ -200,7 +222,7 @@ const Form_1 = () => {
 
       {/* Distance Result */}
       {distance && duration && (
-        <div className="mt-4 p-4 bg-gray-100 rounded-lg text-center">
+        <div className="mt-4 p-4 bg-black/20 backdrop-blur-md rounded-lg text-center text-sm text-white">
           <p>
             <strong>Distance:</strong> {distance}
           </p>

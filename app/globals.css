@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap');
 /* Custom font utility classes */
 /* ✅ Existing */
+
+@font-face {
+  font-family: 'NumberFont';
+  src: url('/fonts/RobotoMono.woff2') format('woff2');
+  unicode-range: U+30-39; /* applies only to 0–9 */
+} 
 .font-poppins {
   font-family: 'Poppins', sans-serif;
 }
@@ -47,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p,  li, a, button {
-  font-family: 'Raleway', sans-serif; /* Paragraph / UI font */
+  font-family: 'Poppins', sans-serif; /* Paragraph / UI font */
 }
 
 /* ✅ 1. Google Fonts must come FIRST */

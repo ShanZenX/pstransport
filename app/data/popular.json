@@ -1,25 +1,24 @@
 [
   {
     "id": 1,
-    "name": "Chennai to Pondicherry",
-    "img": "/assets/trip/thiruchendur.png",
+    "name": "Meenakshi Amman Temple",
+    "img": "/assets/trip/meenkshikovil.png",
     "nights": "2N/3D",
     "price": "₹8,500",
     "includes": ["AC Cab", "Beach View", "Hotel Stay"]
   },
   {
     "id": 2,
-    "name": "Madurai Temple City Tour",
-        "img": "/assets/trip/thiruchendur.png",
-
+    "name": "Tirupati",
+    "img": "/assets/trip/tripathi.png",
     "nights": "1N/2D",
     "price": "₹5,000",
     "includes": ["AC Cab", "Temple Visits", "Guide"]
   },
   {
     "id": 3,
-    "name": "Hill Drive to Ooty",
-        "img": "/assets/trip/thiruchendur.png",
+    "name": "kumbakonam temple",
+    "img": "/assets/trip/kumbakonam.png",
 
     "nights": "3N/4D",
     "price": "₹12,000",
@@ -28,7 +27,7 @@
   {
     "id": 4,
     "name": "Rameswaram Pilgrimage",
-        "img": "/assets/trip/thiruchendur.png",
+    "img": "/assets/trip/rameshwaram.png",
 
     "nights": "2N/3D",
     "price": "₹7,500",
@@ -36,8 +35,8 @@
   },
   {
     "id": 5,
-    "name": "Tiruchendur Temple Tour",
-        "img": "/assets/trip/thiruchendur.png",
+    "name": "Sabarimalai Temple",
+    "img": "/assets/trip/sabarimalai.png",
 
     "nights": "1N/2D",
     "price": "₹4,500",
@@ -45,8 +44,8 @@
   },
   {
     "id": 6,
-    "name": "Coimbatore City",
-        "img": "/assets/trip/thiruchendur.png",
+    "name": " Srirangam Temple",
+    "img": "/assets/trip/srirangam.png",
 
     "nights": "2N/3D",
     "price": "₹6,500",
@@ -54,30 +53,47 @@
   },
   {
     "id": 7,
-    "name": "Kerala Backwater & Hills",
+    "name": "Palani Temple",
+    "img": "/assets/trip/palani.png",
+
     "nights": "4N/5D",
     "price": "₹15,000",
     "includes": ["Cab", "Houseboat", "Spice Plantation"]
   },
   {
     "id": 8,
-    "name": "Kanyakumari Sunrise Tour",
+    "name": "Guruvayur Temple ",
+    "img": "/assets/trip/guruvayur.png",
+
+    "nights": "2N/3D",
+    "price": "₹8,000",
+    "includes": ["Cab", "Vivekananda Rock", "Sunrise View"]
+  },
+
+  {
+    "id": 9,
+    "name": "Vellore Temple ",
+    "img": "/assets/trip/vellore.png",
+
     "nights": "2N/3D",
     "price": "₹8,000",
     "includes": ["Cab", "Vivekananda Rock", "Sunrise View"]
   },
   {
-    "id": 9,
-    "name": "Trichy Andal Tour",
-    "nights": "1N/2D",
-    "price": "₹5,500",
-    "includes": ["Cab", "Rockfort Visit", "Srirangam Temple"]
+    "id": 10,
+    "name": "Thiruvanamalai Temple ",
+    "img": "/assets/trip/thiruvanamalai.png",
+
+    "nights": "2N/3D",
+    "price": "₹8,000",
+    "includes": ["Cab", "Vivekananda Rock", "Sunrise View"]
   },
   {
-    "id": 10,
-    "name": "Yercaud Hills Nature Drive",
+    "id": 11,
+    "name": " Thiruchendur Temple ",
+    "img": "/assets/trip/thiruchendur.png",
     "nights": "2N/3D",
-    "price": "₹9,000",
-    "includes": ["AC Cab", "Lake Visit", "Viewpoints"]
+    "price": "₹8,000",
+    "includes": ["Cab", "Vivekananda Rock", "Sunrise View"]
   }
 ]

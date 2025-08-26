@@ -13,39 +13,39 @@ import PopularTripCard from "./PopularPackCard";
 const packages = [
   {
     id: 1,
-    name: "Chennai to Pondicherry",
-    image: "/assets/trip/Pondicherry.png",
+    name: "Meenakshi Amman Kovil",
+    image: "/assets/trip/meenkshikovil.png",
     nights: "2N/3D",
     price: "₹8,500",
     includes: ["AC Cab", "Beach View", "Hotel Stay"],
   },
   {
     id: 2,
-    name: "Thiruchendur Temple Tour",
-    image: "/assets/trip/thiruchendur.png",
+    name: "Palani Temple",
+    image: "/assets/trip/palani.png",
     nights: "1N/2D",
     price: "₹5,000",
     includes: ["AC Cab", "Temple Visits", "Guide"],
   },
   {
     id: 3,
-    name: "chennai to Thiruvanamali",
-    image: "/assets/trip/thiruvanamalai.png",
+    name: "Guruvayur Temple",
+    image: "/assets/trip/guruvayur.png",
     nights: "2N/2D",
     price: "₹12,000",
     includes: ["AC Cab", "Hill Stay", "Sightseeing"],
   },
   {
     id: 4,
-    name: "Tripathi Pilgrimage",
-    image: "/assets/trip/tirupathi.png",
+    name: "Thiruchendur Temple",
+    image: "/assets/trip/thiruchendur.png",
     nights: "2N/3D",
     price: "₹7,500",
     includes: ["Cab", "Temple Visit", "Bridge Walk"],
   },
   {
     id: 5,
-    name: "vellor Temple Tour",
+    name: "Vellor Temple",
     image: "/assets/trip/vellor.png",
     nights: "1N/2D",
     price: "₹4,500",
@@ -53,16 +53,16 @@ const packages = [
   },
   {
     id: 6,
-    name: "Yercadu City",
-    image: "/assets/trip/Yercadu.png",
+    name: "Srirangam Temple",
+    image: "/assets/trip/srirangam.png",
     nights: "2N/3D",
     price: "₹6,500",
     includes: ["Cab", "Adiyogi Statue", "Local Sightseeing"],
   },
   {
     id: 7,
-    name: "Munnar & Hills",
-    image: "/assets/trip/munnar2.png",
+    name: " Sabarimalai Temple",
+    image: "/assets/trip/sabarimalai.png",
     nights: "4N/5D",
     price: "₹15,000",
     includes: ["Cab", "Houseboat", "Spice Plantation"],
@@ -70,8 +70,23 @@ const packages = [
 
   {
     id: 8,
-    name: "Yercaud Hills Nature Drive",
-    image: "/assets/trip/munnar.png",
+    name: "Kumbakonam Temple",
+    image: "/assets/trip/kumbakonam.png",
+    nights: "2N/3D",
+    price: "₹9,000",
+    includes: ["AC Cab", "Lake Visit", "Viewpoints"],
+  },
+   {
+    id: 9,
+    name: "Rameshwaram Temple",
+    image: "/assets/trip/rameshwaram.png",
+    nights: "2N/3D",
+    price: "₹9,000",
+    includes: ["AC Cab", "Lake Visit", "Viewpoints"],
+  }, {
+    id: 10,
+    name: "Tripati Temple",
+    image: "/assets/trip/tripathi.png",
     nights: "2N/3D",
     price: "₹9,000",
     includes: ["AC Cab", "Lake Visit", "Viewpoints"],
@@ -83,9 +98,9 @@ const TransportPackagesCarousel = () => {
   const nextRef = useRef(null);
 
   return (
-    <section className="py-12 bg-gray-50 !sm:mt-10 lg:mt-8 font-roboto ">
+    <section className="py-12 !sm:mt-10 lg:mt-8 font-roboto ">
       <div className="text-center mb-8 px-4">
-        <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-4 flex justify-center items-center gap-2 sm:mb-6 flex justify-center items-center gap-3  ">
+        <h2 className=" text-2xl md:text-[32px] !font-semibold mb-4 flex justify-center items-center gap-2 sm:mb-6  ">
           <span className="h-[4px] w-[20px] bg-gray-800 block"></span>
           Popular Transport Packages
           <span className="h-[4px] w-[20px] bg-gray-800 block"></span>
@@ -115,29 +130,33 @@ const TransportPackagesCarousel = () => {
 
         {/* Swiper */}
         <Swiper
-          modules={[Navigation, Autoplay]}
-          spaceBetween={20}
-          slidesPerView={1.1}
-          loop
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
-          onInit={(swiper) => {
-            swiper.params.navigation.prevEl = prevRef.current;
-            swiper.params.navigation.nextEl = nextRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
-          }}
-          breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
-          {packages.map((pkg) => (
-            <SwiperSlide>
-              <PopularTripCard pkg={pkg} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+  modules={[Navigation, Autoplay]}
+  spaceBetween={12} // 👈 reduced from 20 → 12
+  slidesPerView={1.1}
+  loop
+  autoplay={{ delay: 3000, disableOnInteraction: false }}
+  onInit={(swiper) => {
+    swiper.params.navigation.prevEl = prevRef.current;
+    swiper.params.navigation.nextEl = nextRef.current;
+    swiper.navigation.init();
+    swiper.navigation.update();
+  }}
+  breakpoints={{
+    640: { slidesPerView: 1 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 4 }, // 👈 4 per row
+  }}
+>
+  {packages.map((pkg) => (
+    <SwiperSlide key={pkg.id}>
+      <div className="scale-90"> {/* 👈 shrink card a bit */}
+        <PopularTripCard pkg={pkg} />
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper>
+
+
       </div>
     </section>
   );

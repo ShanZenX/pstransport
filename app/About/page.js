@@ -5,12 +5,13 @@ import OurVision from "../components/About/OurVision";
 import ThreeSection from "../components/About/ThreeTypes";
 import TechStackMarquee from "../components/Additional/Slider";
 import FormHolder from "../components/MainPage/FormHolder";
+import ReviewsSection from "../components/MainPage/Review";
 import WhyPage from "../components/MainPage/WhyPage";
 import BookingSteps from "../components/ServicePage/BookingSteps";
 
 export default function About() {
   return (
-    <div className="px-4 pt-6    md:h-[4000px]  bg-[#e6b31900]">
+    <div className="px-4 pt-6">
       <HeroPage />
       <OurVision />
       <BookingSteps />
@@ -18,7 +19,8 @@ export default function About() {
       <TechStackMarquee />
       <DriverJoinSection />
       {/* <WhyPage /> */}
-      <ThreeSection/>
+      <ThreeSection />
+      <ReviewsSection />
     </div>
   );
 }

@@ -31,7 +31,7 @@ const StarRating = ({ rating, max = 5 }) => (
 const ReviewCard = ({ review }) => (
   <motion.article
     className="min-w-[280px] max-w-[320px] bg-white border border-gray-200 shadow-md rounded-lg p-4 mx-2"
-    whileHover={{ scale: 1.05 }}
+    
   >
     <h3 className="text-base font-semibold text-gray-900">{review.name}</h3>
     <p className="text-xs text-gray-500 mb-1">{review.position}</p>

@@ -14,21 +14,21 @@ const AboutCompany = () => {
         <Image src={s2} alt="Vision" className="hidden sm:flex w-1/2 h-auto absolute left-[200px] top-[130px] rounded-4xl" />
       </div>
       <div className="w-full flex flex-col sm:flex    sm:w-[48%] ">
-         <p className="font-extrabold  text-4xl pt-[40px]">  {/* font-poppins */}
+         <h2 className="!font-extrabold  text-2xl pt-[40px]">  {/* font-poppins */}
           Reliable And Convenient Taxi Services At Your Doorstep
-        </p>
+        </h2>
         <div className="shadow-inner  bg-white p-4 mt-4">
-          <p className="font-raleway text-xl font-light">
+          <p className="font-raleway text-l font-light">
             Interactively uphold comprehensive best practices and
             user-completed, in-depth analysis of installed internal commerce
           </p>
-          <span className="text-amber-300 font-extrabold">David Smith</span><span> - </span><span>Head of team</span>
+          <span className="text-indigo-00 font-extrabold">XXXXXXXX</span><span> - </span><span>Head of team</span>
       
         </div>
-            <span className="text-black !bg-amber-300 p-2 rounded-2xl flex items-center w-fit mt-4">
+            <span className="!bg-indigo-900 text-white p-2 rounded-2xl flex items-center w-fit mt-4">
                       <Call />
 
-          <Button className="!bg-amber-300 !text-black !border-none">
+          <Button className="!bg-indigo-900 !text-white !border-none">
             Get More Info
           </Button>
           </span>

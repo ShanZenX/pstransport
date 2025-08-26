@@ -19,7 +19,7 @@ export default function Services() {
       <TechStackMarquee />
       <CarsCarousel />
       <LogisticsSection/>
-      <LogisticsServices/>
+      {/* <LogisticsServices/> */}
       <Why/>
       <CorporateCollaboration/>
       <ReviewsSection/>

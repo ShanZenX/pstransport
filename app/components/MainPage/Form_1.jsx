@@ -1,238 +1,129 @@
 "use client";
-
-import React, { useState, useRef } from "react";
-import { DatePicker } from "@mui/x-date-pickers";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import React, { useState } from "react";
+import { Tabs, Tab, TextField, Select, MenuItem, Button } from "@mui/material";
+import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { Select, MenuItem, TextField, Radio, RadioGroup, FormControlLabel } from "@mui/material";
-import { Autocomplete, LoadScript } from "@react-google-maps/api";
 
-const libraries = ["places"];
+export default function CarBookingForm() {
+  const [activeTab, setActiveTab] = useState("local");
+  const [form, setForm] = useState({
+    pickup: "",
+    drop: "",
+    flight: "",
+    departDate: null,
+    returnDate: null,
+    passengers: 1,
+    luggage: 1,
+  });
 
-const Form_1 = () => {
-  const [tripType, setTripType] = useState("oneway");
-  const [from, setFrom] = useState("");
-  const [drop, setDrop] = useState("");
-  const [date, setDate] = useState(null);
-  const [passenger, setPassenger] = useState(1);
-  const [luggage, setLuggage] = useState(1);
-  const [distance, setDistance] = useState(null);
-  const [duration, setDuration] = useState(null);
-
-  const fromRef = useRef(null);
-  const dropRef = useRef(null);
-
-  const handleGetCurrentLocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        const lat = position.coords.latitude;
-        const lng = position.coords.longitude;
-        setFrom(`Lat: ${lat}, Lng: ${lng}`);
-      });
-    } else {
-      alert("Geolocation is not supported by this browser.");
-    }
-  };
-
-  const calculateDistance = () => {
-    if (!from || !drop) {
-      alert("Please select both pickup and drop locations.");
-      return;
-    }
-
-    const service = new window.google.maps.DistanceMatrixService();
-    service.getDistanceMatrix(
-      {
-        origins: [from],
-        destinations: [drop],
-        travelMode: window.google.maps.TravelMode.DRIVING,
-      },
-      (response, status) => {
-        if (status === "OK") {
-          const result = response.rows[0].elements[0];
-          if (result.status === "OK") {
-            setDistance(result.distance.text);
-            setDuration(result.duration.text);
-          } else {
-            alert("Could not calculate distance.");
-          }
-        } else {
-          console.error("DistanceMatrix failed:", status);
-        }
-      }
-    );
+  const handleChange = (name, value) => {
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    calculateDistance();
-
-    console.log({
-      tripType,
-      from,
-      drop,
-      date: date ? date.format("YYYY-MM-DD") : null,
-      passenger,
-      luggage,
-      distance,
-      duration,
-    });
+    console.log("Booking:", activeTab, form);
   };
 
   return (
-    <LoadScript googleMapsApiKey="YOUR_GOOGLE_API_KEY" libraries={libraries}>
-      <form
-        onSubmit={handleSubmit}
-        className="w-10/12 sm:w-9/12 mt-8 flex flex-wrap sm:justify-around gap-2 sm:items-center 
-          backdrop-blur-lg bg-white/20 border border-white/30 p-4 rounded-xl shadow-md text-sm"
+    <div className="max-w-lg mx-auto p-4 bg-white rounded-lg shadow">
+      <Tabs
+        value={activeTab}
+        onChange={(e, val) => setActiveTab(val)}
+        textColor="primary"
+        indicatorColor="primary"
+        variant="fullWidth"
       >
-        {/* Trip Type Radio */}
-        <div className="w-full flex justify-center mb-4">
-          <RadioGroup
-            row
-            value={tripType}
-            onChange={(e) => setTripType(e.target.value)}
-            className="text-xs"
-          >
-            <FormControlLabel value="oneway" control={<Radio size="small" />} label="One Way" />
-            <FormControlLabel value="twoway" control={<Radio size="small" />} label="Two Way" />
-            <FormControlLabel value="airport" control={<Radio size="small" />} label="Airport" />
-          </RadioGroup>
-        </div>
+        <Tab label="Local" value="local" />
+        <Tab label="One Way" value="oneway" />
+        <Tab label="Two Way" value="twoway" />
+        <Tab label="Airport" value="airport" />
+      </Tabs>
 
-        {/* From Input */}
-        <div className="flex w-full sm:w-auto flex-col items-start">
-          <h6 className="text-xs font-semibold mb-1">From</h6>
-          <Autocomplete
-            onLoad={(auto) => (fromRef.current = auto)}
-            onPlaceChanged={() => {
-              const place = fromRef.current.getPlace();
-              setFrom(place.formatted_address || "");
-            }}
-            sx={{ width: "100%" }}
-            className="w-full sm:w-auto"
-          >
-            <TextField
-              id="from"
-              placeholder="Enter pickup"
-              variant="outlined"
-              onClick={handleGetCurrentLocation}
-              size="small"
-              fullWidth
-            />
-          </Autocomplete>
-        </div>
+      <form onSubmit={handleSubmit} className="mt-4 space-y-3">
+        {/* Pickup */}
+        <TextField
+          label="Pickup Location"
+          fullWidth
+          size="small"
+          value={form.pickup}
+          onChange={(e) => handleChange("pickup", e.target.value)}
+        />
 
-        {/* Divider */}
-        <div className="w-[1px] sm:flex hidden h-10 bg-white/40"></div>
+        {/* Drop - Only for non-local */}
+        {activeTab !== "local" && (
+          <TextField
+            label="Drop Location"
+            fullWidth
+            size="small"
+            value={form.drop}
+            onChange={(e) => handleChange("drop", e.target.value)}
+          />
+        )}
 
-        {/* Drop Input */}
-        <div className="flex w-full sm:w-auto flex-col items-start">
-          <h6 className="text-xs font-semibold mb-1">To</h6>
-          <Autocomplete
-            onLoad={(auto) => (dropRef.current = auto)}
-            onPlaceChanged={() => {
-              const place = dropRef.current.getPlace();
-              setDrop(place.formatted_address || "");
-            }}
-            sx={{ width: "100%" }}
-            className="w-full sm:w-auto"
-          >
-            <TextField
-              id="drop"
-              placeholder="Enter drop"
-              variant="outlined"
-              size="small"
-              fullWidth
-            />
-          </Autocomplete>
-        </div>
+        {/* Flight number for Airport */}
+        {activeTab === "airport" && (
+          <TextField
+            label="Flight Number"
+            fullWidth
+            size="small"
+            value={form.flight}
+            onChange={(e) => handleChange("flight", e.target.value)}
+          />
+        )}
 
-        {/* Divider */}
-        <div className="w-[1px] sm:flex hidden h-10 bg-white/40"></div>
-
-        {/* Date Picker */}
-        <div className="w-full sm:w-auto flex flex-col items-start">
-          <h6 className="text-xs font-semibold mb-1">Date</h6>
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
+        {/* Dates */}
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <DatePicker
+            label={activeTab === "twoway" ? "Departure Date" : "Date"}
+            value={form.departDate}
+            onChange={(val) => handleChange("departDate", val)}
+            slotProps={{ textField: { size: "small", fullWidth: true } }}
+          />
+          {activeTab === "twoway" && (
             <DatePicker
-              label="Select"
-              value={date}
-              onChange={(newDate) => setDate(newDate)}
-              slotProps={{ textField: { size: "small" } }}
+              label="Return Date"
+              value={form.returnDate}
+              onChange={(val) => handleChange("returnDate", val)}
+              slotProps={{ textField: { size: "small", fullWidth: true } }}
             />
-          </LocalizationProvider>
-        </div>
+          )}
+        </LocalizationProvider>
 
-        {/* Divider */}
-        <div className="w-[1px] sm:flex hidden h-10 bg-white/40"></div>
+        {/* Passengers */}
+        <Select
+          fullWidth
+          size="small"
+          value={form.passengers}
+          onChange={(e) => handleChange("passengers", e.target.value)}
+        >
+          {Array.from({ length: 10 }, (_, i) => (
+            <MenuItem key={i + 1} value={i + 1}>
+              {i + 1} Passenger{i > 0 ? "s" : ""}
+            </MenuItem>
+          ))}
+        </Select>
 
-        {/* Passenger Select */}
-        <div className="flex flex-col items-start w-[48%] sm:w-auto">
-          <h6 className="text-xs font-semibold mb-1">Passengers</h6>
+        {/* Luggage for One Way & Two Way */}
+        {(activeTab === "oneway" || activeTab === "twoway") && (
           <Select
-            className="w-full sm:w-[90px]"
-            id="passenger"
-            value={passenger}
-            onChange={(e) => setPassenger(e.target.value)}
+            fullWidth
             size="small"
-          >
-            {Array.from({ length: 14 }, (_, i) => (
-              <MenuItem key={i + 1} value={i + 1}>
-                {i + 1}
-              </MenuItem>
-            ))}
-          </Select>
-        </div>
-
-        {/* Divider */}
-        <div className="w-[1px] sm:flex hidden h-10 bg-white/40"></div>
-
-        {/* Luggage Select */}
-        <div className="flex flex-col items-start w-[48%] sm:w-auto">
-          <h6 className="text-xs font-semibold mb-1">Luggage</h6>
-          <Select
-            className="w-full sm:w-[90px]"
-            id="luggage"
-            value={luggage}
-            onChange={(e) => setLuggage(e.target.value)}
-            size="small"
+            value={form.luggage}
+            onChange={(e) => handleChange("luggage", e.target.value)}
           >
             {Array.from({ length: 5 }, (_, i) => (
               <MenuItem key={i + 1} value={i + 1}>
-                {i + 1}
+                {i + 1} Bag{i > 0 ? "s" : ""}
               </MenuItem>
             ))}
           </Select>
-        </div>
+        )}
 
-        {/* Divider */}
-        <div className="w-[1px] sm:flex hidden h-10 bg-white/40"></div>
-
-        {/* Submit */}
-        <div className="flex w-full sm:w-auto mt-2 flex-col">
-          <button
-            type="submit"
-            className="px-3 py-2 h-[40px] w-full sm:w-[140px] bg-black/80 text-white rounded-md hover:bg-black"
-          >
-            Get Taxi
-          </button>
-        </div>
+        <Button variant="contained" type="submit" fullWidth>
+          Book Now
+        </Button>
       </form>
-
-      {/* Distance Result */}
-      {distance && duration && (
-        <div className="mt-4 p-4 bg-black/20 backdrop-blur-md rounded-lg text-center text-sm text-white">
-          <p>
-            <strong>Distance:</strong> {distance}
-          </p>
-          <p>
-            <strong>Duration:</strong> {duration}
-          </p>
-        </div>
-      )}
-    </LoadScript>
+    </div>
   );
-};
-
-export default Form_1;
+}

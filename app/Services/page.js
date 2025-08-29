@@ -18,12 +18,12 @@ export default function Services() {
       <OurServices />
       <TechStackMarquee />
       <CarsCarousel />
-      <LogisticsSection/>
-            <Why/>
+      <LogisticsSection />
+      <Why />
 
       {/* <LogisticsServices/> */}
-      <CorporateCollaboration/>
-      <ReviewsSection/>
+      <CorporateCollaboration />
+      <ReviewsSection />
     </div>
   );
 }

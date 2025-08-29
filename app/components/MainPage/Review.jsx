@@ -43,7 +43,7 @@ const reviewsData = [
     name: "Karan K",
     rating: 5,
     feedback:
-      "PS Transport has revolutionized our freight operations with their reliable and timely services. Their fleet is well-maintained, and the drivers are highly professional.",
+      "PS Transport has revolutionized our freight operations with their reliable and timely services. Their fleet is well-maintained.",
   },
   {
     name: "Madhu S",

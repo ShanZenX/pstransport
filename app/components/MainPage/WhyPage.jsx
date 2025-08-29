@@ -9,7 +9,7 @@ import {
 import useInView from "@/app/components/About/useInView";
 
 const FeatureBox = ({ icons, title, text }) => (
-  <div className="p-2 w-10/12 sm:w-auto text-white rounded border hover:shadow-md transition-all transform border-black bg-[#162455e7]">
+  <div className="p-2 w-10/12 sm:w-auto text-white rounded border hover:shadow-md transition-all transform bg-blue-600">
     <span className="my-2">{icons}</span>
     <h3 className="text-lg sm:text-xl font-semibold mb-2">{title}</h3>
     <p className="text-[14px] sm:text-l">{text}</p>

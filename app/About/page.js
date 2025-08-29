@@ -2,6 +2,7 @@ import AboutCompany from "../components/About/AboutCompany";
 import DriverJoinSection from "../components/About/DriverJoin";
 import HeroPage from "../components/About/HeroPage";
 import OurVision from "../components/About/OurVision";
+import OwnerShowcase from "../components/About/OwnerShowcase";
 import ThreeSection from "../components/About/ThreeTypes";
 import TechStackMarquee from "../components/Additional/Slider";
 import FormHolder from "../components/MainPage/FormHolder";
@@ -13,13 +14,14 @@ export default function About() {
   return (
     <div className="px-4 pt-6">
       <HeroPage />
+      <ThreeSection />
       <OurVision />
       <BookingSteps />
-      <AboutCompany />
       <TechStackMarquee />
       <DriverJoinSection />
       {/* <WhyPage /> */}
-      <ThreeSection />
+      <AboutCompany />
+
       <ReviewsSection />
     </div>
   );

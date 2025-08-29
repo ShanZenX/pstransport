@@ -21,7 +21,7 @@ export default function Services() {
       <LogisticsSection/>
             <Why/>
 
-      <LogisticsServices/>
+      {/* <LogisticsServices/> */}
       <CorporateCollaboration/>
       <ReviewsSection/>
     </div>

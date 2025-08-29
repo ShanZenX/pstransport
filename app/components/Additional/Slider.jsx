@@ -19,7 +19,15 @@ export default function TechStackMarquee() {
     { src: LT, alt: "L&T" },
     { src: PRD, alt: "PRD" },
     { src: Calbeer, alt: "Calbeer" },
-    { src: jio, alt: "Jio" },
+     { src: jio, alt: "Jio" },
+    { src: qq, alt: "Q&Q" },
+    { src: avalon, alt: "Avalon" },
+    { src: saavari, alt: "Saavari" },
+    { src: techmahindra, alt: "Tech Mahindra" },
+    { src: LT, alt: "L&T" },
+    { src: PRD, alt: "PRD" },
+    { src: Calbeer, alt: "Calbeer" },
+     { src: jio, alt: "Jio" },
     { src: qq, alt: "Q&Q" },
     { src: avalon, alt: "Avalon" },
     { src: saavari, alt: "Saavari" },
@@ -30,24 +38,27 @@ export default function TechStackMarquee() {
   ];
 
   return (
-    <div className="bg-white p-8 m-5 marquee-container">
-      <div className="overflow-hidden">
-        <div className="flex whitespace-nowrap animate-scroll">
-          {[...logos, ...logos].map((logo, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 logo-item flex items-center justify-center h-20"
-            >
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                width={50}
-                height={50}
-                className="w-18"
-              />
-            </div>
-          ))}
-        </div>
+    <div className="relative bg-white p-8 m-5 overflow-hidden">
+      {/* Fade on left & right */}
+      <div className="pointer-events-none absolute top-0 left-0 h-full w-20 bg-gradient-to-r from-white to-transparent z-10"></div>
+      <div className="pointer-events-none absolute top-0 right-0 h-full w-20 bg-gradient-to-l from-white to-transparent z-10"></div>
+
+      {/* Marquee */}
+      <div className="flex w-max animate-scroll">
+        {[...logos, ...logos].map((logo, index) => (
+          <div
+            key={index}
+            className="flex-shrink-0 logo-item flex items-center justify-center h-20"
+          >
+            <Image
+              src={logo.src}
+              alt={logo.alt}
+              width={60}
+              height={60}
+              className="w-18"
+            />
+          </div>
+        ))}
       </div>
 
       <style jsx>{`
@@ -59,27 +70,26 @@ export default function TechStackMarquee() {
             transform: translateX(-50%);
           }
         }
+
         .animate-scroll {
-          animation: scroll 15s linear infinite;
+          display: flex;
+          animation: scroll 40s linear infinite;
           will-change: transform;
         }
+
         .logo-item {
           margin-left: 2rem;
           margin-right: 2rem;
           transition: transform 0.3s ease-in-out;
         }
+
         .logo-item:hover {
           transform: scale(1.1);
         }
 
-        /* Mobile adjustments */
         @media (max-width: 768px) {
-          .marquee-container {
-            padding: 0 !important;
-            margin: 0.25rem !important; /* m-1 */
-          }
           .animate-scroll {
-            animation: scroll 18s linear infinite;
+            animation: scroll 50s linear infinite;
           }
           .logo-item {
             margin-left: 1rem;

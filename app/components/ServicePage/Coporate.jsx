@@ -36,6 +36,17 @@ const CorporateCollaboration = () => {
 
   return (
     <section className="bg-white py-20 px-4 sm:px-8">
+      {/* ✅ Heading placed once here */}
+   <h2 className="text-3xl !font-extrabold text-gray-900 mb-3 !font-extrabold mb-2 !sm:my-5 flex justify-center items-center gap-2 text-center text-gray-800">
+  <span className="h-[3px] w-[20px] bg-black block"></span>
+  Our Logistics Services
+  <span className="h-[3px] w-[20px] bg-black block"></span>
+</h2>
+<p className="text-center">
+  Trusted by businesses and families across India for safe deliveries.
+</p>
+
+
       {sections.map((sec, index) => {
         const [refLeft, inViewLeft] = useInView({ threshold: 0.2 });
         const [refRight, inViewRight] = useInView({ threshold: 0.2 });
@@ -61,12 +72,12 @@ const CorporateCollaboration = () => {
               }`}
             >
               <Image
-  src={sec.image}
-  alt={sec.title}
-  width={600}
-  height={300}
-  className="rounded-2xl shadow-md object-cover w-[90%] md:w-[80%] lg:w-[80%] h-[220px] md:h-[260px] lg:h-[300px]"
-/>
+                src={sec.image}
+                alt={sec.title}
+                width={600}
+                height={300}
+                className="rounded-2xl shadow-md object-cover w-[90%] md:w-[80%] lg:w-[80%] h-[220px] md:h-[260px] lg:h-[300px]"
+              />
             </div>
 
             {/* Content */}

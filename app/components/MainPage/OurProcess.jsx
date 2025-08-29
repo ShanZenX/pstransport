@@ -1,13 +1,15 @@
 import React from "react";
 import Image from "next/image";
-import s1 from "@/public/sb.jpg";
+import s1 from "@/public/taxi.png";
 import s2 from "@/public/AddSer.jpg";
+import s3 from "@/public/About-Bg.png";
+import s4 from "@/public/serviceHero.png";
 
 const services = [
   { title: "One-way", image: s1 },
   { title: "Native Trips", image: s2 },
-  { title: "Corporate ways", image: s1 },
-  { title: "Logistics Moves", image: s2 },
+  { title: "Corporate ways", image: s3 },
+  { title: "Logistics Moves", image: s4 },
 ];
 
 const OurProcess = () => {
@@ -18,8 +20,8 @@ const OurProcess = () => {
           <span className="h-[4px] w-[20px] bg-gray-800 block"></span> What we
           Offer <span className="h-[4px] w-[20px] bg-gray-800 block"></span>{" "}
         </h2>
-        <p className="text-gray-600 text-[14px] !sm:text-sm mb-10 max-w-xl mx-auto font-oswald">
-          select your own and ride
+        <p className="text-gray-600 text-[14px] !sm:text-sm mb-10 max-w-xl !text-center  mx-auto">
+          Choose your ride with the perfect variant{" "}
         </p>
       </div>
 
@@ -46,7 +48,7 @@ const OurProcess = () => {
 
       {/* Button */}
       <div className="text-center mt-10">
-        <button className="bg-orange-600 text-white px-6 py-2 rounded hover:bg-orange-700 transition font-semibold shadow">
+        <button className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-orange-700 transition font-semibold shadow">
           See All Services
         </button>
       </div>

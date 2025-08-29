@@ -3,7 +3,7 @@ import React from "react";
 
 const DriverJoinSection = () => {
   return (
-    <section className="relative bg-gray-50 py-14 sm:py-20 my-3 sm:my-20">
+    <section className="relative py-14 sm:py-20 my-3 sm:my-20">
       <div className="max-w-6xl mx-auto px-4 md:flex items-center justify-between ">
         <div className="md:w-2/3 mb-6 md:mb-0">
           <h2 className="text-2xl md:text-[32px] !font-extrabold mb-2 !sm:my-5  uppercase tracking-widest text-gray-500">

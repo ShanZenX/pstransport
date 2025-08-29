@@ -1,12 +1,12 @@
 import Fact from "./components/MainPage/Fact";
 import WhyPage from "./components/MainPage/WhyPage";
-import ReviewsSection from "./components/MainPage/Review";
 import Why from "./components/Additional/Test2";
 import TransportPackagesCarousel from "./components/Additional/Curosal";
 import PopularTrips from "./components/MainPage/PopularTrips";
 import BrandsSection from "./components/MainPage/Brand";
 import FormHolder from "./components/MainPage/FormHolder";
 import OurProcess from "./components/MainPage/OurProcess";
+import ReviewsSection from "./components/MainPage/Review";
 
 export default function Home() {
   return (
@@ -18,8 +18,9 @@ export default function Home() {
         <WhyPage />
         <PopularTrips />
         <BrandsSection />
-        <Fact />
-        <ReviewsSection />
+        {/* <Fact /> */}
+
+        <ReviewsSection/>
       </div>
     </>
   );

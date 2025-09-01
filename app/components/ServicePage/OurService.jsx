@@ -51,7 +51,7 @@ export default function WhyChooseUs() {
 </p>
        
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center my-15 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-15 ">
           {/* LEFT IMAGE GRID */}
           <div className="grid grid-cols-2 gap-2">
             {/* Top Left */}

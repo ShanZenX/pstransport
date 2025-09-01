@@ -16,11 +16,11 @@ const OurProcess = () => {
   return (
     <section className="bg-white py-10 sm-5 lg:m-15 ">
       <div className="text-center mb-10">
-        <h2 className=" text-2xl md:text-[32px] !font-semibold mb-4 flex justify-center items-center gap-2 sm:mb-6  ">
+        <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-4 flex justify-center items-center gap-2 sm:mb-6  ">
           <span className="h-[4px] w-[20px] bg-gray-800 block"></span> What we
           Offer <span className="h-[4px] w-[20px] bg-gray-800 block"></span>{" "}
         </h2>
-        <p className="text-gray-600 text-[14px] !sm:text-sm mb-10 max-w-xl !text-center  mx-auto">
+        <p className= "text-blue-600 text-[14px] !sm:text-sm mb-10 max-w-xl !text-center  mx-auto">
           Choose your ride with the perfect variant{" "}
         </p>
       </div>

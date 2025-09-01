@@ -1,10 +1,27 @@
 "use client";
 import React, { useState } from "react";
-import { Tabs, Tab, TextField, Select, MenuItem, Button } from "@mui/material";
-import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
+import {
+  Tabs,
+  Tab,
+  TextField,
+  Button,
+  Select,
+  MenuItem,
+  FormControl,
+  Typography,
+  Slider,
+  Grid,
+} from "@mui/material";
+import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import Autocomplete from "@mui/material/Autocomplete";
+import dayjs from "dayjs";
 
-export default function CarBookingForm() {
+// Dummy data
+const locations = ["Chennai", "Bangalore", "Mumbai", "Delhi"];
+const vehicles = ["Mini", "Sedan","Etios" , "SUV", "Inova" , "Crysta"  ];
+
+export default function LandscapeTaxiBookingForm() {
   const [activeTab, setActiveTab] = useState("local");
   const [form, setForm] = useState({
     pickup: "",
@@ -13,20 +30,36 @@ export default function CarBookingForm() {
     departDate: null,
     returnDate: null,
     passengers: 1,
-    luggage: 1,
+    luggage: 0,
+    vehicle: "Mini",
   });
+  const [errors, setErrors] = useState({});
 
   const handleChange = (name, value) => {
     setForm((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: "" }));
+  };
+
+  const validateForm = () => {
+    let temp = {};
+    if (!form.pickup) temp.pickup = "Pickup required";
+    if (activeTab !== "local" && !form.drop) temp.drop = "Drop required";
+    if (activeTab === "airport" && !form.flight)
+      temp.flight = "Flight required";
+    if (!form.departDate) temp.departDate = "Departure required";
+    if (activeTab === "twoway" && !form.returnDate)
+      temp.returnDate = "Return required";
+    setErrors(temp);
+    return Object.keys(temp).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Booking:", activeTab, form);
+    if (validateForm()) console.log("Booking:", form);
   };
 
   return (
-    <div className="max-w-lg mx-auto p-4 bg-white rounded-lg shadow">
+    <div className="p-6 bg-white shadow-xl rounded-xl max-w-full">
       <Tabs
         value={activeTab}
         onChange={(e, val) => setActiveTab(val)}
@@ -40,87 +73,137 @@ export default function CarBookingForm() {
         <Tab label="Airport" value="airport" />
       </Tabs>
 
-      <form onSubmit={handleSubmit} className="mt-4 space-y-3">
-        {/* Pickup */}
-        <TextField
-          label="Pickup Location"
-          fullWidth
-          size="small"
-          value={form.pickup}
-          onChange={(e) => handleChange("pickup", e.target.value)}
-        />
-
-        {/* Drop - Only for non-local */}
-        {activeTab !== "local" && (
-          <TextField
-            label="Drop Location"
-            fullWidth
-            size="small"
-            value={form.drop}
-            onChange={(e) => handleChange("drop", e.target.value)}
-          />
-        )}
-
-        {/* Flight number for Airport */}
-        {activeTab === "airport" && (
-          <TextField
-            label="Flight Number"
-            fullWidth
-            size="small"
-            value={form.flight}
-            onChange={(e) => handleChange("flight", e.target.value)}
-          />
-        )}
-
-        {/* Dates */}
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <DatePicker
-            label={activeTab === "twoway" ? "Departure Date" : "Date"}
-            value={form.departDate}
-            onChange={(val) => handleChange("departDate", val)}
-            slotProps={{ textField: { size: "small", fullWidth: true } }}
-          />
-          {activeTab === "twoway" && (
-            <DatePicker
-              label="Return Date"
-              value={form.returnDate}
-              onChange={(val) => handleChange("returnDate", val)}
-              slotProps={{ textField: { size: "small", fullWidth: true } }}
+      <form onSubmit={handleSubmit} className="mt-4 space-y-4">
+        <Grid container spacing={2} alignItems="center">
+          {/* Pickup */}
+          <Grid item xs={12} sm={6} md={3}>
+            <Autocomplete
+              options={locations}
+              value={form.pickup}
+              onChange={(e, val) => handleChange("pickup", val)}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  label="Pickup"
+                  size="small"
+                  error={!!errors.pickup}
+                  helperText={errors.pickup}
+                />
+              )}
             />
+          </Grid>
+
+          {/* Drop */}
+          {activeTab !== "local" && (
+            <Grid item xs={12} sm={6} md={3}>
+              <Autocomplete
+                options={locations}
+                value={form.drop}
+                onChange={(e, val) => handleChange("drop", val)}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    label="Drop"
+                    size="small"
+                    error={!!errors.drop}
+                    helperText={errors.drop}
+                  />
+                )}
+              />
+            </Grid>
           )}
-        </LocalizationProvider>
 
-        {/* Passengers */}
-        <Select
-          fullWidth
-          size="small"
-          value={form.passengers}
-          onChange={(e) => handleChange("passengers", e.target.value)}
-        >
-          {Array.from({ length: 10 }, (_, i) => (
-            <MenuItem key={i + 1} value={i + 1}>
-              {i + 1} Passenger{i > 0 ? "s" : ""}
-            </MenuItem>
-          ))}
-        </Select>
+          {/* Flight */}
+          {activeTab === "airport" && (
+            <Grid item xs={12} sm={6} md={2}>
+              <TextField
+                label="Flight No."
+                size="small"
+                fullWidth
+                value={form.flight}
+                onChange={(e) => handleChange("flight", e.target.value)}
+                error={!!errors.flight}
+                helperText={errors.flight}
+              />
+            </Grid>
+          )}
 
-        {/* Luggage for One Way & Two Way */}
-        {(activeTab === "oneway" || activeTab === "twoway") && (
-          <Select
-            fullWidth
-            size="small"
-            value={form.luggage}
-            onChange={(e) => handleChange("luggage", e.target.value)}
-          >
-            {Array.from({ length: 5 }, (_, i) => (
-              <MenuItem key={i + 1} value={i + 1}>
-                {i + 1} Bag{i > 0 ? "s" : ""}
-              </MenuItem>
-            ))}
-          </Select>
-        )}
+          {/* Depart Date */}
+          <Grid item xs={12} sm={6} md={2}>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DateTimePicker
+                label={activeTab === "twoway" ? "Depart" : "Date & Time"}
+                value={form.departDate}
+                onChange={(val) => handleChange("departDate", val)}
+                slotProps={{
+                  textField: {
+                    size: "small",
+                    fullWidth: true,
+                    error: !!errors.departDate,
+                    helperText: errors.departDate,
+                  },
+                }}
+              />
+            </LocalizationProvider>
+          </Grid>
 
-        <Button variant="contained" type="submit" fullWidth>
+          {/* Return Date */}
+          {activeTab === "twoway" && (
+            <Grid item xs={12} sm={6} md={2}>
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <DateTimePicker
+                  label="Return"
+                  value={form.returnDate}
+                  onChange={(val) => handleChange("returnDate", val)}
+                  slotProps={{
+                    textField: {
+                      size: "small",
+                      fullWidth: true,
+                      error: !!errors.returnDate,
+                      helperText: errors.returnDate,
+                    },
+                  }}
+                />
+              </LocalizationProvider>
+            </Grid>
+          )}
+
+          {/* Passengers */}
+          <Grid item xs={12} sm={6} md={2}>
+            <FormControl fullWidth size="small">
+              <Select
+                value={form.passengers}
+                onChange={(e) => handleChange("passengers", e.target.value)}
+              >
+                {[...Array(6)].map((_, i) => (
+                  <MenuItem key={i + 1} value={i + 1}>
+                    {i + 1} Passenger{i > 0 ? "s" : ""}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </Grid>
+
+         
+
+          {/* Vehicle */}
+          <Grid item xs={12} sm={6} md={2}>
+            <FormControl fullWidth size="small">
+              <Select
+                value={form.vehicle}
+                onChange={(e) => handleChange("vehicle", e.target.value)}
+              >
+                {vehicles.map((v) => (
+                  <MenuItem key={v} value={v}>
+                    {v}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </Grid>
+        </Grid>
+
+        <Button type="submit" variant="contained" size="large" fullWidth>
           Book Now
         </Button>
       </form>

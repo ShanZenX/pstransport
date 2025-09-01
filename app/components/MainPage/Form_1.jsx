@@ -8,18 +8,15 @@ import {
   Select,
   MenuItem,
   FormControl,
-  Typography,
-  Slider,
   Grid,
 } from "@mui/material";
 import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import Autocomplete from "@mui/material/Autocomplete";
-import dayjs from "dayjs";
 
 // Dummy data
 const locations = ["Chennai", "Bangalore", "Mumbai", "Delhi"];
-const vehicles = ["Mini", "Sedan","Etios" , "SUV", "Inova" , "Crysta"  ];
+const vehicles = ["Mini", "Sedan", "Etios", "SUV", "Inova", "Crysta"];
 
 export default function LandscapeTaxiBookingForm() {
   const [activeTab, setActiveTab] = useState("local");
@@ -43,7 +40,7 @@ export default function LandscapeTaxiBookingForm() {
   const validateForm = () => {
     let temp = {};
     if (!form.pickup) temp.pickup = "Pickup required";
-    if (activeTab !== "local" && !form.drop) temp.drop = "Drop required";
+    if (!form.drop) temp.drop = "Drop required"; // ✅ now required for all trips
     if (activeTab === "airport" && !form.flight)
       temp.flight = "Flight required";
     if (!form.departDate) temp.departDate = "Departure required";
@@ -93,25 +90,23 @@ export default function LandscapeTaxiBookingForm() {
             />
           </Grid>
 
-          {/* Drop */}
-          {activeTab !== "local" && (
-            <Grid item xs={12} sm={6} md={3}>
-              <Autocomplete
-                options={locations}
-                value={form.drop}
-                onChange={(e, val) => handleChange("drop", val)}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    label="Drop"
-                    size="small"
-                    error={!!errors.drop}
-                    helperText={errors.drop}
-                  />
-                )}
-              />
-            </Grid>
-          )}
+          {/* Drop - always visible */}
+          <Grid item xs={12} sm={6} md={3}>
+            <Autocomplete
+              options={locations}
+              value={form.drop}
+              onChange={(e, val) => handleChange("drop", val)}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  label="Drop"
+                  size="small"
+                  error={!!errors.drop}
+                  helperText={errors.drop}
+                />
+              )}
+            />
+          </Grid>
 
           {/* Flight */}
           {activeTab === "airport" && (
@@ -183,8 +178,6 @@ export default function LandscapeTaxiBookingForm() {
               </Select>
             </FormControl>
           </Grid>
-
-         
 
           {/* Vehicle */}
           <Grid item xs={12} sm={6} md={2}>

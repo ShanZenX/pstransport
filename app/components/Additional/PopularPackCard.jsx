@@ -36,7 +36,7 @@ const PopularTripCard = ({ pkg }) => (
       </div>
 
       <div className="flex mb-1 sm:mb-2 items-center justify-between">
-        <a className="bg-blue-600 text-white text-xs sm:text-sm px-3 sm:px-4 py-1 sm:py-2 my-3 hover:bg-indigo-900 transition text-decoration-none cursor-pointer">
+        <a className="bg-red-600 text-white text-xs sm:text-sm px-3 sm:px-4 py-1 sm:py-2 my-3 hover:bg-red-900 transition text-decoration-none cursor-pointer">
           Call Now
         </a>
         <span className="text-base sm:text-lg font-bold !font-poppins text-indigo-950">

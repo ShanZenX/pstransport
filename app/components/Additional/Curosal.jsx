@@ -17,7 +17,7 @@ const packages = [
     image: "/assets/trip/meenkshikovil.png",
     nights: "2N/3D",
     price: "₹8,500",
-    includes: ["AC Cab", "Beach View", "Hotel Stay"],
+    includes: ["AC Cab", "Hotel Stay"],
   },
   {
     id: 2,
@@ -149,7 +149,7 @@ const TransportPackagesCarousel = () => {
 >
   {packages.map((pkg) => (
     <SwiperSlide key={pkg.id}>
-      <div className="scale-90"> {/* 👈 shrink card a bit */}
+      <div > {/* 👈 shrink card a bit */}
         <PopularTripCard pkg={pkg} />
       </div>
     </SwiperSlide>

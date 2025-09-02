@@ -1,45 +1,47 @@
 import Image from "next/image";
 import React from "react";
 import { FaCar, FaHotel, FaMapMarkedAlt } from "react-icons/fa";
-import { SwiperSlide } from "swiper/react";
 
 const PopularTripCard = ({ pkg }) => (
-  <div className="bg-white w-full rounded-lg shadow-md m-2 border-black transition overflow-hidden">
-    {/* ✅ Mobile: shorter image height */}
+  <div className="flex flex-col bg-white w-full rounded-xl shadow-md m-2 border border-gray-200 overflow-hidden transition hover:shadow-lg">
     <img
       src={pkg.image}
       alt={pkg.name}
-      className="w-full h-[180px] sm:h-[250px] object-top object-cover"
+      className="w-full h-[215px] sm:h-[290px] object-cover object-center"
     />
 
-    {/* ✅ Mobile: tighter padding + height */}
-    <div className="p-2 sm:p-3 flex flex-col sm:gap-2 max-h-[130px] sm:max-h-[160px]">
-      <h5 className="text-base sm:text-lg !font-semibold sm:pt-1 text-gray-800 m-0">
+    <div className="flex flex-col flex-1 p-2 sm:p-3 gap-1.5">
+      {/* Title */}
+      <h5 className="text-sm sm:text-base !font-semibold text-gray-800">
         {pkg.name}
       </h5>
 
-      <p className="text-xs sm:text-sm text-gray-500 sm:pt-1 font-poppins m-0">
+      {/* Nights
+      <p className="text-[11px] sm:text-xs text-gray-500 font-poppins">
         {pkg.nights}
-      </p>
+      </p> */}
 
-      <div className="flex flex-wrap gap-1 sm:gap-2 sm:pt-1 text-[11px] sm:text-xs text-gray-600">
+      {/* Includes */}
+      <div className="flex flex-wrap gap-1.5 text-[11px] sm:text-[12px] text-gray-600">
         {pkg.includes.map((item, i) => (
           <span
             key={i}
-            className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded"
+            className="flex items-center gap-1 bg-gray-100 px-1.5 py-0.5 rounded-md"
           >
-            {item.includes("Cab") && <FaCar />}
-            {item.includes("Stay") && <FaHotel />}
-            {item.includes("View") && <FaMapMarkedAlt />} {item}
+            {item.includes("Cab") && <FaCar className="text-red-600 text-[12px]" />}
+            {item.includes("Stay") && <FaHotel className="text-blue-600 text-[12px]" />}
+            {item.includes("View") && <FaMapMarkedAlt className="text-green-600 text-[12px]" />}
+            {item}
           </span>
         ))}
       </div>
 
-      <div className="flex mb-1 sm:mb-2 items-center justify-between">
-        <a className="bg-red-700 text-white  sm:text-sm px-3 !text-semibold sm:px-4 py-1 sm:py-2 my-3 hover:bg-red-900 transition text-decoration-none cursor-pointer">
-          Call Now
-        </a>
-        <span className="text-base sm:text-lg font-bold !font-poppins text-indigo-950">
+      {/* Footer */}
+      <div className="flex items-center justify-between mt-auto pt-1 ">
+       <a className="bg-red-700 text-white text-xs sm:text-sm px-3 py-1.5 rounded-md font-base hover:bg-red-900 transition cursor-pointer !no-underline">
+  Call Now
+</a>
+        <span className="text-sm sm:text-base font-semibold font-poppins text-indigo-950">
           {pkg.price}
         </span>
       </div>

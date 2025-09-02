@@ -4,7 +4,7 @@ import PopularTripCard from "./PopularTripCard";
 
 const PopularTrips = () => {
   return (
-    <section className="bg-gray-50 py-3 sm:py-8 px-3">
+    <section className="bg-gray-50 pt-4 sm:py-8 px-3">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between mb-4">
           <div>

@@ -21,7 +21,7 @@ const BrandsSection = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl md:text-4xl !font-extrabold mb-4">
-            Our Business <br /><span className="text-blue-600"> Partners </span>
+            Our Business <br /><span className="text-red-700"> Partners </span>
           </h2>
           <p className="text-gray-600 leading-relaxed max-w-md">
             We collaborate with trusted business partners to deliver reliable

@@ -12,22 +12,22 @@ const STAGGER = 0.08;
 export const WhyData = [
   {
     id: 1,
-    icon: <FaShippingFast size={44} className="text-indigo-950" />, // slightly smaller
+    icon: <FaShippingFast size={44} className="text-blue-600" />, // slightly smaller
     title: "Trusted & Timely Logistics",
     description:
       "With real-time tracking and guaranteed delivery schedules, PS Transport ensures your goods or passengers arrive on time, every time.",
   },
   {
     id: 2,
-    icon: <FaBusAlt size={44} className="text-indigo-950" />,
-    title: "Reliable & Strong Partner Network",
+    icon: <FaBusAlt size={44} className="text-blue-600" />,
+    title: "Reliable & Strong Network",
     description:
       "Our fleet is professionally maintained and equipped for safety, comfort, and performance — whether for cargo or cab services.",
   },
   {
     id: 3,
-    icon: <FaMoneyBillWave size={44} className="text-indigo-950" />,
-    title: "Affordable & Transparent Pricing",
+    icon: <FaMoneyBillWave size={44} className="text-blue-600" />,
+    title: "Affordable & Pricing",
     description:
       "Competitive rates with zero hidden charges. Get premium logistics and transport solutions that fit your budget.",
   },
@@ -113,12 +113,12 @@ const Why = () => {
             whileTap={{ scale: 0.995 }}
           >
             <div>{item.icon}</div>
-            <h3 className="text-[17px] md:text-[19px] !font-semibold text-gray-900">
-              {item.title}
-            </h3>
-            <p className="leading-6 text-[13px] text-gray-600">
-              {item.description}
-            </p>
+           <h5 className="text-[15px] md:text-[17px] !font-semibold text-gray-900">
+  {item.title}
+</h5>
+<p className="leading-5 text-[12px] text-gray-500 font-normal">
+  {item.description}
+</p>
           </motion.div>
         ))}
       </div>

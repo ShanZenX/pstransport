@@ -25,7 +25,7 @@ const PopularTripCard = ({ trip, index }) => {
             {trip.price}
           </p>
         </div>
-        <p className="m-0 mt-2 text-orange-600 font-medium text-[10px] sm:text-[12px] cursor-pointer hover:underline">
+        <p className="m-0 mt-2 text-blue-600 font-medium text-[10px] sm:text-[12px] cursor-pointer hover:underline">
           Book now
         </p>
       </div>

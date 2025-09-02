@@ -81,7 +81,7 @@ const ReviewsSection = () => {
         <span className="h-[3px] w-[20px] bg-black block"></span>
       </h2>
 
-      <p className="text-sm text-gray-600 text-center">
+      <p className="text-sm text-blue-600 text-center">
         Real Stories. Real Smiles. Trusted by Hundreds of Families & Transporters.
       </p>
 
@@ -90,7 +90,7 @@ const ReviewsSection = () => {
           href="https://maps.app.goo.gl/1mAp2JRjA6zg3g4BA"
           target="_blank"
           rel="noopener noreferrer"
-          className="border bg-black text-white rounded-md px-3 py-2 text-sm hover:bg-gray-800 text-center "
+          className="border bg-blue-600 text-white rounded-md px-3 py-2 text-sm hover:bg-gray-800 text-center "
         >
           Write Review
         </a>

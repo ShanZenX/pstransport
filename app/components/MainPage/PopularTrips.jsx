@@ -11,7 +11,7 @@ const PopularTrips = () => {
             <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-4  sm:mb-6   ">
               Popular Trips
             </h2>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-blue-600">
               These routes are booked the most popular for good reason..!!
             </p>
           </div>

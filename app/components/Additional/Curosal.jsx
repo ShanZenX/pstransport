@@ -105,7 +105,7 @@ const TransportPackagesCarousel = () => {
           Popular Transport Packages
           <span className="h-[4px] w-[20px] bg-gray-800 block"></span>
         </h2>
-        <p className="text-gray-600 text-[14px] !sm:text-sm mb-10 max-w-xl mx-auto">
+        <p className="text-blue-600 text-[14px] !sm:text-sm mb-10 max-w-xl mx-auto">
           Journey through Tamil Nadu in comfort, where every mile tells a story.{" "}
         </p>
         {/* <a className="mt-4 px-5 py-2 text-white rounded-full hover:bg-indigo-700 transition bg-indigo-950 text-decoration-none">

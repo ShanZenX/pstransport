@@ -4,14 +4,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import cars from "@/app/data/carData.json"; 
+import cars from "@/app/data/carData.json";
 
 const CarsCarousel = () => {
   return (
     <div className="max-w-7xl  mx-auto px-2 sm:px-8 py-6">
       <h2 className="text-2xl md:text-[32px] !font-extrabold mb-2 !sm:my-5 text-gray-800 text-center ">
-  Our Cars <span className="text-[#583eff]"> Portfolio</span> 
-</h2>
+        <span className="h-[4px] w-[20px] bg-gray-800 block"></span>
+        Our Cars <span className="text-blue-600 "> Portfolio</span>
+        <span className="h-[4px] w-[20px] bg-gray-800 block"></span>
+      </h2>
       <p className="text-center mb-5 text-sm">
         Choose the best cab for yur budegt.
       </p>
@@ -44,7 +46,7 @@ const CarsCarousel = () => {
                   <span className="text-indigo-950 font-semibold text-sm sm:text-base">
                     {car.price}
                   </span>
-                  <button className="bg-[#583eff] text-white px-3 sm:px-3 py-1 text-xs sm:text-sm  hover:bg-blue-800">
+                  <button className="bg-blue-600  text-white px-3 sm:px-3 py-1 text-xs sm:text-sm  hover:bg-blue-800">
                     Book
                   </button>
                 </div>

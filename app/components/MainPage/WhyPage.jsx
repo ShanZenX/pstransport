@@ -26,28 +26,29 @@ const WhyPage = () => {
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
-      <h2 className="text-2xl md:text-[32px] !font-semibold mb-4 text-center flex justify-center items-center gap-2 sm:mb-6">
+      <h2 className="text-2xl md:text-[32px] !font-semibold mb-2 text-center flex justify-center items-center gap-2 sm:mb-6">
         <span className="h-[4px] w-[20px] bg-gray-800 block"></span>
-        Why choose Ps Transport
+        Why choose <span className="text-blue-600">
+       Ps Transport   </span>
         <span className="h-[4px] w-[20px] bg-gray-800 block"></span>
       </h2>
-      <p className="text-center text-[16px] text-blue-600 mb-10">
+      <p className="text-center text-[16px] !mb-3">
         Your trusted travel partner for every journey
       </p>
 
       <div className="flex justify-center mt-15 gap-8 flex-wrap">
         <FeatureBox
-          icons={<MdEventAvailable size={40} className="text-blue-600" />}
+          icons={<MdEventAvailable size={45} className="text-blue-600" />}
           title="Availability"
           text="Available anytime, anywhere for your ride."
         />
         <FeatureBox
-          icons={<MdEmojiTransportation size={40} className="text-blue-600" />}
+          icons={<MdEmojiTransportation size={45} className="text-blue-600" />}
           title="Comfort"
           text="Experience ultimate comfort in every ride."
         />
         <FeatureBox
-          icons={<MdAccountBalanceWallet size={40} className="text-blue-600" />}
+          icons={<MdAccountBalanceWallet size={45} className="text-blue-600" />}
           title="Savings"
           text="Keep more in your pocket with every trip."
         />

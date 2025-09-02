@@ -96,7 +96,7 @@ const ReviewsSection = () => {
         className="text-2xl md:text-[32px] !font-extrabold mb-6 text-center flex justify-center items-center gap-3"
       >
         <span className="h-[3px] w-[20px] bg-black block "></span>
-        User <span className="text-[#582eff]"> Testimonials </span>
+        User <span className="text-blue-600 "> Testimonials </span>
         <span className="h-[3px] w-[20px] bg-black block"></span>
       </motion.h2>
 
@@ -121,7 +121,7 @@ const ReviewsSection = () => {
           href="https://maps.app.goo.gl/1mAp2JRjA6zg3g4BA"
           target="_blank"
           rel="noopener noreferrer"
-          className="border bg-[#582eff] text-white rounded-md px-3 py-2 text-sm hover:bg-indigo-900 text-center"
+          className="border bg-b-6 bg-blue-600  text-white rounded-md px-3 py-2 text-sm hover:bg-indigo-900 text-center"
         >
           Write Review
         </a>

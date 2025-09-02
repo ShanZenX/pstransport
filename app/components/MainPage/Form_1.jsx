@@ -8,7 +8,6 @@ import {
   Select,
   MenuItem,
   FormControl,
-  Grid,
 } from "@mui/material";
 import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -40,7 +39,7 @@ export default function LandscapeTaxiBookingForm() {
   const validateForm = () => {
     let temp = {};
     if (!form.pickup) temp.pickup = "Pickup required";
-    if (!form.drop) temp.drop = "Drop required"; // ✅ now required for all trips
+    if (!form.drop) temp.drop = "Drop required";
     if (activeTab === "airport" && !form.flight)
       temp.flight = "Flight required";
     if (!form.departDate) temp.departDate = "Departure required";
@@ -56,7 +55,8 @@ export default function LandscapeTaxiBookingForm() {
   };
 
   return (
-    <div className="p-6 bg-white shadow-xl rounded-xl max-w-full">
+    <div className="p-6 bg-white shadow-xl rounded-xl min-w-[70%] max-w-[90%] mx-auto">
+      {/* Tabs */}
       <Tabs
         value={activeTab}
         onChange={(e, val) => setActiveTab(val)}
@@ -70,10 +70,12 @@ export default function LandscapeTaxiBookingForm() {
         <Tab label="Airport" value="airport" />
       </Tabs>
 
+      {/* Form */}
       <form onSubmit={handleSubmit} className="mt-4 space-y-4">
-        <Grid container spacing={2} alignItems="center">
+        {/* Flex wrapper: stacked on mobile, single line on large screens */}
+        <div className="flex flex-wrap lg:flex-nowrap gap-4">
           {/* Pickup */}
-          <Grid item xs={12} sm={6} md={3}>
+          <div className="w-full sm:w-1/2 lg:flex-1">
             <Autocomplete
               options={locations}
               value={form.pickup}
@@ -85,13 +87,14 @@ export default function LandscapeTaxiBookingForm() {
                   size="small"
                   error={!!errors.pickup}
                   helperText={errors.pickup}
+                  fullWidth
                 />
               )}
             />
-          </Grid>
+          </div>
 
-          {/* Drop - always visible */}
-          <Grid item xs={12} sm={6} md={3}>
+          {/* Drop */}
+          <div className="w-full sm:w-1/2 lg:flex-1">
             <Autocomplete
               options={locations}
               value={form.drop}
@@ -103,14 +106,15 @@ export default function LandscapeTaxiBookingForm() {
                   size="small"
                   error={!!errors.drop}
                   helperText={errors.drop}
+                  fullWidth
                 />
               )}
             />
-          </Grid>
+          </div>
 
-          {/* Flight */}
+          {/* Flight (only for airport) */}
           {activeTab === "airport" && (
-            <Grid item xs={12} sm={6} md={2}>
+            <div className="w-full sm:w-1/2 lg:flex-1">
               <TextField
                 label="Flight No."
                 size="small"
@@ -120,11 +124,11 @@ export default function LandscapeTaxiBookingForm() {
                 error={!!errors.flight}
                 helperText={errors.flight}
               />
-            </Grid>
+            </div>
           )}
 
           {/* Depart Date */}
-          <Grid item xs={12} sm={6} md={2}>
+          <div className="w-full sm:w-1/2 lg:flex-1">
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DateTimePicker
                 label={activeTab === "twoway" ? "Depart" : "Date & Time"}
@@ -140,11 +144,11 @@ export default function LandscapeTaxiBookingForm() {
                 }}
               />
             </LocalizationProvider>
-          </Grid>
+          </div>
 
           {/* Return Date */}
           {activeTab === "twoway" && (
-            <Grid item xs={12} sm={6} md={2}>
+            <div className="w-full sm:w-1/2 lg:flex-1">
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DateTimePicker
                   label="Return"
@@ -160,11 +164,11 @@ export default function LandscapeTaxiBookingForm() {
                   }}
                 />
               </LocalizationProvider>
-            </Grid>
+            </div>
           )}
 
           {/* Passengers */}
-          <Grid item xs={12} sm={6} md={2}>
+          <div className="w-full sm:w-1/2 lg:flex-1">
             <FormControl fullWidth size="small">
               <Select
                 value={form.passengers}
@@ -177,10 +181,10 @@ export default function LandscapeTaxiBookingForm() {
                 ))}
               </Select>
             </FormControl>
-          </Grid>
+          </div>
 
           {/* Vehicle */}
-          <Grid item xs={12} sm={6} md={2}>
+          <div className="w-full sm:w-1/2 lg:flex-1">
             <FormControl fullWidth size="small">
               <Select
                 value={form.vehicle}
@@ -193,10 +197,17 @@ export default function LandscapeTaxiBookingForm() {
                 ))}
               </Select>
             </FormControl>
-          </Grid>
-        </Grid>
+          </div>
+        </div>
 
-        <Button type="submit" variant="contained" size="large" fullWidth>
+        {/* Submit */}
+        <Button
+          type="submit"
+          variant="contained"
+          size="large"
+          fullWidth
+          className="!bg-black"
+        >
           Book Now
         </Button>
       </form>

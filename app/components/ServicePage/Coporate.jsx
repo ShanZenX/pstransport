@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import CorporateCars from "@/public/Coporate.png";
-import SupplyFreight from "@/public/LogisticsLorry.png";
-import ContainerFreight from "@/public/LogisticsContainer.png";
+import SupplyFreight from "@/public/assets/servicepage/supply.png";
+import ContainerFreight from "@/public/assets/servicepage/container.png";
 import useInView from "@/app/components/About/useInView";
 
 const CorporateCollaboration = () => {
@@ -39,7 +39,7 @@ const CorporateCollaboration = () => {
       {/* ✅ Heading placed once here */}
    <h2 className="text-3xl !font-extrabold text-gray-900 mb-3 !font-extrabold mb-2 !sm:my-5 flex justify-center items-center gap-2 text-center text-gray-800">
   <span className="h-[3px] w-[20px] bg-black block"></span>
-  Our Logistics Services
+  Our Logistics <span className="text-[#583eff]"> Services</span>
   <span className="h-[3px] w-[20px] bg-black block"></span>
 </h2>
 <p className="text-center">
@@ -100,7 +100,7 @@ const CorporateCollaboration = () => {
               <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6">
                 {sec.description}
               </p>
-              <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-full shadow-md transition">
+              <button className="bg-[#583eff] hover:bg-indigo-900 text-white font-semibold py-2 px-6 rounded-full shadow-md transition">
                 {sec.buttonText}
               </button>
             </div>

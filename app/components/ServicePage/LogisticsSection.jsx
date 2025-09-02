@@ -28,7 +28,7 @@ const LogisticsSection = () => {
         {/* Right Content */}
         <div>
           <h2 className="text-2xl md:text-[32px] !font-extrabold mb-4 sm:mb-5 text-gray-800">
-            Who we are
+            Who <span className="text-[#583eff]">we are ..!!</span> 
           </h2>
 
           <h6 className="text-lg md:text-2xl font-bold leading-snug mb-3">
@@ -50,7 +50,7 @@ const LogisticsSection = () => {
               "Supply Chain Solutions",
             ].map((item, idx) => (
               <div key={idx} className="flex  items-center gap-2 text-lg">
-                <FaCheckCircle className="text-indigo-900 text-sm" />
+                <FaCheckCircle className="text-[#583eff] text-sm" />
                 <h6 className="text-gray-700 mb-0">{item}</h6>
               </div>
             ))}
@@ -58,7 +58,7 @@ const LogisticsSection = () => {
 
           {/* ↓ Buttons */}
           <div className="flex  items-center gap-3">
-            <button className="bg-indigo-900 flex items-center gap-3 hover:bg-indigo-600 text-white px-4 py-2 rounded-md shadow-sm font-medium text-sm transition">
+            <button className="bg-[#583eff] flex items-center gap-3 hover:bg-indigo-900 text-white px-4 py-2 rounded-md shadow-sm font-medium text-sm transition">
                             <FaPhoneAlt size={16} />
 
               Request a Quote

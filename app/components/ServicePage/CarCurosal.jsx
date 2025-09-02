@@ -10,9 +10,9 @@ const CarsCarousel = () => {
   return (
     <div className="max-w-7xl  mx-auto px-2 sm:px-8 py-6">
       <h2 className="text-2xl md:text-[32px] !font-extrabold mb-2 !sm:my-5 text-gray-800 text-center ">
-  — Our Cars Portfolio —
+  Our Cars <span className="text-[#583eff]"> Portfolio</span> 
 </h2>
-      <p className="text-center mb-2 text-sm">
+      <p className="text-center mb-5 text-sm">
         Choose the best cab for yur budegt.
       </p>
 
@@ -38,13 +38,13 @@ const CarsCarousel = () => {
                 className="h-40 sm:h-52 w-full object-cover"
               />
               <div className="p-2 sm:p-3">
-                <h3 className="text-base sm:text-lg font-bold">{car.name}</h3>
+                <h5 className="text-base sm:text-lg !font-bold">{car.name}</h5>
                 <p className="text-gray-600 text-xs sm:text-sm">{car.desc}</p>
                 <div className="mt-2 flex items-center justify-between">
                   <span className="text-indigo-950 font-semibold text-sm sm:text-base">
                     {car.price}
                   </span>
-                  <button className="bg-indigo-950 text-white px-2 sm:px-3 py-1 text-xs sm:text-sm rounded hover:bg-blue-800">
+                  <button className="bg-[#583eff] text-white px-3 sm:px-3 py-1 text-xs sm:text-sm  hover:bg-blue-800">
                     Book
                   </button>
                 </div>

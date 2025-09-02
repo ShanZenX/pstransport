@@ -8,10 +8,10 @@ const PopularTrips = () => {
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-4  sm:mb-6   ">
-              Popular Trips
+            <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-2  sm:mb-3  ">
+              Popular <span className="text-[#582eff]"> Trips</span>
             </h2>
-            <p className="text-sm text-blue-600">
+            <p className="text-sm text-gray-800">
               These routes are booked the most popular for good reason..!!
             </p>
           </div>

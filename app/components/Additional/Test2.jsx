@@ -1,6 +1,5 @@
 "use client";
 
-
 import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { FaShippingFast, FaBusAlt, FaMoneyBillWave } from "react-icons/fa";
@@ -12,21 +11,21 @@ const STAGGER = 0.08;
 export const WhyData = [
   {
     id: 1,
-    icon: <FaShippingFast size={44} className="text-blue-600" />, // slightly smaller
+    icon: <FaShippingFast size={44} className="text-[#583eff]" />, // slightly smaller
     title: "Trusted & Timely Logistics",
     description:
       "With real-time tracking and guaranteed delivery schedules, PS Transport ensures your goods or passengers arrive on time, every time.",
   },
   {
     id: 2,
-    icon: <FaBusAlt size={44} className="text-blue-600" />,
+    icon: <FaBusAlt size={44} className="text-[#583eff]" />,
     title: "Reliable & Strong Network",
     description:
       "Our fleet is professionally maintained and equipped for safety, comfort, and performance — whether for cargo or cab services.",
   },
   {
     id: 3,
-    icon: <FaMoneyBillWave size={44} className="text-blue-600" />,
+    icon: <FaMoneyBillWave size={44} className="text-[#583eff]" />,
     title: "Affordable & Pricing",
     description:
       "Competitive rates with zero hidden charges. Get premium logistics and transport solutions that fit your budget.",
@@ -80,7 +79,8 @@ const Why = () => {
         viewport={{ once: true, amount: 0.3 }}
         variants={heading}
       >
-        Why Choose PS Transport Logistics?
+        Why Choose PS Transport{" "}
+        <span className="text-[#583eff]"> Logistics</span>
       </motion.h2>
 
       <motion.p
@@ -113,12 +113,12 @@ const Why = () => {
             whileTap={{ scale: 0.995 }}
           >
             <div>{item.icon}</div>
-           <h5 className="text-[15px] md:text-[17px] !font-semibold text-gray-900">
-  {item.title}
-</h5>
-<p className="leading-5 text-[12px] text-gray-500 font-normal">
-  {item.description}
-</p>
+            <h5 className="text-[15px] md:text-[17px] !font-semibold text-gray-900">
+              {item.title}
+            </h5>
+            <p className="leading-5 text-[14px] text-gray-500 font-normal">
+              {item.description}
+            </p>
           </motion.div>
         ))}
       </div>

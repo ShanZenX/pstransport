@@ -3,9 +3,9 @@
 import Image from "next/image";
 
 import Seb2 from "@/public/assets/CarporateCabs.jpeg";
-import Seb1 from "@/public/assets/Innova.jpeg";
+import Seb1 from "@/public/assets/servicepage/chennai.png";
 import Seb3 from "@/public/assets/Truck.jpeg";
-import Seb4 from "@/public/assets/Truck.jpeg";
+import Seb4 from "@/public/assets/servicepage/logistics.png";
 import useInView from "@/app/components/About/useInView";
 
 const features = [
@@ -43,9 +43,9 @@ export default function WhyChooseUs() {
         }`}
       >
        <h2 className="text-3xl md:text-4xl !font-extrabold mb-3 text-gray-900 text-center ">
-  Our Services
+  Our  <span className="text-[#582eff]"> Services</span>
 </h2>
-<p className="text-gray-600 mb-8 max-w-xl mx-auto text-center my-4">
+<p className="text-gray-600 mb-8 max-w-xl mx-auto text-center my-4 font-base">
   We provide trusted travel and logistics services, ensuring comfort,
   safety, and reliability at every step of your journey.
 </p>
@@ -96,7 +96,7 @@ export default function WhyChooseUs() {
             {features.map((feature, index) => (
               <div key={index} className="flex flex-col gap-2">
                 <div className="bg-white shadow-md rounded-lg px-4 py-2 w-fit">
-                  <span className="text-sky-500 font-bold text-lg">{feature.id}</span>
+                  <span className="text-[#582eff] font-bold text-lg">{feature.id}</span>
                 </div>
                 <h4 className="text-lg !font-semibold text-gray-900 sm:mt-1 mt-2">{feature.title}</h4>
                 <p className="text-gray-600 text-sm">{feature.desc}</p>

@@ -17,12 +17,14 @@ const OurProcess = () => {
     <section className="bg-white py-10 sm-5 lg:m-15 ">
       <div className="text-center mb-10">
         <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-4 flex justify-center items-center gap-2 sm:mb-6  ">
-          <span className="h-[4px] w-[20px] bg-gray-800 block"></span> What we
-          Offer <span className="h-[4px] w-[20px] bg-gray-800 block"></span>{" "}
+          <span className="h-[4px] w-[20px] bg-gray-800 block"></span> What we <span className="text-[#582eff]">
+            Offer
+          </span>
+           <span className="h-[4px] w-[20px] bg-gray-800 block"></span>{" "}
         </h2>
-        <p className= "text-blue-600 text-[14px] !sm:text-sm mb-10 max-w-xl !text-center  mx-auto">
-          Choose your ride with the perfect variant{" "}
-        </p>
+        <h6 className=" text-[14px] sm:text-sm mb-10 max-w-xl text-center mx-auto">
+          Choose your ride with the perfect variant
+        </h6>
       </div>
 
       {/* Services Grid */}
@@ -48,7 +50,7 @@ const OurProcess = () => {
 
       {/* Button */}
       <div className="text-center mt-10">
-        <button className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-orange-700 transition font-semibold shadow">
+        <button className="bg-[#582eff] text-white px-6 py-2 rounded hover:bg-[#3159f8] transition font-semibold shadow">
           See All Services
         </button>
       </div>

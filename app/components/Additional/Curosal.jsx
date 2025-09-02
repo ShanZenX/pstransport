@@ -100,12 +100,12 @@ const TransportPackagesCarousel = () => {
   return (
     <section className="py-12 !sm:mt-10 lg:mt-8 font-roboto ">
       <div className="text-center mb-8 px-4">
-        <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-4 flex justify-center items-center gap-2 sm:mb-6  ">
+        <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-2 flex justify-center items-center gap-2 sm:mb-6  ">
           <span className="h-[4px] w-[20px] bg-gray-800 block"></span>
-          Popular Transport Packages
+          Popular Transport <span className="text-[#582eff]">Packages</span>
           <span className="h-[4px] w-[20px] bg-gray-800 block"></span>
         </h2>
-        <p className="text-blue-600 text-[14px] !sm:text-sm mb-10 max-w-xl mx-auto">
+        <p className=" text-[14px] !sm:text-sm mb-3 max-w-xl mx-auto">
           Journey through Tamil Nadu in comfort, where every mile tells a story.{" "}
         </p>
         {/* <a className="mt-4 px-5 py-2 text-white rounded-full hover:bg-indigo-700 transition bg-indigo-950 text-decoration-none">

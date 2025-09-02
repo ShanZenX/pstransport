@@ -4,12 +4,12 @@ import PopularTripCard from "./PopularTripCard";
 
 const PopularTrips = () => {
   return (
-    <section className="bg-gray-50 py-6 sm:py-15 px-3">
+    <section className="bg-gray-50 py-3 sm:py-8 px-3">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between mb-4">
           <div>
             <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-2  sm:mb-3  ">
-              Popular <span className="text-blue-600"> Trips</span>
+              Popular <span className="text-red-700"> Trips</span>
             </h2>
             <p className="text-sm text-gray-800">
               These routes are booked the most popular for good reason..!!

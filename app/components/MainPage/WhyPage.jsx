@@ -11,7 +11,7 @@ import useInView from "@/app/components/About/useInView";
 const Feature = ({ icon, title, text }) => (
   <div className="flex flex-col items-center text-center ">
     {/* Icon */}
-    <div className="flex items-center justify-center text-red-600 mb-4 ">
+    <div className="flex items-center justify-center text-red-700 mb-4 ">
   {icon}
 </div>
     {/* Title */}

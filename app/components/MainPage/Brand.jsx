@@ -9,10 +9,10 @@ const BrandsSection = () => {
   const [ref, inView] = useInView({ threshold: 0.2 });
 
   return (
-    <section className="bg-white my-10 sm:my-20">
+    <section className="bg-white my-6 sm:my-20">
       <div
         ref={ref}
-        className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center my-30"
+        className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center my-20 sm:my-25"
       >
         {/* Left Content */}
         <motion.div

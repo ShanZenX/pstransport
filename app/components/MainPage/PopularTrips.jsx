@@ -8,7 +8,7 @@ const PopularTrips = () => {
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-2  sm:mb-3  ">
+            <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-2  sm:mb-3 pt-6 sm:pt-8 ">
               Popular <span className="text-red-700"> Trips</span>
             </h2>
             <p className="text-sm text-gray-800">

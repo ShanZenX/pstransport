@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap');
 /* Custom font utility classes */
-/* ✅ Existing */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&family=Prompt:wght@400;700&display=swap');
 
 @font-face {
   font-family: 'NumberFont';
@@ -49,8 +49,7 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif; /* Heading font */
-
+  font-family: 'Montserrat', sans-serif;
 }
 
 p,  li, a, button {

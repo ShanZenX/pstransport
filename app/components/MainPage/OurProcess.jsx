@@ -16,7 +16,7 @@ const OurProcess = () => {
   return (
     <section className="bg-white py-8 sm-5 lg:m-15">
       <div className="text-center mb-10">
-        <h2 className=" text-2xl md:text-[32px] !font-extrabold mb-4 flex justify-center items-center gap-2 sm:mb-6">
+        <h2 className=" text-2xl md:text-[32px] !font-semibold mb-4 flex justify-center items-center gap-2 sm:mb-6">
           <span className="h-[4px] w-[20px] bg-gray-800 block"></span> What we{" "}
           <span className="text-red-700">Offer</span>
           <span className="h-[4px] w-[20px] bg-gray-800 block"></span>

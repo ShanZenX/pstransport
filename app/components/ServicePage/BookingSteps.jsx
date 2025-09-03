@@ -10,28 +10,28 @@ import { FaArrowRightLong } from "react-icons/fa6";
 const BookingSteps = () => {
   const steps = [
     {
-      icon: <FaMapMarkedAlt className="text-indigo-900" />,
+      icon: <FaMapMarkedAlt className="text-red-700" />,
       title: "Choose Destination",
     },
     {
-      icon: <FaClipboardList className="text-indigo-900" />,
+      icon: <FaClipboardList className="text-red-700" />,
       title: "Fill Details",
     },
     {
-      icon: <FaMoneyBillWave className="text-indigo-900" />,
+      icon: <FaMoneyBillWave className="text-red-700" />,
       title: "Make Payment",
     },
     {
-      icon: <FaCheckCircle className="text-indigo-900" />,
+      icon: <FaCheckCircle className="text-red-700" />,
       title: "Booking Confirmed",
     },
   ];
 
   return (
-    <section className="py-12 px-4 bg-gray-50">
+    <section className="py-14 sm:py-20 px-4 bg-gray-50">
       <h3 className="!text-xl sm:!text-4xl !font-bold text-gray-800 text-center flex justify-center items-center gap-2 ">
         <span className="h-[3px] w-[20px] bg-black block "></span>
-        How To Book With PS Transport{" "}
+        How To Book With <span className="text-red-700">PS Transport</span>
         <span className="h-[3px] w-[20px] bg-black block "></span>
       </h3>
       <p className="text-sm text-center text-gray-600 mt-2 mx-auto max-w-md">
@@ -45,9 +45,9 @@ const BookingSteps = () => {
               <div className="text-3xl sm:text-3xl md:text-4xl">
                 {step.icon}
               </div>
-              <p className="text-sm sm:text-xs md:text-sm xl:text-xl font-semibold text-gray-800 my-2">
+              <h6 className="text-sm sm:text-xs md:text-sm xl:text-xl !font-semibold text-gray-800 my-4">
                 {step.title}
-              </p>
+              </h6>
             </div>
             {index < steps.length - 1 && (
               <FaArrowRightLong className="hidden sm:block text-gray-500 text-sm sm:text-lg md:text-xl flex-shrink-0" />

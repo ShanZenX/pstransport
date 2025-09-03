@@ -13,7 +13,7 @@ const FormHolder = () => {
     >
       <p className=" text-mq text-4xl pt-0  sm:pt-40 sm:text-5xl text-black font-poppins font-extrabold   ">
         Book your best Trip with{" "}
-        <span className="text-orange-300">Ps transport</span>
+        <span className="text-red-700">Ps transport</span>
       </p>
       <Form_1 />
     </div>

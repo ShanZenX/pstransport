@@ -11,21 +11,21 @@ const STAGGER = 0.08;
 export const WhyData = [
   {
     id: 1,
-    icon: <FaShippingFast size={44} className="text-[#583eff]" />, // slightly smaller
+    icon: <FaShippingFast size={44} className="text-red-700" />, // slightly smaller
     title: "Trusted & Timely Logistics",
     description:
       "With real-time tracking and guaranteed delivery schedules, PS Transport ensures your goods or passengers arrive on time, every time.",
   },
   {
     id: 2,
-    icon: <FaBusAlt size={44} className="text-[#583eff]" />,
+    icon: <FaBusAlt size={44} className="text-red-700" />,
     title: "Reliable & Strong Network",
     description:
       "Our fleet is professionally maintained and equipped for safety, comfort, and performance — whether for cargo or cab services.",
   },
   {
     id: 3,
-    icon: <FaMoneyBillWave size={44} className="text-[#583eff]" />,
+    icon: <FaMoneyBillWave size={44} className="text-red-700" />,
     title: "Affordable & Pricing",
     description:
       "Competitive rates with zero hidden charges. Get premium logistics and transport solutions that fit your budget.",
@@ -80,7 +80,7 @@ const Why = () => {
         variants={heading}
       >
         Why Choose PS Transport{" "}
-        <span className="text-[#583eff]"> Logistics</span>
+        <span className="text-red-700"> Logistics</span>
       </motion.h2>
 
       <motion.p

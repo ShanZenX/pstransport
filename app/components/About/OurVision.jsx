@@ -18,14 +18,14 @@ const OurVision = () => {
         className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row justify-between items-center gap-10 px-4 sm:px-6"
       >
         <div
-          className={`flex-1 w-full ${
+          className={`flex-1 w-full flex justify-center ${
             visionVisible ? "animate-slideInLeft" : "opacity-0"
           }`}
         >
           <Image
             src={ourVision}
             alt="Our Vision illustration"
-            className="rounded-lg w-full h-auto max-w-full"
+            className="rounded-lg w-[280px] sm:w-[320px] md:w-[380px] h-auto"
           />
         </div>
 
@@ -34,15 +34,16 @@ const OurVision = () => {
             visionVisible ? "animate-slideInRight" : "opacity-0"
           }`}
         >
-          <h2 className="!text-xl sm:!text-4xl !font-bold text-gray-800  text-3xl md:text-4xl text-gray-900 mb-2 text-start">
-            Our Vision
+          <h2 className="!text-xl sm:!text-4xl !font-bold text-red-700  text-3xl md:text-4xl mb-2 text-start">
+            Our <span className="text-red-700">Vision</span>
           </h2>
-          <div className="h-[3px] w-20 bg-black mb-4 rounded"></div>
+          <div className="h-[3px] w-20 bg-red-700 mb-4 rounded"></div>
           <p className="text-gray-800 leading-relaxed text-start">
-            To be among the top 5 leading transport service providers in India,
-            delivering cost-effective and reliable travel solutions with a
-            win-win approach by continuously upgrading our fleet and technology
-            to satisfy both our customers and dedicated team members.{" "}
+            To be recognized among the most trusted transport service providers
+            in India by offering affordable, reliable, and customer-focused
+            travel solutions. At PS Transport, we strive to upgrade our fleet
+            and technology to ensure comfort, safety, and satisfaction for both
+            our customers and team members.
           </p>
         </div>
       </div>
@@ -57,30 +58,29 @@ const OurVision = () => {
             missionVisible ? "animate-slideInRight" : "opacity-0"
           }`}
         >
-          <h2 className="!text-xl sm:!text-4xl !font-bold text-gray-800  text-3xl md:text-4xl text-gray-900 mb-2 text-start">
-            Our Mission
+          <h2 className="!text-xl sm:!text-4xl !font-bold text-red-700   md:text-4xl mb-2 text-start">
+            Our <span className="text-red-700"> Mission</span>
           </h2>
-          <div className="h-[3px] w-20 bg-black mb-4 rounded"></div>
+          <div className="h-[3px] w-20 bg-red-700 mb-4 rounded"></div>
           <p className="text-gray-800 leading-relaxed text-start">
-            Our mission is to provide efficient, reliable, timely and safe
-            transportation services to our customers at all times.
-            Professionalism, exceptional service, responsibility, and high
-            levels of comfort are the pillars of our company.
+            Our mission at PS Transport is to deliver safe, reliable, and timely
+            travel services with professionalism and care. We are dedicated to
+            offering comfort, responsibility, and excellent customer experiences
+            on every ride.
           </p>
         </div>
 
         <div
-          className={`flex-1 w-full ${
+          className={`flex-1 w-full flex justify-center ${
             missionVisible ? "animate-slideInLeft" : "opacity-0"
           }`}
         >
           <Image
             src={Vision}
             alt="Our Mission illustration"
-            className="rounded-lg w-full h-auto max-w-full"
+            className="rounded-lg w-[280px] sm:w-[320px] md:w-[380px] h-auto"
           />
         </div>
-      
       </div>
     </section>
   );

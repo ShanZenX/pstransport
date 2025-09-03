@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import {
   Tabs,
   Tab,
@@ -54,15 +55,42 @@ export default function LandscapeTaxiBookingForm() {
     if (validateForm()) console.log("Booking:", form);
   };
 
+  // Common sx for black borders
+  const blackBorderSx = {
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": { borderColor: "black" },
+      "&:hover fieldset": { borderColor: "black" },
+      "&.Mui-focused fieldset": { borderColor: "black" },
+    },
+    "& .MuiInputLabel-root.Mui-focused": {
+      color: "black",
+    },
+  };
+
   return (
-    <div className="p-6 bg-white shadow-xl rounded-xl min-w-[70%] max-w-[90%] mx-auto">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      className="p-6 sm:p-10 bg-white/5 backdrop-blur-xl border border-white/20 shadow-2xl rounded-2xl max-w-5xl w-full mx-auto mt-10"
+    >
       {/* Tabs */}
       <Tabs
         value={activeTab}
         onChange={(e, val) => setActiveTab(val)}
-        textColor="primary"
-        indicatorColor="primary"
-        variant="fullWidth"
+        textColor="inherit"
+        indicatorColor="secondary"
+        sx={{
+          "& .MuiTab-root": {
+            color: "gray",
+          },
+          "& .Mui-selected": {
+            color: "black",
+          },
+          "& .MuiTabs-indicator": {
+            backgroundColor: "black",
+          },
+        }}
       >
         <Tab label="Local" value="local" />
         <Tab label="One Way" value="oneway" />
@@ -71,9 +99,14 @@ export default function LandscapeTaxiBookingForm() {
       </Tabs>
 
       {/* Form */}
-      <form onSubmit={handleSubmit} className="mt-4 space-y-4">
-        {/* Flex wrapper: stacked on mobile, single line on large screens */}
-        <div className="flex flex-wrap lg:flex-nowrap gap-4">
+      <motion.form
+        onSubmit={handleSubmit}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.8 }}
+        className="mt-6 space-y-6"
+      >
+        <div className="flex flex-wrap lg:flex-nowrap gap-6">
           {/* Pickup */}
           <div className="w-full sm:w-1/2 lg:flex-1">
             <Autocomplete
@@ -88,6 +121,7 @@ export default function LandscapeTaxiBookingForm() {
                   error={!!errors.pickup}
                   helperText={errors.pickup}
                   fullWidth
+                  sx={blackBorderSx}
                 />
               )}
             />
@@ -107,12 +141,13 @@ export default function LandscapeTaxiBookingForm() {
                   error={!!errors.drop}
                   helperText={errors.drop}
                   fullWidth
+                  sx={blackBorderSx}
                 />
               )}
             />
           </div>
 
-          {/* Flight (only for airport) */}
+          {/* Flight */}
           {activeTab === "airport" && (
             <div className="w-full sm:w-1/2 lg:flex-1">
               <TextField
@@ -123,6 +158,7 @@ export default function LandscapeTaxiBookingForm() {
                 onChange={(e) => handleChange("flight", e.target.value)}
                 error={!!errors.flight}
                 helperText={errors.flight}
+                sx={blackBorderSx}
               />
             </div>
           )}
@@ -140,6 +176,7 @@ export default function LandscapeTaxiBookingForm() {
                     fullWidth: true,
                     error: !!errors.departDate,
                     helperText: errors.departDate,
+                    sx: blackBorderSx,
                   },
                 }}
               />
@@ -160,6 +197,7 @@ export default function LandscapeTaxiBookingForm() {
                       fullWidth: true,
                       error: !!errors.returnDate,
                       helperText: errors.returnDate,
+                      sx: blackBorderSx,
                     },
                   }}
                 />
@@ -169,7 +207,7 @@ export default function LandscapeTaxiBookingForm() {
 
           {/* Passengers */}
           <div className="w-full sm:w-1/2 lg:flex-1">
-            <FormControl fullWidth size="small">
+            <FormControl fullWidth size="small" sx={blackBorderSx}>
               <Select
                 value={form.passengers}
                 onChange={(e) => handleChange("passengers", e.target.value)}
@@ -185,7 +223,7 @@ export default function LandscapeTaxiBookingForm() {
 
           {/* Vehicle */}
           <div className="w-full sm:w-1/2 lg:flex-1">
-            <FormControl fullWidth size="small">
+            <FormControl fullWidth size="small" sx={blackBorderSx}>
               <Select
                 value={form.vehicle}
                 onChange={(e) => handleChange("vehicle", e.target.value)}
@@ -201,16 +239,21 @@ export default function LandscapeTaxiBookingForm() {
         </div>
 
         {/* Submit */}
-        <Button
-          type="submit"
-          variant="contained"
-          size="large"
-          fullWidth
-          className="!bg-black"
+        <motion.div
+          whileHover={{ scale: 1.01 }}
+          whileTap={{ scale: 0.95 }}
+          className="flex justify-end"
         >
-          Book Now
-        </Button>
-      </form>
-    </div>
+          <Button
+            type="submit"
+            variant="contained"
+            size="medium"
+            className="!bg-gradient-to-r !from-yellow-300 !to-red-700 !text-white !font-semibold !rounded-lg !shadow-md px-6"
+          >
+            Book Now
+          </Button>
+        </motion.div>
+      </motion.form>
+    </motion.div>
   );
 }

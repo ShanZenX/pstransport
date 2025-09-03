@@ -53,7 +53,7 @@ export default function Navbar() {
               href={href}
               className={`text-sm px-3 py-1 no-underline rounded-full transition-all duration-300 text-decoration-none text-black ${
                 pathname === href
-                  ? "bg-blue-950 text-white"
+                  ? "bg-red-700 text-white !font-bold" 
                   : "hover:bg-gray-100"
               }`}
             >

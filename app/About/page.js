@@ -16,12 +16,11 @@ export default function About() {
       <HeroPage />
       <ThreeSection />
       <OurVision />
-      <BookingSteps />
       <TechStackMarquee />
+      <BookingSteps />
       <DriverJoinSection />
       {/* <WhyPage /> */}
       <AboutCompany />
-
       <ReviewsSection />
     </div>
   );

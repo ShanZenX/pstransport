@@ -1,4 +1,3 @@
-"use client";
 
 import React from "react";
 import {
@@ -28,7 +27,7 @@ const TariffTable = ({ headers, rows }) => {
         <TableHead>
           <TableRow
             sx={{
-              background: "linear-gradient(135deg, #1976d2, #42a5f5)",
+              background: "#b71c1c",
             }}
           >
             {headers.map((header, index) => (

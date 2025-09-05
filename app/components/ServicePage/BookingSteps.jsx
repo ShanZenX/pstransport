@@ -29,9 +29,9 @@ const BookingSteps = () => {
 
   return (
     <section className="py-14 sm:py-20 px-4 bg-gray-50">
-      <h3 className="!text-xl sm:!text-4xl !font-bold text-gray-800 text-center flex justify-center items-center gap-2 ">
+      <h3 className="!font-bold text-gray-800 text-center flex justify-center items-center gap-2 ">
         <span className="h-[3px] w-[20px] bg-black block "></span>
-        How To Book With <span className="text-red-700">PS Transport</span>
+        How To Book PS Transport
         <span className="h-[3px] w-[20px] bg-black block "></span>
       </h3>
       <p className="text-sm text-center text-gray-600 mt-2 mx-auto max-w-md">

@@ -11,16 +11,19 @@ import "swiper/css/navigation";
 import PopularTripCard from "./PopularPackCard";
 
 const packages = [
-  { id: 1, name: "Meenakshi Amman Kovil", image: "/assets/trip/meenkshikovil.png", nights: "2N/3D", price: "₹8,500", includes: ["AC Cab", "Hotel Stay"] },
-  { id: 2, name: "Palani Temple", image: "/assets/trip/palani.png", nights: "1N/2D", price: "₹5,000", includes: ["AC Cab", "Temple Visits", "Guide"] },
-  { id: 3, name: "Guruvayur Temple", image: "/assets/trip/guruvayur.png", nights: "2N/2D", price: "₹12,000", includes: ["AC Cab", "Hill Stay", "Sightseeing"] },
-  { id: 4, name: "Thiruchendur Temple", image: "/assets/trip/thiruchendur.png", nights: "2N/3D", price: "₹7,500", includes: ["Cab", "Temple Visit", "Bridge Walk"] },
-  { id: 5, name: "Vellor Temple", image: "/assets/trip/vellor.png", nights: "1N/2D", price: "₹4,500", includes: ["AC Cab", "Temple Visit", "Beach Walk"] },
-  { id: 6, name: "Srirangam Temple", image: "/assets/trip/srirangam.png", nights: "2N/3D", price: "₹6,500", includes: ["Cab", "Adiyogi Statue", "Local Sightseeing"] },
-  { id: 7, name: "Sabarimalai Temple", image: "/assets/trip/sabarimalai.png", nights: "4N/5D", price: "₹15,000", includes: ["Cab", "Houseboat", "Spice Plantation"] },
-  { id: 8, name: "Kumbakonam Temple", image: "/assets/trip/kumbakonam.png", nights: "2N/3D", price: "₹9,000", includes: ["AC Cab", "Lake Visit", "Viewpoints"] },
-  { id: 9, name: "Rameshwaram Temple", image: "/assets/trip/rameshwaram.png", nights: "2N/3D", price: "₹9,000", includes: ["AC Cab", "Lake Visit", "Viewpoints"] },
-  { id: 10, name: "Tripati Temple", image: "/assets/trip/tripathi.png", nights: "2N/3D", price: "₹9,000", includes: ["AC Cab", "Lake Visit", "Viewpoints"] },
+  { id: 1, name: "Meenakshi Amman Kovil", image: "/assets/trip/meenkshikovil.png", nights: "3D", price: "₹13,700", includes: ["AC Cab", "Hotel Stay "] },
+  { id: 2, name: "Palani Temple", image: "/assets/trip/palani.png", nights: "3D", price: "₹5,000", includes: ["AC Cab", "Temple Visits", "Guide"] },
+  { id: 3, name: "Guruvayur Temple", image: "/assets/trip/guruvayur.png", nights: "3D", price: "₹22,500", includes: ["AC Cab", "Hill Stay", "Sightseeing"] },
+  { id: 4, name: "Thiruchendur Temple", image: "/assets/trip/thiruchendur.png", nights: "3D", price: "₹16,500", includes: ["Cab", "Temple Visit", "Bridge Walk"] },
+  { id: 5, name: "Vellor Temple", image: "/assets/trip/vellor.png", nights: "3D", price: "₹3,900", includes: ["AC Cab", "Temple Visit", "Beach Walk"] },
+  { id: 6, name: "Srirangam Temple", image: "/assets/trip/srirangam.png", nights: "3D", price: "₹9,900", includes: ["Cab", "Adiyogi Statue", "Local Sightseeing"] },
+  { id: 7, name: "Sabarimalai Temple", image: "/assets/trip/sabarimalai.png", nights: "4N/5D", price: "₹18,500", includes: ["Cab", "Houseboat", "Spice Plantation"] },
+  { id: 8, name: "Kumbakonam Temple", image: "/assets/trip/kumbakonam.png", nights:"3D", price: "₹8,000", includes: ["AC Cab", "Lake Visit", "Viewpoints"] },
+  { id: 9, name: "Rameshwaram Temple", image: "/assets/trip/rameshwaram.png", nights: "3D", price: "₹16,000", includes: ["AC Cab", "Lake Visit", "Viewpoints"] },
+  { id: 10, name: "Tripati Temple", image: "/assets/trip/tripathi.png", nights: "3D", price: "₹6,200", includes: ["AC Cab", "Lake Visit", "Viewpoints"] },
+  { id: 11, name: "Velankanni", image: "/assets/trip/velankanni.png", nights: "3D", price: "₹10,900", includes: ["AC Cab", "Lake Visit", "Viewpoints"] },
+  { id: 12, name: "Thiruvanamali", image: "/assets/trip/thiruvanamalai.png", nights: "3D", price: "₹5,500", includes: ["AC Cab", "Lake Visit", "Viewpoints"] },
+
 ];
 
 const TransportPackagesCarousel = () => {
@@ -31,9 +34,9 @@ const TransportPackagesCarousel = () => {
     <section className="py-6 sm:mt-10 lg:mt-8 font-roboto">
       {/* Heading */}
       <div className="text-center mb-8 px-4">
-        <h2 className="text-2xl md:text-[32px] !font-semibold mb-2 flex justify-center items-center gap-2 sm:mb-6">
+        <h2 className="!text-xl md:text-[32px] !font-semibold mb-3 flex justify-center items-center gap-2 sm:mb-6">
           <span className="h-[4px] w-[20px] bg-gray-800 block" />
-          Popular <span className="text-red-700">Packages</span>
+          Popular <span className="text-red-700">2 way</span>Packages
           <span className="h-[4px] w-[20px] bg-gray-800 block" />
         </h2>
         <p className="text-[14px] sm:text-sm mb-3 max-w-xl mx-auto">

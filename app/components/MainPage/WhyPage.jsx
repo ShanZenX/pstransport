@@ -2,63 +2,77 @@
 
 import React from "react";
 import {
-  MdEventAvailable,
+  MdLocationOn,
+  MdCalendarToday,
+  MdPerson,
+  MdWork,
+  MdLocalOffer,
   MdEmojiTransportation,
-  MdAccountBalanceWallet,
+  MdStar,
+  MdCreditCard,
+  MdReceipt,
+  MdCheckCircle,
 } from "react-icons/md";
-import useInView from "@/app/components/About/useInView";
 
-const Feature = ({ icon, title, text }) => (
-  <div className="flex flex-col items-center text-center ">
-    {/* Icon */}
-    <div className="flex items-center justify-center text-red-700 mb-4 ">
-  {icon}
-</div>
-    {/* Title */}
-    <h5 className="text-lg !font-bold text-gray-900 mb-2">{title}</h5>
-    {/* Text */}
-    <p className="text-sm text-gray-600 leading-relaxed">{text}</p>
-  </div>
-);
+const steps = [
+  {
+    title: "Where to?",
+    icons: [MdLocationOn],
+    description: "Enter pickup location and destination",
+  },
+  {
+    title: "When and who travels?",
+    icons: [MdCalendarToday, MdPerson, MdWork],
+    description: "Enter date and time, passenger and luggage count",
+  },
+  {
+    title: "At what price?",
+    icons: [MdLocalOffer, MdEmojiTransportation, MdStar],
+    description: "Compare the prices from multiple taxi operators",
+  },
+  {
+    title: "Book and relax",
+    icons: [MdCreditCard, MdReceipt, MdCheckCircle],
+    description: "Pay securely. Email and SMS confirmation will follow.",
+  },
+];
 
-const WhyPage = () => {
-  const [ref, inView] = useInView({ threshold: 0.1 });
-
+const HowItWorks = () => {
   return (
-    <div
-      ref={ref}
-      className={`py-12 sm:py-20 my-3 sm:my-10 transition-all duration-1000 ease-out transform ${
-        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-      }`}
-    >
-      {/* Title */}
-      <h2 className="text-2xl md:text-[32px] !font-semibold mb-2 text-center">
-        Why choosing <span className="text-red-700">us..?</span>
-      </h2>
-      <p className="text-center text-[16px] text-gray-700 mb-5">
-        Your trusted travel partner for every journey
-      </p>
+    <section className="!py-20 px-4 bg-white">
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-2xl sm:text-3xl !font-bold text-black !mb-12 !sm:mb-18">
+          How does it <span className="text-red-700">work?</span>
+        </h2>
 
-      {/* Features inline */}
-      <div className="flex flex-wrap justify-center gap-13 sm:gap-16">
-        <Feature
-          icon={<MdEventAvailable size={48} />}
-          title="Availability"
-          text="Available anytime, anywhere for your ride."
-        />
-        <Feature
-          icon={<MdEmojiTransportation size={48} />}
-          title="Comfort"
-          text="Experience ultimate comfort in every ride."
-        />
-        <Feature
-          icon={<MdAccountBalanceWallet size={48} />}
-          title="Savings"
-          text="Keep more in your pocket with every trip."
-        />
+        <div className="flex justify-between items-start gap-6 max-w-6xl mx-auto px-4 flex-wrap sm:flex-nowrap">
+          {steps.map((step, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center text-center flex-1 min-w-[180px]"
+            >
+              {/* Title */}
+              <h6 className="text-md !font-semibold text-red-700 mb-3">
+                {step.title}
+              </h6>
+
+              {/* Icons inside circle */}
+              <div className="rounded-full border border-gray-300 p-4 flex items-center justify-center gap-2 mb-4">
+                {step.icons.map((Icon, idx) => (
+                  <Icon key={idx} size={20} className="text-red-700" />
+                ))}
+              </div>
+
+              {/* Description */}
+              <p className="text-sm text-gray-800 leading-snug max-w-[180px]">
+                {step.description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default WhyPage;
+export default HowItWorks;

@@ -1,33 +1,54 @@
+"use client";
 
 import React from "react";
 import { Box, Typography, List, ListItem } from "@mui/material";
 import TariffTable from "./TariffTable";
+import useInView from "@/app/components/About/useInView";
+
+const AnimatedSection = ({ children }) => {
+  const [ref, inView] = useInView({ threshold: 0.2 });
+  return (
+    <Box
+      ref={ref}
+      sx={{
+        opacity: inView ? 1 : 0,
+        transform: inView ? "translateY(0)" : "translateY(20px)",
+        transition: "opacity 0.8s ease-out, transform 0.8s ease-out",
+        mb: 6,
+      }}
+    >
+      {children}
+    </Box>
+  );
+};
 
 const TariffPage = () => {
   return (
-    <Box sx={{ maxWidth: "1200px", mx: "auto", p: 3, mt: 10 }}>
-      <Typography variant="h4" gutterBottom fontWeight="bold">
+    <Box
+      sx={{
+        maxWidth: "1200px",
+        mx: "auto",
+        p: { xs: 1, sm: 3 },
+        mt: 10,
+      }}
+    >
+      <Typography
+        variant="h4"
+        gutterBottom
+        fontWeight="bold"
+        sx={{ fontSize: { xs: "1.25rem", sm: "2rem" } }}
+      >
         Chennai & Tamil Nadu Cab Tariff
       </Typography>
 
-      {/* 1. One Way Trips */}
-      <Box sx={{ mb: 6 }}>
-        <Typography variant="h5" gutterBottom fontWeight="bold">
-          One Way Trips
-        </Typography>
-        <Typography variant="body1" sx={{ mb: 2 }}>
-          Affordable one-way taxi services for travel between cities.
-          Perfect for those who don’t need a return trip.
-        </Typography>
-        <TariffTable
-          headers={[
-            "Vehicle Type",
-            "Minimum Km",
-            "Fixed Fare",
-            "Extra per Km",
-            "Driver Bata",
-          ]}
-          rows={[
+      {/* Wrap all tables in scrollable container for mobile */}
+      {[
+        {
+          title: "One Way Trips",
+          description:
+            "Affordable one-way taxi services for travel between cities. Perfect for those who don’t need a return trip.",
+          headers: ["Vehicle Type", "Minimum Km", "Fixed Fare", "Extra per Km", "Driver Bata"],
+          rows: [
             {
               col1: "Sedan (Dzire / Etios)",
               col2: "150 km",
@@ -42,32 +63,21 @@ const TariffPage = () => {
               col4: "₹19",
               col5: "₹500/day",
             },
-          ]}
-        />
-        <List sx={{ mt: 2, pl: 2 }}>
-          <ListItem disablePadding>• One way booking minimum 150 km</ListItem>
-          <ListItem disablePadding>• Toll & Permit charges extra</ListItem>
-        </List>
-      </Box>
-
-      {/* 2. Outstation / Native Trip */}
-      <Box sx={{ mb: 6 }}>
-        <Typography variant="h5" gutterBottom fontWeight="bold">
-          Outstation / Native Trip
-        </Typography>
-        <Typography variant="body1" sx={{ mb: 2 }}>
-          Ideal for long-distance journeys across Tamil Nadu. 
-          Enjoy per-day packages with fixed minimum coverage.
-        </Typography>
-        <TariffTable
-          headers={[
+          ],
+          list: ["One way booking minimum 150 km", "Toll & Permit charges extra"],
+        },
+        {
+          title: "Outstation / Native Trip",
+          description:
+            "Ideal for long-distance journeys across Tamil Nadu. Enjoy per-day packages with fixed minimum coverage.",
+          headers: [
             "Vehicle Type",
             "Per Day Minimum Km",
             "Driver Bata",
             "Per Day Tariff",
             "Extra per Km",
-          ]}
-          rows={[
+          ],
+          rows: [
             {
               col1: "Sedan (Dzire / Etios)",
               col2: "250 km",
@@ -89,34 +99,15 @@ const TariffPage = () => {
               col4: "₹5900",
               col5: "₹22",
             },
-          ]}
-        />
-        <List sx={{ mt: 2, pl: 2 }}>
-          <ListItem disablePadding>• Minimum 250 km billing per day</ListItem>
-          <ListItem disablePadding>
-            • Toll, Parking & Permit charges extra
-          </ListItem>
-        </List>
-      </Box>
-
-      {/* 3. Local Chennai Trip */}
-      <Box sx={{ mb: 6 }}>
-        <Typography variant="h5" gutterBottom fontWeight="bold">
-          Local Chennai Trip
-        </Typography>
-        <Typography variant="body1" sx={{ mb: 2 }}>
-          Convenient hourly packages for Chennai city travel. 
-          Choose short 4-hour or full-day 8-hour trips.
-        </Typography>
-        <TariffTable
-          headers={[
-            "Vehicle Type",
-            "4 Hrs / 40 Km",
-            "8 Hrs / 80 Km",
-            "Extra Km",
-            "Extra Hr",
-          ]}
-          rows={[
+          ],
+          list: ["Minimum 250 km billing per day", "Toll, Parking & Permit charges extra"],
+        },
+        {
+          title: "Local Chennai Trip",
+          description:
+            "Convenient hourly packages for Chennai city travel. Choose short 4-hour or full-day 8-hour trips.",
+          headers: ["Vehicle Type", "4 Hrs / 40 Km", "8 Hrs / 80 Km", "Extra Km", "Extra Hr"],
+          rows: [
             {
               col1: "Sedan (Dzire / Etios 4+1)",
               col2: "₹1100",
@@ -145,39 +136,57 @@ const TariffPage = () => {
               col4: "₹32",
               col5: "₹500",
             },
-          ]}
-        />
-        <List sx={{ mt: 2, pl: 2 }}>
-          <ListItem disablePadding>
-            • After 8 hrs, extra hours will be charged
-          </ListItem>
-          <ListItem disablePadding>• Toll & Parking extra</ListItem>
-        </List>
-      </Box>
-
-      {/* 4. Tempo Traveller */}
-      <Box sx={{ mb: 6 }}>
-        <Typography variant="h5" gutterBottom fontWeight="bold">
-          Tempo Traveller (Outstation)
-        </Typography>
-        <Typography variant="body1" sx={{ mb: 2 }}>
-          Spacious option for group travel and family trips. 
-          Best choice for long outstation journeys.
-        </Typography>
-        <TariffTable
-          headers={["Description", "Rate"]}
-          rows={[
+          ],
+          list: ["After 8 hrs, extra hours will be charged", "Toll & Parking extra"],
+        },
+        {
+          title: "Tempo Traveller (Outstation)",
+          description:
+            "Spacious option for group travel and family trips. Best choice for long outstation journeys.",
+          headers: ["Description", "Rate"],
+          rows: [
             { col1: "Rate per km", col2: "₹32" },
             { col1: "Driver Bata", col2: "₹800/day" },
-          ]}
-        />
-        <List sx={{ mt: 2, pl: 2 }}>
-          <ListItem disablePadding>• Minimum 300 km billing per day</ListItem>
-          <ListItem disablePadding>
-            • Toll, Parking & Interstate Permit charges extra
-          </ListItem>
-        </List>
-      </Box>
+          ],
+          list: ["Minimum 300 km billing per day", "Toll, Parking & Interstate Permit charges extra"],
+        },
+      ].map((section, idx) => (
+        <AnimatedSection key={idx}>
+          <Typography
+            variant="h5"
+            gutterBottom
+            fontWeight="bold"
+            sx={{ fontSize: { xs: "1rem", sm: "1.5rem" } }}
+          >
+            {section.title}
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{ mb: 2, fontSize: { xs: "0.7rem", sm: "0.875rem" } }}
+          >
+            {section.description}
+          </Typography>
+
+          {/* Horizontal scroll wrapper for mobile */}
+          <Box sx={{ overflowX: "auto" }}>
+            <Box sx={{ minWidth: { xs: "500px", sm: "100%" } }}>
+              <TariffTable headers={section.headers} rows={section.rows} />
+            </Box>
+          </Box>
+
+          <List sx={{ mt: 1, pl: 2 }}>
+            {section.list.map((item, index) => (
+              <ListItem
+                key={index}
+                sx={{ fontSize: { xs: "0.65rem", sm: "0.875rem" } }}
+                disablePadding
+              >
+                • {item}
+              </ListItem>
+            ))}
+          </List>
+        </AnimatedSection>
+      ))}
     </Box>
   );
 };

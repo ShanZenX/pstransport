@@ -2,14 +2,14 @@
   {
     "name": "Swift Dzire",
     "desc": "Comfortable sedan for city & long trips.",
-    "price": "₹12/km",
+    "price": "₹11/km",
     "img": "/assets/cars/imageDizire.png"
 
   },
   {
     "name": " Hyundy aura",
     "desc": "Spacious and premium for family trips.",
-    "price": "₹18/km",
+    "price": "₹11/km",
     "img": "/assets/cars/imageAura.png"
   },
   {
@@ -21,26 +21,26 @@
   {
     "name": "Innova ",
     "desc": "Perfect for group tours & pilgrimages.",
-    "price": "₹25/km",
+    "price": "₹22/km",
     "img": "/assets/cars/imageInnova.png"
   },
   {
     "name": "Ertiga",
     "desc": "Compact 7-seater for small groups.",
-    "price": "₹15/km",
+    "price": "₹17/km",
     "img": "/assets/cars/imageErtiga.png"
   },
   {
     "name": "Crysta",
     "desc": "Comfortable SUV for long journeys.",
-    "price": "₹16/km",
+    "price": "₹22/km",
     "img": "/assets/cars/imageCrysta.png"
 
   },
   {
     "name": "Tempo traveller",
     "desc": "Ideal for team or tourist group travel.",
-    "price": "₹30/km",
+    "price": "₹32/km",
     "img": "/assets/cars/imageTempo.png"
   }
 ]

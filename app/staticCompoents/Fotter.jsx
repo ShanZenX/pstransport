@@ -40,7 +40,7 @@ const Footer = () => (
       </div>
       <div className="space-y-2">
         <p>Bookings@pstransport.in</p>
-        <p className="text-yellow-400">+91 90000 00000</p>
+        <p className="text-yellow-400">+91 98403 03916</p>
       </div>
     </div>
 
@@ -55,16 +55,36 @@ const Footer = () => (
       </p>
 
       <div className="flex items-center space-x-4">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-400 text-xl">
+        <a
+          href="https://www.facebook.com/pstransport.tn?_rdr"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:text-yellow-400 text-xl"
+        >
           <FaFacebookF />
         </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-400 text-xl">
+        <a
+          href="https://www.instagram.com/p/CYrHa3kPLNJ/?igshid=MDJmNzVkMjY%3D"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:text-yellow-400 text-xl"
+        >
           <FaInstagram />
         </a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-400 text-xl">
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:text-yellow-400 text-xl"
+        >
           <FaTwitter />
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-400 text-xl">
+        <a
+          href="https://www.linkedin.com/in/ps-transport-856470218/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:text-yellow-400 text-xl"
+        >
           <FaLinkedinIn />
         </a>
       </div>

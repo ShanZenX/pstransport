@@ -41,9 +41,11 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-[0.4rem]">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center !no-underline !font-extrabold text-black">
           <Image src={logo} alt="Logo" height={52} priority />
-        </Link>
+       <span className="!no-underline">
+          Ps Transport
+        </span> </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-4 text-black font-medium items-center">
@@ -65,7 +67,7 @@ export default function Navbar() {
         {/* Call Me Button */}
         <a
           href="tel:+123456789"
-          className="hidden md:inline-block bg-blue-950 text-white px-4 py-1 text-sm rounded-full no-underline font-medium text-decoration-none"
+          className="hidden md:inline-block  hover:bg-blue-950 text-white px-4 py-1 text-sm rounded-full no-underline font-medium text-decoration-none"
         >
           CALL ME
         </a>

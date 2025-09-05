@@ -1,10 +1,21 @@
+"use client";
+
 import React from "react";
+import useInView from "@/app/components/About/useInView";
 
 const PopularTripCard = ({ trip, index }) => {
+  // 👀 observe each card
+  const [ref, inView] = useInView({ threshold: 0.2 });
+
   return (
     <div
+      ref={ref}
       key={index}
-      className="flex items-center group bg-white overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] p-2 sm:p-3"
+      className={`flex items-center group bg-white overflow-hidden shadow-sm hover:shadow-md
+        transition-all duration-700 ease-out transform
+        ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
+      hover:scale-[1.02] p-2 sm:p-3`}
+      style={{ transitionDelay: `${index * 0.08}s` }} // slight stagger effect
     >
       {/* Image */}
       <div className="w-[64px] h-[64px] sm:w-[80px] sm:h-[80px] flex-shrink-0 bg-gray-100">

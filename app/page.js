@@ -7,11 +7,14 @@ import BrandsSection from "./components/MainPage/Brand";
 import FormHolder from "./components/MainPage/FormHolder";
 import OurProcess from "./components/MainPage/OurProcess";
 import ReviewsSection from "./components/MainPage/Review";
+import MapInput from "./components/MainPage/MapInput";
 
 export default function Home() {
   return (
     <>
       <div className=" mt-[50px] sm:mt-[0px]">
+                          <MapInput />
+
         <FormHolder />
         <OurProcess />
         <TransportPackagesCarousel />

@@ -9,7 +9,9 @@ import {
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./staticCompoents/Navbar";
-import Fotter from "./staticCompoents/Fotter";
+import Fotter from "./staticCompoents/Footer";
+import MapInput from './components/MainPage/MapInput';
+import Footer from "./staticCompoents/Footer";
 
 // Google fonts with CSS variables
 const poppins = Poppins({
@@ -56,8 +58,9 @@ export default function RootLayout({ children }) {
         <Navbar />
 
         {children}
+        
 
-        <Fotter />
+        {/* <Footer/> */}
       </body>
     </html>
   );

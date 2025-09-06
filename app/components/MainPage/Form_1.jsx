@@ -13,6 +13,7 @@ import {
 import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import Autocomplete from "@mui/material/Autocomplete";
+import MapInput from './MapInput';
 
 // Dummy data
 const locations = ["Chennai", "Bangalore", "Mumbai", "Delhi"];

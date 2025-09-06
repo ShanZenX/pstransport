@@ -1,10 +1,10 @@
+"use client";
 import React from "react";
-import MapInput from "../components/MainPage/MapInput";
-
+import LocationAutocomplete from "../components/MainPage/LocationAutocomplete";
 const Sample = () => {
   return (
     <div className="mt-[200px] h-[600px] w-1/2 border-2 border-black">
-      <MapInput />
+      <LocationAutocomplete onSelect={(loc) => console.log(loc)} />
     </div>
   );
 };

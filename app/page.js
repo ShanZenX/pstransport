@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <div className=" mt-[50px] sm:mt-[0px]">
-                          <MapInput />
+                          {/* <MapInput /> */}
 
         <FormHolder />
         <OurProcess />

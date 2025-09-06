@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/public/Ps-main.png";
 
 export default function Navbar() {
@@ -14,14 +15,12 @@ export default function Navbar() {
 
   useEffect(() => {
     let lastScrollTop = 0;
-
     const handleScroll = () => {
       const scrollTop =
         window.pageYOffset || document.documentElement.scrollTop;
       setIsVisible(scrollTop <= lastScrollTop);
       lastScrollTop = Math.max(scrollTop, 0);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -41,11 +40,13 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-[0.4rem]">
         {/* Logo */}
-        <Link href="/" className="flex items-center !no-underline !font-extrabold text-black">
+        <Link
+          href="/"
+          className="flex items-center !no-underline !font-extrabold text-black"
+        >
           <Image src={logo} alt="Logo" height={52} priority />
-       <span className="!no-underline">
-          Ps Transport
-        </span> </Link>
+          <span className="ml-1">PS Transport</span>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-4 text-black font-medium items-center">
@@ -55,7 +56,7 @@ export default function Navbar() {
               href={href}
               className={`text-sm px-3 py-1 no-underline rounded-full transition-all duration-300 text-decoration-none text-black ${
                 pathname === href
-                  ? "bg-red-700 text-white !font-bold" 
+                  ? "bg-red-700 text-white !font-bold"
                   : "hover:bg-gray-100"
               }`}
             >
@@ -67,7 +68,7 @@ export default function Navbar() {
         {/* Call Me Button */}
         <a
           href="tel:+123456789"
-          className="hidden md:inline-block  hover:bg-blue-950 text-white px-4 py-1 text-sm rounded-full no-underline font-medium text-decoration-none"
+          className="hidden md:inline-block hover:bg-blue-950 text-white px-4 py-1 text-sm rounded-full no-underline font-medium text-decoration-none bg-red-700"
         >
           CALL ME
         </a>
@@ -75,43 +76,65 @@ export default function Navbar() {
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden text-indigo-950"
+          className="md:hidden text-red-800"
         >
-          {isMenuOpen ? (
-            <XMarkIcon className="w-6 h-6" />
-          ) : (
-            <Bars3Icon className="w-6 h-6" />
-          )}
+          {isMenuOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 shadow-sm ">
-          <nav className="flex flex-col px-4 py-2 space-y-2 text-black font-medium">
-            {navItems.map(({ name, href }) => (
-              <Link
-                key={name}
-                href={href}
-                className={`px-4 py-2 !no-underline  !text-gray-800 ${
-                  pathname === href
-                    ? "bg-gray-100 text-white"
-                    : "hover:bg-gray-100"
-                }`}
+      {/* Mobile Navigation Drawer */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            key="mobileMenu"
+            initial={{ x: "-100%", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: "-100%", opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="md:hidden fixed top-0 left-0 w-full h-screen bg-white shadow-lg z-40"
+          >
+            {/* Drawer Header with Logo + Close */}
+            <div className="flex items-center justify-between px-4 py-4 border-b border-gray-200">
+              <div className="flex items-center gap-2">
+                <Image src={logo} alt="Logo" height={42} priority />
+                <span className="text-lg font-bold text-black">
+                  PS Transport
+                </span>
+              </div>
+              <button
                 onClick={() => setIsMenuOpen(false)}
+                className="text-gray-700 hover:text-black"
               >
-                {name.toUpperCase()}
-              </Link>
-            ))}
-            <a
-              href="tel:+123456789"
-              className=" w-[150] bg-indigo-950 text-white px-1 py-2 mt-50  text-center !no-underline font-semibold"
-            >
-              CALL ME
-            </a>
-          </nav>
-        </div>
-      )}
+                <XMarkIcon className="w-7 h-7" />
+              </button>
+            </div>
+
+            {/* Nav Links */}
+            <nav className="flex flex-col px-4 py-6 space-y-4 text-black font-medium">
+              {navItems.map(({ name, href }) => (
+                <Link
+                  key={name}
+                  href={href}
+                  className={`px-4 py-2 rounded !no-underline !text-gray-800 ${
+                    pathname === href
+                      ? "bg-gray-100 text-white"
+                      : "hover:bg-gray-100"
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {name.toUpperCase()}
+                </Link>
+              ))}
+              <a
+                href="tel:+123456789"
+                className="w-[150px] bg-red-950 text-white px-1 py-2 text-center !no-underline font-semibold"
+              >
+                CALL ME
+              </a>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

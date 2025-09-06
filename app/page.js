@@ -23,7 +23,7 @@ export default function Home() {
         <BrandsSection />
         {/* <Fact /> */}
 
-        <ReviewsSection/>
+        <ReviewsSection />
       </div>
     </>
   );

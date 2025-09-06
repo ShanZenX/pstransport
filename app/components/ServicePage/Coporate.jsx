@@ -35,17 +35,15 @@ const CorporateCollaboration = () => {
   ];
 
   return (
-    <section className="bg-white py-20 px-4 sm:px-8">
-      {/* ✅ Heading placed once here */}
-   <h2 className="text-3xl !font-extrabold text-gray-900 mb-3 !font-extrabold mb-2 !sm:my-5 flex justify-center items-center gap-2 text-center text-gray-800">
-  <span className="h-[3px] w-[20px] bg-black block"></span>
-  Our Logistics <span className="text-red-700 "> Services</span>
-  <span className="h-[3px] w-[20px] bg-black block"></span>
-</h2>
-<p className="text-center">
-  Trusted by businesses and families across India for safe deliveries.
-</p>
-
+    <section className="bg-white py-8 mt-1 !sm:mt-5 px-4 sm:px-8">
+      <h2 className="text-3xl !font-extrabold text-gray-900 mb-3  !sm:my-5 flex justify-center items-center gap-2 text-center">
+        <span className="h-[3px] w-[20px] bg-black block"></span>
+        Core<span className="text-red-700 "> Services</span>
+        <span className="h-[3px] w-[20px] bg-black block"></span>
+      </h2>
+      <p className="text-center">
+        Trusted by businesses and families across India for safe deliveries.
+      </p>
 
       {sections.map((sec, index) => {
         const [refLeft, inViewLeft] = useInView({ threshold: 0.2 });

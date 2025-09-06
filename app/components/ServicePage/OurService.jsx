@@ -36,9 +36,9 @@ export default function WhyChooseUs() {
   const [ref, visible] = useInView({ threshold: 0.2 });
 
   return (
-    <section ref={ref} className="py-16 bg-gradient-to-r">
+    <section ref={ref} className="py-8 bg-gradient-to-r">
       <div
-        className={`max-w-6xl mx-auto px-6 transition-all duration-700 mt-20 sm:mt-3 ${
+        className={`max-w-6xl mx-auto px-6 transition-all duration-700 mt-8 sm:mt-3 ${
           visible ? "animate-slideInUp" : "opacity-0 translate-y-10"
         }`}
       >

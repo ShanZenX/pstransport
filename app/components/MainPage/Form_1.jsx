@@ -1,174 +1,182 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import {
   Tabs,
   Tab,
-  TextField,
   Button,
   Select,
   MenuItem,
   FormControl,
+  InputLabel,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
 } from "@mui/material";
 import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import Autocomplete from "@mui/material/Autocomplete";
-import MapInput from './MapInput';
+import {
+  GeoapifyGeocoderAutocomplete,
+  GeoapifyContext,
+} from "@geoapify/react-geocoder-autocomplete";
+import "@geoapify/geocoder-autocomplete/styles/minimal.css";
+import { AnimatePresence, motion } from "framer-motion";
 
-// Dummy data
-const locations = ["Chennai", "Bangalore", "Mumbai", "Delhi"];
-const vehicles = ["Mini", "Sedan", "Etios", "SUV", "Inova", "Crysta"];
+// Vehicle price per km
+const vehicles = {
+  Sedan: 12,
+  Ertiga: 18,
+  Inova: 10,
+};
 
-export default function LandscapeTaxiBookingForm() {
+// MUI style for borderless fields
+const noBorderSx = {
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": { border: "none" }, // removes border
+    "&:hover fieldset": { border: "none" },
+    "&.Mui-focused fieldset": { border: "none" },
+  },
+  "& .MuiInputLabel-root.Mui-focused": {
+    color: "black",
+  },
+};
+
+export default function BookingForm() {
   const [activeTab, setActiveTab] = useState("local");
   const [form, setForm] = useState({
-    pickup: "",
-    drop: "",
-    flight: "",
+    pickup: null,
+    drop: null,
     departDate: null,
     returnDate: null,
+    tripType: "oneway",
     passengers: 1,
-    luggage: 0,
-    vehicle: "Mini",
+    vehicle: "Sedan",
   });
   const [errors, setErrors] = useState({});
+  const [distance, setDistance] = useState(null);
+  const [openDialog, setOpenDialog] = useState(false);
+  const [userDetails, setUserDetails] = useState({ name: "", phone: "" });
 
-  const handleChange = (name, value) => {
-    setForm((prev) => ({ ...prev, [name]: value }));
-    setErrors((prev) => ({ ...prev, [name]: "" }));
+  // handle form change
+  const handleChange = (field, value) => {
+    setForm((prev) => ({ ...prev, [field]: value }));
+    setErrors((prev) => ({ ...prev, [field]: "" }));
   };
 
-  const validateForm = () => {
-    let temp = {};
-    if (!form.pickup) temp.pickup = "Pickup required";
-    if (!form.drop) temp.drop = "Drop required";
-    if (activeTab === "airport" && !form.flight)
-      temp.flight = "Flight required";
-    if (!form.departDate) temp.departDate = "Departure required";
-    if (activeTab === "twoway" && !form.returnDate)
-      temp.returnDate = "Return required";
-    setErrors(temp);
-    return Object.keys(temp).length === 0;
+  // calculate distance using Geoapify Route API
+  const calculateDistance = async () => {
+    if (!form.pickup || !form.drop) return;
+    const start = [
+      form.pickup.properties.lon,
+      form.pickup.properties.lat,
+    ].join(",");
+    const end = [form.drop.properties.lon, form.drop.properties.lat].join(",");
+
+    try {
+      const res = await fetch(
+        `https://api.geoapify.com/v1/routing?waypoints=${start}|${end}&mode=drive&apiKey=59905bf1b7e14b7d83a7825ad63ae722`
+      );
+      const data = await res.json();
+      if (data?.features?.length) {
+        const { distance, time } = data.features[0].properties;
+        setDistance({
+          distanceKm: (distance / 1000).toFixed(2),
+          timeMin: Math.round(time / 60),
+        });
+      }
+    } catch (err) {
+      console.error("Error fetching route:", err);
+    }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validateForm()) console.log("Booking:", form);
+  // calculate cost
+  const totalCost =
+    distance && form.vehicle
+      ? Math.round(distance.distanceKm * vehicles[form.vehicle])
+      : 0;
+
+  // confirm booking
+  const confirmBooking = () => {
+    alert("Booking confirmed!");
+    setOpenDialog(false);
   };
 
-  // Common sx for black borders
-  const blackBorderSx = {
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": { borderColor: "black" },
-      "&:hover fieldset": { borderColor: "black" },
-      "&.Mui-focused fieldset": { borderColor: "black" },
-    },
-    "& .MuiInputLabel-root.Mui-focused": {
-      color: "black",
-    },
+  // open booking dialog
+  const handleBookNow = () => {
+    let newErrors = {};
+    if (!form.pickup) newErrors.pickup = "Pickup required";
+    if (!form.drop) newErrors.drop = "Drop required";
+    if (!form.departDate) newErrors.departDate = "Departure required";
+    if (activeTab === "outstation" && form.tripType === "twoway" && !form.returnDate) {
+      newErrors.returnDate = "Return required";
+    }
+    setErrors(newErrors);
+    if (Object.keys(newErrors).length === 0) {
+      calculateDistance();
+      setOpenDialog(true);
+    }
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-      className="p-6 sm:p-10 bg-white/5 backdrop-blur-xl border border-white/20 shadow-2xl rounded-2xl max-w-5xl w-full mx-auto mt-10"
-    >
-      {/* Tabs */}
-      <Tabs
-        value={activeTab}
-        onChange={(e, val) => setActiveTab(val)}
-        textColor="inherit"
-        indicatorColor="secondary"
-        sx={{
-          "& .MuiTab-root": {
-            color: "gray",
-          },
-          "& .Mui-selected": {
-            color: "black",
-          },
-          "& .MuiTabs-indicator": {
-            backgroundColor: "black",
-          },
-        }}
+    <GeoapifyContext apiKey="59905bf1b7e14b7d83a7825ad63ae722">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="p-6 sm:p-10 bg-white border border-white/20 shadow-2xl rounded-2xl max-w-fit w-full mx-auto mt-10"
       >
-        <Tab label="Local" value="local" />
-        <Tab label="One Way" value="oneway" />
-        <Tab label="Two Way" value="twoway" />
-        <Tab label="Airport" value="airport" />
-      </Tabs>
+        {/* Tabs */}
+        <Tabs
+          value={activeTab}
+          onChange={(e, val) => setActiveTab(val)}
+          textColor="inherit"
+          indicatorColor="secondary"
+          sx={{
+            "& .MuiTab-root": { color: "black" },
+            "& .Mui-selected": { color: "black" },
+            "& .MuiTabs-indicator": { backgroundColor: "black" },
+          }}
+        >
+          <Tab label="Local" value="local" />
+          <Tab label="Outstation" value="outstation" />
+          <Tab label="Airport" value="airport" />
+        </Tabs>
 
-      {/* Form */}
-      <motion.form
-        onSubmit={handleSubmit}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
-        className="mt-6 space-y-6"
-      >
-        <div className="flex flex-wrap lg:flex-nowrap gap-6">
+        {/* Row 1 - Pickup & Drop */}
+        <div className="flex flex-wrap gap-6 mt-6">
           {/* Pickup */}
-          <div className="w-full sm:w-1/2 lg:flex-1">
-            <Autocomplete
-              options={locations}
-              value={form.pickup}
-              onChange={(e, val) => handleChange("pickup", val)}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  label="Pickup"
-                  size="small"
-                  error={!!errors.pickup}
-                  helperText={errors.pickup}
-                  fullWidth
-                  sx={blackBorderSx}
-                />
-              )}
+          <div>
+            <GeoapifyGeocoderAutocomplete
+              placeholder="Pickup location"
+              options={{ type: "city" }}
+              lang="en"
+              limit={5}
+              placeSelect={(val) => handleChange("pickup", val)}
             />
+            {errors.pickup && (
+              <p className="text-red-500 text-sm">{errors.pickup}</p>
+            )}
           </div>
 
           {/* Drop */}
-          <div className="w-full sm:w-1/2 lg:flex-1">
-            <Autocomplete
-              options={locations}
-              value={form.drop}
-              onChange={(e, val) => handleChange("drop", val)}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  label="Drop"
-                  size="small"
-                  error={!!errors.drop}
-                  helperText={errors.drop}
-                  fullWidth
-                  sx={blackBorderSx}
-                />
-              )}
+          <div>
+            <GeoapifyGeocoderAutocomplete
+              placeholder="Drop location"
+              options={{ type: "city" }}
+              lang="en"
+              limit={5}
+              placeSelect={(val) => handleChange("drop", val)}
             />
+            {errors.drop && (
+              <p className="text-red-500 text-sm">{errors.drop}</p>
+            )}
           </div>
 
-          {/* Flight */}
-          {activeTab === "airport" && (
-            <div className="w-full sm:w-1/2 lg:flex-1">
-              <TextField
-                label="Flight No."
-                size="small"
-                fullWidth
-                value={form.flight}
-                onChange={(e) => handleChange("flight", e.target.value)}
-                error={!!errors.flight}
-                helperText={errors.flight}
-                sx={blackBorderSx}
-              />
-            </div>
-          )}
-
           {/* Depart Date */}
-          <div className="w-full sm:w-1/2 lg:flex-1">
+          <div className="max-w-[150px]">
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DateTimePicker
-                label={activeTab === "twoway" ? "Depart" : "Date & Time"}
+                label="Depart"
                 value={form.departDate}
                 onChange={(val) => handleChange("departDate", val)}
                 slotProps={{
@@ -177,38 +185,33 @@ export default function LandscapeTaxiBookingForm() {
                     fullWidth: true,
                     error: !!errors.departDate,
                     helperText: errors.departDate,
-                    sx: blackBorderSx,
+                    sx: noBorderSx,
                   },
                 }}
               />
             </LocalizationProvider>
           </div>
 
-          {/* Return Date */}
-          {activeTab === "twoway" && (
-            <div className="w-full sm:w-1/2 lg:flex-1">
-              <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DateTimePicker
-                  label="Return"
-                  value={form.returnDate}
-                  onChange={(val) => handleChange("returnDate", val)}
-                  slotProps={{
-                    textField: {
-                      size: "small",
-                      fullWidth: true,
-                      error: !!errors.returnDate,
-                      helperText: errors.returnDate,
-                      sx: blackBorderSx,
-                    },
-                  }}
-                />
-              </LocalizationProvider>
+          {/* Trip Type Dropdown (only Outstation) */}
+          {activeTab === "outstation" && (
+            <div className="min-w-[200px]">
+              <FormControl fullWidth size="small" sx={noBorderSx}>
+                <InputLabel>Trip Type</InputLabel>
+                <Select
+                  value={form.tripType}
+                  label="Trip Type"
+                  onChange={(e) => handleChange("tripType", e.target.value)}
+                >
+                  <MenuItem value="oneway">One Way</MenuItem>
+                  <MenuItem value="twoway">Round Trip</MenuItem>
+                </Select>
+              </FormControl>
             </div>
           )}
 
           {/* Passengers */}
-          <div className="w-full sm:w-1/2 lg:flex-1">
-            <FormControl fullWidth size="small" sx={blackBorderSx}>
+          <div className="min-w-[200px]">
+            <FormControl fullWidth size="small" sx={noBorderSx}>
               <Select
                 value={form.passengers}
                 onChange={(e) => handleChange("passengers", e.target.value)}
@@ -223,13 +226,13 @@ export default function LandscapeTaxiBookingForm() {
           </div>
 
           {/* Vehicle */}
-          <div className="w-full sm:w-1/2 lg:flex-1">
-            <FormControl fullWidth size="small" sx={blackBorderSx}>
+          <div className="min-w-[200px]">
+            <FormControl fullWidth size="small" sx={noBorderSx}>
               <Select
                 value={form.vehicle}
                 onChange={(e) => handleChange("vehicle", e.target.value)}
               >
-                {vehicles.map((v) => (
+                {Object.keys(vehicles).map((v) => (
                   <MenuItem key={v} value={v}>
                     {v}
                   </MenuItem>
@@ -239,22 +242,50 @@ export default function LandscapeTaxiBookingForm() {
           </div>
         </div>
 
-        {/* Submit */}
-        <motion.div
-          whileHover={{ scale: 1.01 }}
-          whileTap={{ scale: 0.95 }}
-          className="flex justify-end"
-        >
+        {/* Animated Return Date */}
+        <AnimatePresence>
+          {activeTab === "outstation" && form.tripType === "twoway" && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="overflow-hidden"
+            >
+              <div className="mt-4 w-[300px]">
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DateTimePicker
+                    label="Return"
+                    value={form.returnDate}
+                    onChange={(val) => handleChange("returnDate", val)}
+                    slotProps={{
+                      textField: {
+                        size: "small",
+                        fullWidth: true,
+                        error: !!errors.returnDate,
+                        helperText: errors.returnDate,
+                        sx: noBorderSx,
+                      },
+                    }}
+                  />
+                </LocalizationProvider>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Book Now */}
+        <div className="mt-6 flex justify-end">
           <Button
-            type="submit"
             variant="contained"
             size="medium"
             className="!bg-gradient-to-r !from-yellow-300 !to-red-700 !text-white !font-semibold !rounded-lg !shadow-md px-6"
+            onClick={handleBookNow}
           >
             Book Now
           </Button>
-        </motion.div>
-      </motion.form>
-    </motion.div>
+        </div>
+      </motion.div>
+    </GeoapifyContext>
   );
 }

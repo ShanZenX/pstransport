@@ -5,19 +5,22 @@ import TaxiBookingForm from "./NewForm";
 const FormHolder = () => {
   return (
     <div
-      className="min-h-[100vh] sm:mt-0 gap-1  sm:gap-10 bg-black  sm:pt-[13%] flex flex-col items-center sm:justify-start text-center"
+      className="min-h-screen flex flex-col items-center justify-center text-center px-4"
       style={{
         backgroundImage: "url('/main-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <p className=" text-mq text-4xl pt-0  sm:pt-40 sm:text-5xl text-black font-poppins font-extrabold   ">
+      {/* Heading */}
+      <p className="text-4xl sm:text-5xl text-black font-poppins font-extrabold mb-8">
         Book your best Trip with{" "}
         <span className="text-red-700">Ps transport</span>
       </p>
-      <Form_1 />
-      {/* <TaxiBookingForm/> */}
+
+      {/* Form below heading */}
+      {/* <Form_1 /> */}
+      <TaxiBookingForm />
     </div>
   );
 };

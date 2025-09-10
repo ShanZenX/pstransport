@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/public/Ps-main.png";
+import logo from "@/public/ps-logo.jpeg";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -38,14 +38,13 @@ export default function Navbar() {
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-[0.4rem]">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 ">
         {/* Logo */}
         <Link
           href="/"
           className="flex items-center !no-underline !font-extrabold text-black"
         >
-          <Image src={logo} alt="Logo" height={52} priority />
-          <span className="ml-1">PS Transport</span>
+          <Image src={logo} alt="Logo" height={72} priority />
         </Link>
 
         {/* Desktop Navigation */}
@@ -96,10 +95,8 @@ export default function Navbar() {
             {/* Drawer Header with Logo + Close */}
             <div className="flex items-center justify-between px-4 py-4 border-b border-gray-200">
               <div className="flex items-center gap-2">
-                <Image src={logo} alt="Logo" height={42} priority />
-                <span className="text-lg font-bold text-black">
-                  PS Transport
-                </span>
+                <Image src={logo} alt="Logo" height={62} priority />
+               
               </div>
               <button
                 onClick={() => setIsMenuOpen(false)}

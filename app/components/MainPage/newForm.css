@@ -1,0 +1,28 @@
+/* newForm.css */
+.geoapify-autocomplete-input {
+  height: 48px !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  padding-right: 2.5rem !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Desktop (box input) */
+@media (min-width: 1024px) {
+  .geoapify-autocomplete-input {
+    border: 2px solid #9ca3af !important;
+    border-radius: 0.5rem !important;
+  }
+}
+
+/* Mobile (underline only) */
+@media (max-width: 1023px) {
+  .geoapify-autocomplete-input {
+    border: none !important;
+    border-bottom: 2px solid #9ca3af !important;
+    border-radius: 0 !important;
+    text-align: left !important; /* align text to start */
+    padding-left: 0.5rem; /* optional: add some left padding */
+  }
+}

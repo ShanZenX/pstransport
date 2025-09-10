@@ -6,9 +6,10 @@ import {
   GeoapifyContext,
 } from "@geoapify/react-geocoder-autocomplete";
 import "@geoapify/geocoder-autocomplete/styles/minimal.css";
+import "./newForm.css";
 
 export default function TaxiBookingForm() {
-  const [from, setFrom] = useState(null); // will hold place object
+  const [from, setFrom] = useState(null);
   const [to, setTo] = useState(null);
   const [date, setDate] = useState("");
   const [passenger, setPassenger] = useState(0);
@@ -21,70 +22,75 @@ export default function TaxiBookingForm() {
     }
 
     alert(
-      `Taxi booked from ${
-        from.properties.formatted
-      } to ${to.properties.formatted} on ${date} for ${passenger} passenger(s) with ${luggage} luggage.`
+      `Taxi booked from ${from.properties.formatted} to ${
+        to.properties.formatted
+      } on ${date} for ${passenger} passenger(s) with ${luggage} luggage.`
     );
   };
 
   return (
     <GeoapifyContext apiKey="59905bf1b7e14b7d83a7825ad63ae722">
-      <div className="border border-blue-300 rounded-xl p-4 flex items-end gap-4 bg-white shadow-md max-w-fit border-2 border-black">
+      <div className="border-2 border-black rounded-2xl p-6 flex flex-col !text-start lg:flex-row items-stretch lg:items-end gap-6 bg-white shadow-lg max-w-full lg:max-w-fit">
+        
         {/* From Location */}
-        <div className="flex flex-col w-40">
-          <label className="text-sm font-medium text-black mb-1">From</label>
+        <div className="flex flex-col w-full lg:w-48">
+          <label className="text-sm font-semibold text-black mb-2">📍From</label>
           <GeoapifyGeocoderAutocomplete
             placeholder="Select a location"
             options={{ type: "city" }}
             lang="en"
             limit={5}
             placeSelect={(val) => setFrom(val)}
+            className="!h-12 !border-2 !border-gray-400 !rounded-lg"
           />
         </div>
 
         {/* Arrow Icon */}
-        <div className="flex items-end h-full mb-2">
-          <div className="bg-yellow-400 text-white text-lg font-bold w-6 h-6 flex items-center justify-center rounded-full">
+        <div className="flex justify-center lg:items-end h-full">
+          <div className="bg-yellow-400 text-white text-lg font-bold w-8 h-8 flex items-center justify-center rounded-full">
             ➤
           </div>
         </div>
 
         {/* Drop Location */}
-        <div className="flex flex-col w-40">
-          <label className="text-sm font-medium text-black mb-1">Drop</label>
+        <div className="flex flex-col w-full lg:w-48">
+          <label className="text-sm font-semibold text-black mb-2">📍Drop</label>
           <GeoapifyGeocoderAutocomplete
             placeholder="Select a location"
             options={{ type: "city" }}
             lang="en"
             limit={5}
             placeSelect={(val) => setTo(val)}
+            className="!h-12 !border-2 !border-gray-400 !rounded-lg"
           />
         </div>
 
-        {/* Divider */}
-        <div className="h-12 w-px bg-black/20 mx-2" />
+        {/* Divider (hidden on mobile) */}
+        <div className="hidden lg:block h-12 w-px bg-black/20 mx-2" />
 
         {/* Date Picker */}
-        <div className="flex flex-col">
-          <label className="text-sm font-medium text-black mb-1">Date</label>
+        <div className="flex flex-col w-full lg:w-auto">
+          <label className="text-sm font-semibold text-black mb-2">Date</label>
           <input
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
-            className="border border-blue-300 rounded-md px-3 py-2 w-40 focus:outline-none"
+            className="border-2 border-gray-400 rounded-lg px-4 h-12 w-full lg:w-44 focus:outline-none font-medium"
           />
         </div>
 
-        {/* Divider */}
-        <div className="h-12 w-px bg-black/20 mx-2" />
+        {/* Divider (hidden on mobile) */}
+        <div className="hidden lg:block h-12 w-px bg-black/20 mx-2" />
 
         {/* Passenger Count */}
-        <div className="flex flex-col">
-          <label className="text-sm font-medium text-black mb-1">Passenger</label>
+        <div className="flex flex-col w-full lg:w-auto">
+          <label className="text-sm font-semibold text-black mb-2">
+            Passenger
+          </label>
           <select
             value={passenger}
             onChange={(e) => setPassenger(e.target.value)}
-            className="border border-blue-300 rounded-md px-3 py-2 w-20 bg-white appearance-none focus:outline-none text-center"
+            className="border-2 border-gray-400 rounded-lg px-3 h-12 w-full lg:w-24 bg-white focus:outline-none font-medium text-center"
           >
             {[...Array(6).keys()].map((num) => (
               <option key={num} value={num}>
@@ -95,12 +101,14 @@ export default function TaxiBookingForm() {
         </div>
 
         {/* Luggage Count */}
-        <div className="flex flex-col">
-          <label className="text-sm font-medium text-black mb-1">Luggage</label>
+        <div className="flex flex-col w-full lg:w-auto">
+          <label className="text-sm font-semibold text-black mb-2">
+            Luggage
+          </label>
           <select
             value={luggage}
             onChange={(e) => setLuggage(e.target.value)}
-            className="border border-blue-300 rounded-md px-3 py-2 w-20 bg-white appearance-none focus:outline-none text-center"
+            className="border-2 border-gray-400 rounded-lg px-3 h-12 w-full lg:w-24 bg-white focus:outline-none font-medium text-center"
           >
             {[...Array(6).keys()].map((num) => (
               <option key={num} value={num}>
@@ -110,14 +118,14 @@ export default function TaxiBookingForm() {
           </select>
         </div>
 
-        {/* Divider */}
-        <div className="h-12 w-px bg-black/20 mx-2" />
+        {/* Divider (hidden on mobile) */}
+        <div className="hidden lg:block h-12 w-px bg-black/20 mx-2" />
 
         {/* Get Taxi Button */}
-        <div className="mb-1">
+        <div className="mt-2 lg:mt-0 w-full lg:w-auto">
           <button
             onClick={handleSubmit}
-            className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-6 rounded-lg transition"
+            className="w-full lg:w-auto bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-8 rounded-lg transition text-lg"
           >
             Get Taxi
           </button>

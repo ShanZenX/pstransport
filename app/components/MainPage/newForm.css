@@ -1,11 +1,10 @@
-/* newForm.css */
 .geoapify-autocomplete-input {
   height: 48px !important;
   font-size: 1rem !important;
   font-weight: 500 !important;
   padding-right: 2.5rem !important;
   outline: none !important;
-  box-shadow: none !important;
+  background: white !important;
 }
 
 /* Desktop (box input) */
@@ -13,66 +12,58 @@
   .geoapify-autocomplete-input {
     border: 2px solid #9ca3af !important;
     border-radius: 0.5rem !important;
-  }
-}
-
-/* Mobile (underline only) */
-@media (max-width: 1023px) {
-  .geoapify-autocomplete-input {
-    border: none !important;
-    border-bottom: 2px solid #9ca3af !important;
-    border-radius: 0 !important;
-    text-align: left !important; /* align text to start */
-    padding-left: 0.5rem; /* optional: add some left padding */
-  }
-}
-/* Mobile adjustments */
-@media (max-width: 1023px) {
-  .geoapify-autocomplete-input {
-    border: none !important;
-    border-bottom: 2px solid #9ca3af !important;
-    border-radius: 0 !important;
-    text-align: left !important; /* align text start */
-    padding-left: 1rem !important; /* push text a bit right */
-    height: 2.5rem !important; /* make input smaller */
-    font-size: 0.875rem !important; /* slightly smaller text */
+    padding-left: 0.75rem !important;
   }
 
-  /* Shrink all select & date inputs */
   input[type="date"],
   select {
-    height: 2.5rem !important;
+    border: 2px solid #9ca3af !important;
+    border-radius: 0.5rem !important;
+    background: white !important;
+    padding-left: 0.75rem !important;
+  }
+}
+
+/* Mobile (underline only + compact) */
+@media (max-width: 1023px) {
+  .geoapify-autocomplete-input {
+    border: none !important;
+    border-bottom: 2px solid #9ca3af !important;
+    border-radius: 0 !important;
+    text-align: left !important;
+    padding-left: 0.5rem !important;
+    height: 2.2rem !important;
     font-size: 0.875rem !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    background: transparent !important;
   }
 
-  /* Shrink button */
-  button {
-    padding: 0.5rem 1rem !important;
+  input[type="date"],
+  select {
+    border: none !important;
+    border-bottom: 2px solid #9ca3af !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    height: 2.2rem !important;
     font-size: 0.875rem !important;
+    padding-left: 0.5rem !important;
   }
 
-  /* Shrink spacing & gaps */
+  /* Compact labels */
   .flex-col > label {
-    font-size: 0.75rem !important;
+    font-size: 0.7rem !important;
+    margin-bottom: 0.2rem !important;
   }
 
+  /* Compact spacing */
   .flex.flex-col {
-    gap: 0.25rem !important;
-  }
-   button {
-    padding: 0.5rem 0.75rem !important;
-    font-size: 0.875rem !important;
-    min-width: 0 !important;
+    gap: 0.2rem !important;
   }
 
-  /* Gap between buttons smaller */
-  .flex.flex-wrap.gap-2 {
-    gap: 0.5rem !important;
-  }
-  .flex.overflow-x-auto {
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
+  /* Ride type group */
+  .ride-type-group button {
+    background: transparent !important;
+    border-radius: 0 !important;
+    font-size: 0.8rem !important;
+    padding: 0.25rem 0.5rem !important;
   }
 }

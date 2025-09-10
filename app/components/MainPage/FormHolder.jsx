@@ -18,10 +18,10 @@ const FormHolder = () => {
       <div className="relative z-10 flex flex-col items-center w-full mb-5 space-y-3">
         {/* Headings */}
         <div className="flex flex-col items-center text-center">
-          <p className="text-3xl sm:text-6xl text-white font-oswald font-extrabold">
+          <p className="text-4xl sm:text-7xl text-white font-oswald font-extrabold">
             PS TRANSPORT
           </p>
-          <p className="text-2xl sm:text-3xl text-white font-poppins mt-2">
+          <p className="text-2xl sm:text-4xl text-white font-poppins mt-2">
             Book your best Trip & Logistics
           </p>
         </div>

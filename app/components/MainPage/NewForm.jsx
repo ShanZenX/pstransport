@@ -42,38 +42,72 @@ export default function TaxiBookingForm() {
     <GeoapifyContext apiKey="59905bf1b7e14b7d83a7825ad63ae722">
       {/* Main Form Container */}
       <div className="border-2 border-black rounded-2xl p-4 flex flex-col text-start lg:flex-row items-stretch lg:items-end gap-4 bg-white shadow-lg max-w-full lg:max-w-fit">
-        
-        {/* Ride Type Selector */}
-        <div className="flex gap-4 mb-3 overflow-x-auto ride-type-group">
-          {["oneway", "localtrip", "twoway", "airport"].map((type) => {
-            const isActive = rideType === type;
-            return (
-              <button
-                key={type}
-                type="button"
-                onClick={() => setRideType(type)}
-                className={`
-                  px-2 sm:px-3 py-1 text-sm font-medium transition
-                  border-b-2
-                  ${isActive ? "border-black text-black" : "border-transparent text-gray-600 hover:text-black"}
-                `}
-              >
-                {type.charAt(0).toUpperCase() + type.slice(1)}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* From Location */}
+        {/* From Location with Ride Type on top (desktop only above From) */}
         <div className="flex flex-col w-full lg:w-48">
-          <label className="text-sm font-semibold text-black mb-1">📍From</label>
+          {/* Ride Type Selector - Desktop (above From) */}
+          {/* Ride Type Selector - Mobile (scrollable underline buttons) */}
+          <div className="flex gap-4 mb-3 overflow-x-auto lg:hidden">
+            {["oneway", "localtrip", "twoway", "airport"].map((type) => {
+              const isActive = rideType === type;
+              return (
+                <button
+                  key={type}
+                  type="button"
+                  onClick={() => setRideType(type)}
+                  className={`
+          px-2 sm:px-3 py-1 text-sm font-medium transition
+          border-b-2 whitespace-nowrap
+          ${
+            isActive
+              ? "border-black text-black"
+              : "border-transparent text-gray-600 hover:text-black"
+          }
+        `}
+                >
+                  {type.charAt(0).toUpperCase() + type.slice(1)}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* From Location with Ride Type above it (Desktop) */}
+          <div className="flex flex-col w-full lg:w-48">
+            {/* Ride Type Selector - Desktop */}
+            <div className="hidden lg:flex gap-2 mb-4">
+              {["oneway", "localtrip", "twoway", "airport"].map((type) => {
+                const isActive = rideType === type;
+                return (
+                  <button
+                    key={type}
+                    type="button"
+                    onClick={() => setRideType(type)}
+                    className={`
+            px-4 py-2 rounded-full text-sm font-medium transition
+            ${
+              isActive
+                ? "bg-black text-white"
+                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+            }
+          `}
+                  >
+                    {type.charAt(0).toUpperCase() + type.slice(1)}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* From Location */}
+          <label className="text-sm font-semibold text-black mb-2">
+            📍From
+          </label>
           <GeoapifyGeocoderAutocomplete
             placeholder="Select a location"
             options={{ type: "city" }}
             lang="en"
             limit={5}
             placeSelect={(val) => setFrom(val)}
-            className="!h-12"
+            className="!h-12 !border-2 !border-gray-400 !rounded-lg"
           />
         </div>
 
@@ -86,7 +120,9 @@ export default function TaxiBookingForm() {
 
         {/* Drop Location */}
         <div className="flex flex-col w-full lg:w-48">
-          <label className="text-sm font-semibold text-black mb-1">📍Drop</label>
+          <label className="text-sm font-semibold text-black mb-1">
+            📍Drop
+          </label>
           <GeoapifyGeocoderAutocomplete
             placeholder="Select a location"
             options={{ type: "city" }}
@@ -125,7 +161,9 @@ export default function TaxiBookingForm() {
 
         {/* Passenger */}
         <div className="flex flex-col w-full lg:w-auto">
-          <label className="text-sm font-semibold text-black mb-1">Passenger</label>
+          <label className="text-sm font-semibold text-black mb-1">
+            Passenger
+          </label>
           <select
             value={passenger}
             onChange={(e) => setPassenger(e.target.value)}
@@ -141,7 +179,9 @@ export default function TaxiBookingForm() {
 
         {/* Luggage */}
         <div className="flex flex-col w-full lg:w-auto">
-          <label className="text-sm font-semibold text-black mb-1">Luggage</label>
+          <label className="text-sm font-semibold text-black mb-1">
+            Luggage
+          </label>
           <select
             value={luggage}
             onChange={(e) => setLuggage(e.target.value)}
@@ -156,7 +196,7 @@ export default function TaxiBookingForm() {
         </div>
 
         {/* Get Taxi Button */}
-        <div className="mt-2 lg:mt-0 w-full lg:w-auto">
+        <div className=" w-full lg:w-auto">
           <button
             onClick={handleSubmit}
             className="w-full lg:w-auto bg-black text-white font-bold py-2 px-6 rounded-lg transition text-sm"
@@ -168,16 +208,16 @@ export default function TaxiBookingForm() {
 
       {/* Return Date (Desktop only, below form) */}
       <div
-        className={`hidden lg:flex justify-center w-full mt-2 transition-all ${
+        className={`ml-0 lg:ml-14  justify-center hidden lg:flex w-full mt-2 transition-all ${
           rideType === "twoway" ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="w-full lg:w-44">
+        <div className="w-full lg:w-44 ">
           <input
             type="date"
             value={returnDate}
             onChange={(e) => setReturnDate(e.target.value)}
-            className="border-2 border-gray-400 rounded-lg px-3 h-12 w-full bg-white"
+            className="border-2 border-gray-400 rounded-lg px-3 h-12 w-full bg-white "
           />
         </div>
       </div>

@@ -20,7 +20,7 @@ export default function About() {
       <BookingSteps />
       <DriverJoinSection />
       {/* <WhyPage /> */}
-      <AboutCompany />
+      {/* <AboutCompany /> */}
       <ReviewsSection />
     </div>
   );

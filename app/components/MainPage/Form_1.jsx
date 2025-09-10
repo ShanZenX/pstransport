@@ -66,10 +66,9 @@ export default function BookingForm() {
   // calculate distance using Geoapify Route API
   const calculateDistance = async () => {
     if (!form.pickup || !form.drop) return;
-    const start = [
-      form.pickup.properties.lon,
-      form.pickup.properties.lat,
-    ].join(",");
+    const start = [form.pickup.properties.lon, form.pickup.properties.lat].join(
+      ","
+    );
     const end = [form.drop.properties.lon, form.drop.properties.lat].join(",");
 
     try {
@@ -107,7 +106,11 @@ export default function BookingForm() {
     if (!form.pickup) newErrors.pickup = "Pickup required";
     if (!form.drop) newErrors.drop = "Drop required";
     if (!form.departDate) newErrors.departDate = "Departure required";
-    if (activeTab === "outstation" && form.tripType === "twoway" && !form.returnDate) {
+    if (
+      activeTab === "outstation" &&
+      form.tripType === "twoway" &&
+      !form.returnDate
+    ) {
       newErrors.returnDate = "Return required";
     }
     setErrors(newErrors);
@@ -123,7 +126,7 @@ export default function BookingForm() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="p-6 sm:p-10 bg-white border border-white/20 shadow-2xl rounded-2xl max-w-fit w-full mx-auto mt-10"
+        className="p-1 sm:p-10 bg-white border border-white/20 shadow-2xl rounded-2xl max-w-fit w-full mx-auto mt-10"
       >
         {/* Tabs */}
         <Tabs
@@ -270,21 +273,20 @@ export default function BookingForm() {
                   />
                 </LocalizationProvider>
               </div>
+
+              <div>
+                <Button
+                  variant="contained"
+                  size="medium"
+                  className="!bg-gradient-to-r !from-yellow-300 !to-red-700 !text-white !font-semibold !rounded-lg !shadow-md px-6"
+                  onClick={handleBookNow}
+                >
+                  Book Now
+                </Button>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
-
-        {/* Book Now */}
-        <div className="mt-6 flex justify-end">
-          <Button
-            variant="contained"
-            size="medium"
-            className="!bg-gradient-to-r !from-yellow-300 !to-red-700 !text-white !font-semibold !rounded-lg !shadow-md px-6"
-            onClick={handleBookNow}
-          >
-            Book Now
-          </Button>
-        </div>
       </motion.div>
     </GeoapifyContext>
   );

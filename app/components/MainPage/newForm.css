@@ -26,3 +26,53 @@
     padding-left: 0.5rem; /* optional: add some left padding */
   }
 }
+/* Mobile adjustments */
+@media (max-width: 1023px) {
+  .geoapify-autocomplete-input {
+    border: none !important;
+    border-bottom: 2px solid #9ca3af !important;
+    border-radius: 0 !important;
+    text-align: left !important; /* align text start */
+    padding-left: 1rem !important; /* push text a bit right */
+    height: 2.5rem !important; /* make input smaller */
+    font-size: 0.875rem !important; /* slightly smaller text */
+  }
+
+  /* Shrink all select & date inputs */
+  input[type="date"],
+  select {
+    height: 2.5rem !important;
+    font-size: 0.875rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Shrink button */
+  button {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  /* Shrink spacing & gaps */
+  .flex-col > label {
+    font-size: 0.75rem !important;
+  }
+
+  .flex.flex-col {
+    gap: 0.25rem !important;
+  }
+   button {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.875rem !important;
+    min-width: 0 !important;
+  }
+
+  /* Gap between buttons smaller */
+  .flex.flex-wrap.gap-2 {
+    gap: 0.5rem !important;
+  }
+  .flex.overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+}

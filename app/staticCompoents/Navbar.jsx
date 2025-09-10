@@ -53,9 +53,9 @@ export default function Navbar() {
             <Link
               key={name}
               href={href}
-              className={`text-sm px-3 py-1 no-underline rounded-full transition-all duration-300 text-decoration-none text-black ${
+              className={`text-sm px-3 py-1 no-underline -full transition-all duration-300 text-decoration-none text-black ${
                 pathname === href
-                  ? "bg-red-700 text-white !font-bold"
+                  ? "bg-black text-white !font-bold"
                   : "hover:bg-gray-100"
               }`}
             >
@@ -67,7 +67,7 @@ export default function Navbar() {
         {/* Call Me Button */}
         <a
           href="tel:+123456789"
-          className="hidden md:inline-block hover:bg-blue-950 text-white px-4 py-1 text-sm rounded-full no-underline font-medium text-decoration-none bg-red-700"
+          className="hidden md:inline-block  text-white px-4 py-1 text-sm no-underline font-bold text-decoration-none bg-black"
         >
           CALL ME
         </a>
@@ -112,7 +112,7 @@ export default function Navbar() {
                 <Link
                   key={name}
                   href={href}
-                  className={`px-4 py-2 rounded !no-underline !text-gray-800 ${
+                  className={`px-4 py-2  !no-underline !text-gray-800 ${
                     pathname === href
                       ? "bg-gray-100 text-white"
                       : "hover:bg-gray-100"

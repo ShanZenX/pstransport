@@ -1,53 +1,64 @@
 [
   {
     "img": "/assets/trip/Pondi-2.png",
-    "title": "Chennai to Pondicherry",
+    "title": "Chennai to Pondicherry 1 day",
     "price": "(Sedan 4+1 Rs.5500 ) (SUV 6+1 Rs.7200)"
   },
    {
     "img": "/assets/trip/meenkshikovil.png",
-    "title": "Chennai to Madurai",
+    "title": "Chennai to Madurai 3 days",
     "price": "(Sedan 4+1 Rs.13700 ) (SUV 6+1 Rs.18500)"
   },
   {
     "img": "/assets/trip/munnar.png",
-    "title": "Chennai to Yercaud ",
+    "title": "Chennai to Yercaud 3 Days",
     "price": "(Sedan 4+1 Rs.12000 ) (SUV 6+1 Rs.17500)"
   },
   {
     "img": "/assets/trip/ooty.png",
-    "title": "Chennai to Ooty ",
-    "price": "( Sedan 4 + 1 Rs.18300 ) (SUV 6+1 Rs.24200)"
+    "title": "Chennai to Ooty 3 Days",
+    "price": "( Sedan 4 + 1 Rs.16100 ) (SUV 6+1 Rs.22900)"
   },
   {
     "img": "/assets/trip/munnar2.png",
-    "title": "Chennai to Munnar ",
+    "title": "Chennai to Munnar 3 Days",
     "price": "( Sedan 4 + 1 Rs.17000 ) (SUV 6+1 Rs.24000)"
   },
   {
     "img": "/assets/trip/Yercadu.png",
-    "title": "Chennai to Kodaikannal ",
-    "price": "( Sedan 4 + 1 Rs.15200 ) (SUV 6+1 Rs.21000)"
+    "title": "Chennai to Kodaikannal 3 Days ",
+    "price": "( Sedan 4 + 1 Rs.15100 ) (SUV 6+1 Rs.21500)"
   },
   {
-    "img": "/assets/trip/vellor.png",
-    "title": "Chennai to Kannyakumari ",
-    "price": "( Sedan 4+1 Rs.3900 )(SUV 6+1 Rs.6000)"
+    "img": "/assets/trip/kannyakumari.png",
+    "title": "Chennai to Kannyakumari 4 Days",
+    "price": "( Sedan 4+1 Rs.21000 )(SUV 6+1 Rs.29500)"
   },
   {
     "img": "/assets/trip/bengaluru.png",
-    "title": "Chennai to Bengaluru ",
+    "title": "Chennai to Bengaluru 3 Days",
     "price": "( Sedan 4 + 1 Rs.11900 ) (SUV 6+1 Rs.17500)"
   }, {
     "img": "/assets/trip/nellore.png",
-    "title": "Chennai to Nellore",
+    "title": "Chennai to Nellore 1 Day",
     "price": "( Sedan 4 + 1 Rs.6000 ) (SUV 6+1 Rs.8100)"
   }
 ,{
     "img": "/assets/trip/kerala.png",
-    "title": "Chennai to Thiruvanthapuram ",
+    "title": "Chennai to Thiruvanthapuram 4 Days",
     "price": "( Sedan 4 + 1 Rs.22500 ) (SUV 6+1 Rs.31000)"
+  },
+  {
+    "img": "/assets/trip/thhirukovillur.png",
+    "title": "Chennai to Tirukovilur 1 Days",
+    "price": "( Sedan 4 + 1 Rs.5699 ) (SUV 6+1 Rs.7900)"
+  },
+  {
+    "img": "/assets/trip/kallakurichi.png",
+    "title": "Chennai to Kallakurichi 1 Days",
+    "price": "( Sedan 4 + 1 Rs.6800 ) (SUV 6+1 Rs.9800)"
   }
+
 
 
 ]

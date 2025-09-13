@@ -39,8 +39,8 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section className="!py-20 px-4 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="!py-20 px-3 bg-white">
+      <div className="max-w-6xl mx-auto">
         <h2 className="text-2xl sm:text-3xl !font-bold text-black !mb-12 !sm:mb-18">
           How does it <span className="text-red-700">work?</span>
         </h2>

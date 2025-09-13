@@ -24,7 +24,7 @@ const ThreeSection = () => {
   return (
     <section
       ref={ref}
-      className="bg-white py-8 sm:py-15 px-4 sm:px-8"
+      className="bg-white py-15  px-4 sm:px-8"
     >
       {/* Heading */}
       <motion.div

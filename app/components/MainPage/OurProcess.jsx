@@ -17,7 +17,7 @@ const services = [
 
 const OurProcess = () => {
   return (
-    <section className="bg-white py-8 sm-5 lg:m-15">
+    <section className="bg-white py-8 sm-5 lg:m-15 my-12 sm:my-20">
       <div className="text-center mb-10">
         <h2 className=" text-2xl md:text-[32px] !font-semibold mb-3 flex justify-center items-center gap-2 sm:mb-3">
           <span className="h-[4px] w-[20px] bg-gray-800 block"></span> What we{" "}

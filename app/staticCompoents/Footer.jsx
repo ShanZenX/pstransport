@@ -16,9 +16,9 @@ const Footer = () => (
           About PS Transport
         </a>
         <a href="/Services" className="text-white !no-underline  cursor-pointer">
-          Contact Us
+          Services
         </a>
-        <a href="#" className="text-white !no-underline  cursor-pointer">
+        <a href="/" className="text-white !no-underline  cursor-pointer">
           Home
         </a>
       </div>
@@ -31,16 +31,14 @@ const Footer = () => (
         </a>
       </div>
       <div className="space-y-3">
-        <a href="#" className="inline-block text-white no-underline transition">
-          Become an Operator <span className="text-yellow-400 ml-1">›</span>
-        </a>
+       
         <a href="#" className="inline-block text-white no-underline transition">
           Ride with PS Transport <span className="text-yellow-400 ml-1">›</span>
         </a>
       </div>
       <div className="space-y-2">
         <p>Bookings@pstransport.in</p>
-        <p className="text-yellow-400">+91 98403 03916</p>
+        <p className="text-yellow-400">+91 93603 03916</p>
       </div>
     </div>
 

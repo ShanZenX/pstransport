@@ -4,15 +4,20 @@
     "title": "Chennai to Pondicherry",
     "price": "(Sedan 4+1 Rs.5500 ) (SUV 6+1 Rs.7200)"
   },
+   {
+    "img": "/assets/trip/meenkshikovil.png",
+    "title": "Chennai to Madurai",
+    "price": "(Sedan 4+1 Rs.13700 ) (SUV 6+1 Rs.18500)"
+  },
   {
     "img": "/assets/trip/munnar.png",
     "title": "Chennai to Yercaud ",
-    "price": "(Sedan 4+1 Rs.12000 ) (SUV 6+1 Rs.17000)"
+    "price": "(Sedan 4+1 Rs.12000 ) (SUV 6+1 Rs.17500)"
   },
   {
-    "img": "/assets/trip/tirupathi.png",
+    "img": "/assets/trip/ooty.png",
     "title": "Chennai to Ooty ",
-    "price": "( Sedan 4 + 1 Rs.6200 ) (SUV 6+1 Rs.8200)"
+    "price": "( Sedan 4 + 1 Rs.18300 ) (SUV 6+1 Rs.24200)"
   },
   {
     "img": "/assets/trip/munnar2.png",
@@ -20,9 +25,9 @@
     "price": "( Sedan 4 + 1 Rs.17000 ) (SUV 6+1 Rs.24000)"
   },
   {
-    "img": "/assets/trip/thiruvanamalai.png",
+    "img": "/assets/trip/Yercadu.png",
     "title": "Chennai to Kodaikannal ",
-    "price": "( Sedan 4 + 1 Rs.5500 ) (SUV 6+1 Rs.7200)"
+    "price": "( Sedan 4 + 1 Rs.15200 ) (SUV 6+1 Rs.21000)"
   },
   {
     "img": "/assets/trip/vellor.png",
@@ -30,13 +35,18 @@
     "price": "( Sedan 4+1 Rs.3900 )(SUV 6+1 Rs.6000)"
   },
   {
-    "img": "/assets/trip/thiruchendur.png",
+    "img": "/assets/trip/bengaluru.png",
     "title": "Chennai to Bengaluru ",
-    "price": "( Sedan 4 + 1 Rs.16500 ) (SUV 6+1 Rs.22500)"
+    "price": "( Sedan 4 + 1 Rs.11900 ) (SUV 6+1 Rs.17500)"
   }, {
-    "img": "/assets/trip/thiruchendur.png",
+    "img": "/assets/trip/nellore.png",
     "title": "Chennai to Nellore",
-    "price": "( Sedan 4 + 1 Rs.16500 ) (SUV 6+1 Rs.22500)"
+    "price": "( Sedan 4 + 1 Rs.6000 ) (SUV 6+1 Rs.8100)"
+  }
+,{
+    "img": "/assets/trip/kerala.png",
+    "title": "Chennai to Thiruvanthapuram ",
+    "price": "( Sedan 4 + 1 Rs.22500 ) (SUV 6+1 Rs.31000)"
   }
 
 

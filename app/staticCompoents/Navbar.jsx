@@ -123,7 +123,8 @@ export default function Navbar() {
                 </Link>
               ))}
               <a
-                href="tel:+123456789"
+                href=""
+                to="tel:+91 9360303916"
                 className="w-[150px] bg-red-950 text-white px-1 py-2 text-center !no-underline font-semibold"
               >
                 CALL ME

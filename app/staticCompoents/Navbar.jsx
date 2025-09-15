@@ -77,7 +77,11 @@ export default function Navbar() {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="md:hidden text-red-800"
         >
-          {isMenuOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}
+          {isMenuOpen ? (
+            <XMarkIcon className="w-6 h-6" />
+          ) : (
+            <Bars3Icon className="w-6 h-6" />
+          )}
         </button>
       </div>
 
@@ -96,7 +100,6 @@ export default function Navbar() {
             <div className="flex items-center justify-between px-4 py-4 border-b border-gray-200">
               <div className="flex items-center gap-2">
                 <Image src={logo} alt="Logo" height={62} priority />
-               
               </div>
               <button
                 onClick={() => setIsMenuOpen(false)}
@@ -123,9 +126,8 @@ export default function Navbar() {
                 </Link>
               ))}
               <a
-                href=""
-                to="tel:9360303916"
-                className="w-[150px] bg-red-950 text-white px-1 py-2 text-center !no-underline font-semibold"
+                href="tel:9360303916"
+                className="w-[150px] bg-black text-white px-1 py-2 text-center !no-underline font-semibold"
               >
                 CALL ME
               </a>

@@ -27,9 +27,15 @@ const PopularTripCard = ({ pkg }) => (
             key={i}
             className="flex items-center gap-1 bg-gray-100 px-1.5 py-0.5 rounded-md"
           >
-            {item.includes("Cab") && <FaCar className="text-red-600 text-[12px]" />}
-            {item.includes("Stay") && <FaHotel className="text-blue-600 text-[12px]" />}
-            {item.includes("View") && <FaMapMarkedAlt className="text-green-600 text-[12px]" />}
+            {item.includes("Cab") && (
+              <FaCar className="text-red-600 text-[12px]" />
+            )}
+            {item.includes("Stay") && (
+              <FaHotel className="text-blue-600 text-[12px]" />
+            )}
+            {item.includes("View") && (
+              <FaMapMarkedAlt className="text-green-600 text-[12px]" />
+            )}
             {item}
           </span>
         ))}
@@ -37,9 +43,12 @@ const PopularTripCard = ({ pkg }) => (
 
       {/* Footer */}
       <div className="flex items-center justify-between mt-auto pt-1 ">
-       <a className="bg-red-700 text-white text-xs sm:text-sm px-3 py-1.5 rounded-md font-base hover:bg-red-900 transition cursor-pointer !no-underline">
-  Call Now
-</a>
+        <a
+          href="tel:+919360303916"
+          className="bg-red-700 text-white text-xs sm:text-sm px-3 py-1.5 rounded-md font-base hover:bg-red-900 transition cursor-pointer !no-underline"
+        >
+          Call Now
+        </a>
         <span className="text-sm sm:text-base font-semibold font-poppins text-indigo-950">
           {pkg.price}
         </span>

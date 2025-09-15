@@ -18,22 +18,33 @@ import "./newForm.css";
 // ==========================
 // Fare Tables
 // ==========================
-const localTripRates = {
-  Sedan: { baseKm: 40, baseFare: 1100, extraKmRate: 18 },
-  Ertiga: { baseKm: 40, baseFare: 1500, extraKmRate: 21 },
-  Innova: { baseKm: 40, baseFare: 1500, extraKmRate: 21 },
+const localTripPackages = {
+  Sedan: [
+    { label: "4 hr / 40 km", km: 40, fare: 1100 },
+    { label: "8 hr / 80 km", km: 80, fare: 2200 },
+  ],
+  Ertiga: [
+    { label: "4 hr / 40 km", km: 40, fare: 1500 },
+    { label: "8 hr / 80 km", km: 80, fare: 3000 },
+  ],
+  Innova: [
+    { label: "4 hr / 40 km", km: 40, fare: 2100 },
+    { label: "8 hr / 80 km", km: 80, fare: 4200 },
+  ],
 };
 
 const oneWayRates = {
   Sedan: { minKm: 150, fixedFare: 2460, extraKmRate: 14 },
   Ertiga: { minKm: 150, fixedFare: 3200, extraKmRate: 19 },
   Innova: { minKm: 150, fixedFare: 3200, extraKmRate: 19 },
+  Tempo: { minKm: 250, baseFare: 9000, extraKmRate: 32 },
 };
 
 const twoWayRates = {
   Sedan: { minKm: 250, baseFare: 3300, extraKmRate: 12 },
   Ertiga: { minKm: 250, baseFare: 4500, extraKmRate: 17 },
   Innova: { minKm: 250, baseFare: 4500, extraKmRate: 17 },
+  Tempo: { minKm: 250, baseFare: 9000, extraKmRate: 32 },
 };
 
 export default function TaxiBookingForm() {
@@ -60,9 +71,20 @@ export default function TaxiBookingForm() {
     const km = distance.distanceKm;
 
     if (rideType === "localtrip" || rideType === "airport") {
-      const { baseKm, baseFare, extraKmRate } = localTripRates[vehicle];
-      const extraKm = Math.max(0, km - baseKm);
-      return baseFare + extraKm * extraKmRate;
+      const packages = localTripPackages[vehicle];
+      const extraKmRateByVehicle = { Sedan: 18, Ertiga: 21, Innova: 23 };
+      const extraKmRate = extraKmRateByVehicle[vehicle];
+      // Pick the smallest package that can cover the distance
+      let selectedPackage = packages[packages.length - 1]; // default largest
+      for (let pkg of packages) {
+        if (distance.distanceKm <= pkg.km) {
+          selectedPackage = pkg;
+          break;
+        }
+      }
+
+      const extraKm = Math.max(0, distance.distanceKm - selectedPackage.km);
+      return selectedPackage.fare + extraKm * extraKmRate;
     }
 
     if (rideType === "oneway") {
@@ -201,7 +223,7 @@ export default function TaxiBookingForm() {
   // ==========================
   // Vehicle Options Based on Passengers
   // ==========================
-  const vehicleOptions = ["Sedan", "Ertiga", "Innova"];
+  const vehicleOptions = ["Sedan", "Ertiga", "Innova", "Tempo"];
 
   return (
     <GeoapifyContext apiKey="59905bf1b7e14b7d83a7825ad63ae722">
@@ -218,7 +240,7 @@ export default function TaxiBookingForm() {
                 border-b-2 whitespace-nowrap
                 ${
                   isActive
-                    ? "border-black  text-white"
+                    ? "border-white  text-white"
                     : "border-transparent text-white hover:text-black"
                 }
               `}

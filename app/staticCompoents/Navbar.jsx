@@ -75,7 +75,7 @@ export default function Navbar() {
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden text-red-800"
+          className="md:hidden text-black"
         >
           {isMenuOpen ? (
             <XMarkIcon className="w-6 h-6" />

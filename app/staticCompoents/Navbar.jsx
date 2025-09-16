@@ -38,7 +38,7 @@ export default function Navbar() {
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 ">
+      <div className="max-w-7xl mx-auto flex items-center justify-between sm:px-4 ">
         {/* Logo */}
         <Link
           href="/"

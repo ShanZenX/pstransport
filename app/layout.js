@@ -12,6 +12,7 @@ import Navbar from "./staticCompoents/Navbar";
 import Fotter from "./staticCompoents/Footer";
 import MapInput from './components/MainPage/MapInput';
 import Footer from "./staticCompoents/Footer";
+import ReviewsSection from "./components/MainPage/Review";
 
 // Google fonts with CSS variables
 const poppins = Poppins({
@@ -59,7 +60,7 @@ export default function RootLayout({ children }) {
 
         {children}
         
-
+        <ReviewsSection />
         <Footer/>
       </body>
     </html>

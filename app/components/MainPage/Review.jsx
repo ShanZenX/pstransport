@@ -121,7 +121,7 @@ const ReviewsSection = () => {
           href="https://maps.app.goo.gl/1mAp2JRjA6zg3g4BA"
           target="_blank"
           rel="noopener noreferrer"
-          className="border bg-b-6 bg-red-700  text-white rounded-md px-3 py-2 text-sm hover:bg-red-900 text-center"
+          className="border bg-b-6 bg-red-700 text-white  rounded-md px-3 py-2 text-sm hover:bg-red-900 text-center !no-underline"
         >
           Write Review
         </a>

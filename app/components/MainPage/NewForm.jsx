@@ -36,16 +36,31 @@ const localTripPackages = {
 const oneWayRates = {
   Sedan: { minKm: 150, fixedFare: 2460, extraKmRate: 14 },
   Ertiga: { minKm: 150, fixedFare: 3200, extraKmRate: 19 },
-  Innova: { minKm: 150, fixedFare: 3200, extraKmRate: 19 },
+  Innova: { minKm: 150, fixedFare: 3200, extraKmRate: 23 },
   Tempo: { minKm: 250, baseFare: 9000, extraKmRate: 32 },
 };
 
 const twoWayRates = {
   Sedan: { minKm: 250, baseFare: 3300, extraKmRate: 12 },
   Ertiga: { minKm: 250, baseFare: 4500, extraKmRate: 17 },
-  Innova: { minKm: 250, baseFare: 4500, extraKmRate: 17 },
+  Innova: { minKm: 300, baseFare: 5900, extraKmRate: 22 },
   Tempo: { minKm: 250, baseFare: 9000, extraKmRate: 32 },
 };
+const chennaiBounds = {
+  north: 13.3, // above Ennore
+  south: 12.6, // Mahabalipuram
+  west: 79.85, // beyond Chengalpattu
+  east: 80.4, // East coast (Bay of Bengal)
+};
+
+function isWithinChennaiBounds(lat, lon) {
+  return (
+    lat <= chennaiBounds.north &&
+    lat >= chennaiBounds.south &&
+    lon >= chennaiBounds.west &&
+    lon <= chennaiBounds.east
+  );
+}
 
 export default function TaxiBookingForm() {
   const [from, setFrom] = useState(null);
@@ -124,6 +139,23 @@ export default function TaxiBookingForm() {
     if (!dateTime) newErrors.dateTime = "Departure date & time required";
     if (rideType === "twoway" && !returnDateTime)
       newErrors.returnDateTime = "Return date & time required";
+
+    if (rideType === "localtrip" && from && to) {
+      const pickupLat = from.properties.lat;
+      const pickupLon = from.properties.lon;
+      const dropLat = to.properties.lat;
+      const dropLon = to.properties.lon;
+
+      if (
+        !isWithinChennaiBounds(pickupLat, pickupLon) ||
+        !isWithinChennaiBounds(dropLat, dropLon)
+      ) {
+        alert(
+          "Local trips are restricted to Chennai and surrounding areas only."
+        );
+        return;
+      }
+    }
 
     setErrors(newErrors);
 

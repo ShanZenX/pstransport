@@ -21,8 +21,8 @@ const DriverJoinSection = () => {
 
         <div className="md:w-1/6 flex flex-col gap-3">
           <a
-            href="#apply"
-            className="bg-red-700 text-white text-base font-medium py-2.5 px-2 rounded-lg !no-underline text-center shadow hover:bg-red-900 transition-all"
+          href="tel:+919360303916"
+            className="bg-red-700 text-white !font-bold  py-2.5 px-2 rounded-lg !no-underline text-center shadow hover:bg-red-900 transition-all"
           >
             Become a Member
           </a>

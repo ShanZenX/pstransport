@@ -8,7 +8,7 @@ import OurProcess from "./components/MainPage/OurProcess";
 export default function Home() {
   return (
     <>
-      <div className=" mt-[50px] sm:mt-[0px]">
+      <div className=" mt-[0px] sm:mt-[0px]">
         <FormHolder />
         <OurProcess />
         <TransportPackagesCarousel />

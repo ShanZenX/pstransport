@@ -37,8 +37,13 @@ const PopularTripCard = ({ trip, index }) => {
           </p>
         </div>
         <p className="m-0 mt-2 text-red-700 font-semibold text-[14px] sm:text-[14px] cursor-pointer hover:underline">
-          Book now
-        </p>
+ <a
+          href="tel:9360303916"
+          className="mt-1 !text-red-700 text-[13px] sm:text-[14px] font-medium hover:underline cursor-pointer"
+        >
+Book Now
+        </a>        </p>
+       
       </div>
     </div>
   );

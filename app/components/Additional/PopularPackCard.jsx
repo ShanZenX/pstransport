@@ -45,7 +45,7 @@ const PopularTripCard = ({ pkg }) => (
       <div className="flex items-center justify-between mt-auto pt-1 ">
         <a
           href="tel:+919360303916"
-          className="bg-red-700 text-white text-xs sm:text-sm px-3 py-1.5 rounded-md font-base hover:bg-red-900 transition cursor-pointer !no-underline"
+          className="bg-red-700 !font-bold text-white text-xs sm:text-sm px-3 py-1.5 rounded-md font-base hover:bg-red-900 transition cursor-pointer !no-underline"
         >
           Call Now
         </a>

@@ -16,12 +16,13 @@ const BrandsSection = () => {
       >
         {/* Left Content */}
         <motion.div
-          // initial={{ opacity: 0, x: -50 }}
-          // animate={inView ? { opacity: 1, x: 0 } : {}}
-          // transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="text-3xl md:text-4xl !font-extrabold mb-4">
-            Our Business <br /><span className="text-red-700"> Partners </span>
+            Our Business <br />
+            <span className="text-red-700"> Partners </span>
           </h2>
           <p className="text-gray-600 leading-relaxed max-w-md">
             We collaborate with trusted business partners to deliver reliable
@@ -32,9 +33,9 @@ const BrandsSection = () => {
 
         {/* Right Logos with grid lines */}
         <motion.div
-          // initial={{ opacity: 0, x: 50 }}
-          // animate={inView ? { opacity: 1, x: 0 } : {}}
-          // transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           className="relative w-full"
         >
           {/* grid lines (only show on md and above) */}
@@ -51,10 +52,10 @@ const BrandsSection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-4 md:grid-rows-2">
             {brands.map((brand, index) => (
               <motion.div
-                // key={index}
-                // initial={{ opacity: 0, scale: 0.9 }}
-                // animate={inView ? { opacity: 1, scale: 1 } : {}}
-                // transition={{ duration: 0.5, delay: index * 0.1 }}
+                key={brand.id || index} // ✅ FIXED unique key
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
                 className="flex items-center justify-center p-6"
               >
                 <div className="w-24 h-12 sm:w-28 sm:h-14 relative">

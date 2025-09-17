@@ -4,7 +4,7 @@ import TaxiBookingForm from "./NewForm";
 const FormHolder = () => {
   return (
     <div
-      className="relative min-h-screen flex flex-col px-4 items-center justify-end"
+      className="relative min-h-screen flex flex-col px-4 items-center justify-end !pt-0"
       style={{
         backgroundImage: "url('/main-bg8.png')",
         backgroundSize: "cover",

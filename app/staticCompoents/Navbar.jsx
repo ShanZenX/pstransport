@@ -116,7 +116,7 @@ export default function Navbar() {
                 <Link
                   key={name}
                   href={href}
-                  className={`px-4 py-2 rounded ${
+                  className={`px-4 py-2 rounded !no-underline text-black font-bold ${
                     pathname === href
                       ? "bg-black text-white"
                       : "hover:bg-gray-100"
@@ -128,7 +128,7 @@ export default function Navbar() {
               ))}
               <a
                 href="tel:9360303916"
-                className="w-[150px] bg-black text-white px-4 py-2 text-center rounded font-semibold"
+                className="w-[150px] bg-black text-white px-4 py-2 text-center !no-underline  rounded font-semibold"
               >
                 CALL ME
               </a>
@@ -138,7 +138,7 @@ export default function Navbar() {
       </AnimatePresence>
 
       {/* Page offset so content isn’t hidden */}
-      <div className="pt-20" />
+      {/* <div className="pt-20" /> */}
     </>
   );
 }

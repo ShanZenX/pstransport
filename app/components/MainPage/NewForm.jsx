@@ -531,6 +531,8 @@ export default function TaxiBookingForm() {
                 <p className="text-lg font-bold text-green-600">
                   Total Fare: ₹{totalCost}
                 </p>
+                {/* <p>Note : Toll fee and driverbata are not included in Total Fare</p> */}
+                <p>Note : If you exceed the booked kilometers, you will be charged per kilometer according to the vehicle you selected.</p>
               </>
             )}
           </div>

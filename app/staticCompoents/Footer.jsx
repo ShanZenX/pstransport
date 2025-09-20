@@ -37,7 +37,7 @@ const Footer = () => (
         </a>
       </div>
       <div className="space-y-2">
-        <p>Bookings@pstransport.in</p>
+        <p>pstransport.tn@gmail.com</p>
         <p className="text-yellow-400">+91 93603 03916</p>
       </div>
     </div>
